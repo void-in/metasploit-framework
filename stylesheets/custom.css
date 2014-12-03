@@ -1,0 +1,24 @@
+/* General */
+
+
+
+body {
+  background-color: black;
+}
+/* Panel Colors */
+
+.getting_started {
+	background-color: #BFD730;
+}
+
+.pro_tips {
+	background-color: #40DBF6;
+}
+
+.writing_modules {
+	background-color: #B41E8E;
+}
+
+.frequently_asked_questions {
+	background-color: #F2A51F;
+}
