@@ -1,13 +1,23 @@
 /* General */
 
 
-
 body {
   background-color: black;
   width: 98%;
   margin-left: auto;
   margin-right: auto;
+
 }
+
+.logo {
+  max-width: 200px;
+}
+
+a:link { color: white; }
+a:active { color: #FDB714; }
+a:visited { color: white; }
+a:hover { color: #FDB714; }
+
 /* Panel Colors */
 
 .getting_started {
@@ -23,5 +33,9 @@ body {
 }
 
 .frequently_asked_questions {
-	background-color: #F2A51F;
+  background-color: #F2A51F;
+  a:link { color: white; }
+  a:active { color: #F2A51F; }
+  a:visited { color: white; }
+  a:hover { color: #F2A51F; }
 }
