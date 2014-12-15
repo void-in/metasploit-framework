@@ -1,18 +1,1 @@
-/* General */
-
-
-body {
-  width: 98%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.logo {
-  max-width: 200px;
-}
-
-/* Indicate that panel headings are clickable */
-
-.panel-heading {
-  cursor: pointer;
-}
+body{width:98%;margin-left:auto;margin-right:auto}.logo{max-width:300px}.panel-heading{cursor:pointer}
