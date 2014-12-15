@@ -1,0 +1,8 @@
+# Ignore things from mainline dev.
+
+.versions.conf
+.yardoc/
+config/
+coverage/
+log/
+modules/
