@@ -274,7 +274,8 @@
 26
 27
 28
-29</pre>
+29
+30</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'plugins/event_tester.rb', line 21</span>
@@ -282,10 +283,11 @@
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_framework'>framework</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
   <span class='kw'>super</span>
   <span class='ivar'>@subscriber</span> <span class='op'>=</span> <span class='const'>Subscriber</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
-  <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_add_exploit_subscriber'>add_exploit_subscriber</span><span class='lparen'>(</span><span class='ivar'>@subscriber</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_add_session_subscriber'>add_session_subscriber</span><span class='lparen'>(</span><span class='ivar'>@subscriber</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_add_general_subscriber'>add_general_subscriber</span><span class='lparen'>(</span><span class='ivar'>@subscriber</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_add_custom_subscriber'>add_custom_subscriber</span><span class='lparen'>(</span><span class='ivar'>@subscriber</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_add_db_subscriber'>add_db_subscriber</span><span class='lparen'>(</span><span class='ivar'>@subscriber</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_add_exploit_subscriber'>add_exploit_subscriber</span><span class='lparen'>(</span><span class='ivar'>@subscriber</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_add_general_subscriber'>add_general_subscriber</span><span class='lparen'>(</span><span class='ivar'>@subscriber</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_add_session_subscriber'>add_session_subscriber</span><span class='lparen'>(</span><span class='ivar'>@subscriber</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_add_ui_subscriber'>add_ui_subscriber</span><span class='lparen'>(</span><span class='ivar'>@subscriber</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -315,22 +317,24 @@
       <pre class="lines">
 
 
-30
 31
 32
 33
 34
 35
-36</pre>
+36
+37
+38</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'plugins/event_tester.rb', line 30</span>
+      <pre class="code"><span class="info file"># File 'plugins/event_tester.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cleanup'>cleanup</span>
-  <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_remove_exploit_subscriber'>remove_exploit_subscriber</span><span class='lparen'>(</span><span class='ivar'>@subscriber</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_remove_session_subscriber'>remove_session_subscriber</span><span class='lparen'>(</span><span class='ivar'>@subscriber</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_remove_general_subscriber'>remove_general_subscriber</span><span class='lparen'>(</span><span class='ivar'>@subscriber</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_remove_custom_subscriber'>remove_custom_subscriber</span><span class='lparen'>(</span><span class='ivar'>@subscriber</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_remove_db_subscriber'>remove_db_subscriber</span><span class='lparen'>(</span><span class='ivar'>@subscriber</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_remove_exploit_subscriber'>remove_exploit_subscriber</span><span class='lparen'>(</span><span class='ivar'>@subscriber</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_remove_general_subscriber'>remove_general_subscriber</span><span class='lparen'>(</span><span class='ivar'>@subscriber</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_remove_session_subscriber'>remove_session_subscriber</span><span class='lparen'>(</span><span class='ivar'>@subscriber</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_remove_ui_subscriber'>remove_ui_subscriber</span><span class='lparen'>(</span><span class='ivar'>@subscriber</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -369,7 +373,7 @@
 </div>
 
     <div id="footer">
-  Generated on Mon Dec  8 15:52:14 2014 by
+  Generated on Wed Dec 17 15:15:57 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>

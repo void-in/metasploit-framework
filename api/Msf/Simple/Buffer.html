@@ -138,7 +138,7 @@ use is to transform a raw buffer into another format.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#transform-class_method" title="transform (class method)">+ (Object) <strong>transform</strong>(buf, fmt = &quot;ruby&quot;) </a>
+      <a href="#transform-class_method" title="transform (class method)">+ (Object) <strong>transform</strong>(buf, fmt = &quot;ruby&quot;, var_name = &#39;buf&#39;) </a>
     
 
     
@@ -219,8 +219,6 @@ raw, ruby, python, perl, bash, js_be, js_le, c, and java.</p>
       <pre class="lines">
 
 
-63
-64
 65
 66
 67
@@ -243,10 +241,12 @@ raw, ruby, python, perl, bash, js_be, js_le, c, and java.</p>
 84
 85
 86
-87</pre>
+87
+88
+89</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/buffer.rb', line 63</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/buffer.rb', line 65</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_comment'>comment</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='comma'>,</span> <span class='id identifier rubyid_fmt'>fmt</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_fmt'>fmt</span>
@@ -281,7 +281,7 @@ raw, ruby, python, perl, bash, js_be, js_le, c, and java.</p>
       <div class="method_details ">
   <h3 class="signature " id="transform-class_method">
   
-    + (<tt>Object</tt>) <strong>transform</strong>(buf, fmt = &quot;ruby&quot;) 
+    + (<tt>Object</tt>) <strong>transform</strong>(buf, fmt = &quot;ruby&quot;, var_name = &#39;buf&#39;) 
   
 
   
@@ -341,12 +341,16 @@ num, dword, ruby, python, perl, bash, c, js_be, js_le, java and psh</p>
 54
 55
 56
-57</pre>
+57
+58
+59</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/msf/base/simple/buffer.rb', line 21</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_transform'>transform</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='comma'>,</span> <span class='id identifier rubyid_fmt'>fmt</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_transform'>transform</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='comma'>,</span> <span class='id identifier rubyid_fmt'>fmt</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_var_name'>var_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>buf</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_default_wrap'>default_wrap</span> <span class='op'>=</span> <span class='int'>60</span>
+
   <span class='kw'>case</span> <span class='id identifier rubyid_fmt'>fmt</span>
     <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>raw</span><span class='tstring_end'>&#39;</span></span>
     <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>num</span><span class='tstring_end'>&#39;</span></span>
@@ -354,29 +358,29 @@ num, dword, ruby, python, perl, bash, c, js_be, js_le, java and psh</p>
     <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>dword</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>dw</span><span class='tstring_end'>&#39;</span></span>
       <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_dword'>to_dword</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='rparen'>)</span>
     <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>python</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>py</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_python'>to_python</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_python'>to_python</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='comma'>,</span> <span class='id identifier rubyid_default_wrap'>default_wrap</span><span class='comma'>,</span> <span class='id identifier rubyid_var_name'>var_name</span><span class='rparen'>)</span>
     <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ruby</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rb</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_ruby'>to_ruby</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_ruby'>to_ruby</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='comma'>,</span> <span class='id identifier rubyid_default_wrap'>default_wrap</span><span class='comma'>,</span> <span class='id identifier rubyid_var_name'>var_name</span><span class='rparen'>)</span>
     <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>perl</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>pl</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_perl'>to_perl</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_perl'>to_perl</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='comma'>,</span> <span class='id identifier rubyid_default_wrap'>default_wrap</span><span class='comma'>,</span> <span class='id identifier rubyid_var_name'>var_name</span><span class='rparen'>)</span>
     <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>bash</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sh</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_bash'>to_bash</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_bash'>to_bash</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='comma'>,</span> <span class='id identifier rubyid_default_wrap'>default_wrap</span><span class='comma'>,</span> <span class='id identifier rubyid_var_name'>var_name</span><span class='rparen'>)</span>
     <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>c</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_c'>to_c</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_c'>to_c</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='comma'>,</span> <span class='id identifier rubyid_default_wrap'>default_wrap</span><span class='comma'>,</span> <span class='id identifier rubyid_var_name'>var_name</span><span class='rparen'>)</span>
     <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>csharp</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_csharp'>to_csharp</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_csharp'>to_csharp</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='comma'>,</span> <span class='id identifier rubyid_default_wrap'>default_wrap</span><span class='comma'>,</span> <span class='id identifier rubyid_var_name'>var_name</span><span class='rparen'>)</span>
     <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>js_be</span><span class='tstring_end'>&#39;</span></span>
       <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_unescape'>to_unescape</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='comma'>,</span> <span class='const'>ENDIAN_BIG</span><span class='rparen'>)</span>
     <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>js_le</span><span class='tstring_end'>&#39;</span></span>
       <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_unescape'>to_unescape</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='comma'>,</span> <span class='const'>ENDIAN_LITTLE</span><span class='rparen'>)</span>
     <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>java</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='comma'>,</span> <span class='id identifier rubyid_var_name'>var_name</span><span class='rparen'>)</span>
     <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>powershell</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ps1</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_powershell'>to_powershell</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_powershell'>to_powershell</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='comma'>,</span> <span class='id identifier rubyid_var_name'>var_name</span><span class='rparen'>)</span>
     <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>vbscript</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_vbscript'>to_vbscript</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_vbscript'>to_vbscript</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='comma'>,</span> <span class='id identifier rubyid_var_name'>var_name</span><span class='rparen'>)</span>
     <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>vbapplication</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_vbapplication'>to_vbapplication</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_vbapplication'>to_vbapplication</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='comma'>,</span> <span class='id identifier rubyid_var_name'>var_name</span><span class='rparen'>)</span>
     <span class='kw'>else</span>
       <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unsupported buffer format: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_fmt'>fmt</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
   <span class='kw'>end</span>
@@ -414,8 +418,6 @@ num, dword, ruby, python, perl, bash, c, js_be, js_le, java and psh</p>
       <pre class="lines">
 
 
-92
-93
 94
 95
 96
@@ -438,10 +440,12 @@ num, dword, ruby, python, perl, bash, c, js_be, js_le, java and psh</p>
 113
 114
 115
-116</pre>
+116
+117
+118</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/buffer.rb', line 92</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/buffer.rb', line 94</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_transform_formats'>transform_formats</span>
   <span class='lbracket'>[</span>
@@ -478,7 +482,7 @@ num, dword, ruby, python, perl, bash, c, js_be, js_le, java and psh</p>
 </div>
 
     <div id="footer">
-  Generated on Mon Dec  8 15:50:41 2014 by
+  Generated on Wed Dec 17 15:14:14 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>

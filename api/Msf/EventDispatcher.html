@@ -173,7 +173,7 @@ custom actions when a specific event or events occur.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the value of attribute db_event_subscribers.</p>
+<p>:nodoc:.</p>
 </div></span>
   
 </li>
@@ -227,7 +227,7 @@ custom actions when a specific event or events occur.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>:nodoc:.</p>
+<p>Returns the value of attribute general_event_subscribers.</p>
 </div></span>
   
 </li>
@@ -254,7 +254,7 @@ custom actions when a specific event or events occur.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>:nodoc: :nodoc:.</p>
+<p>:nodoc: :nodoc: :nodoc:.</p>
 </div></span>
   
 </li>
@@ -281,7 +281,7 @@ custom actions when a specific event or events occur.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>:nodoc: :nodoc:.</p>
+<p>:nodoc:.</p>
 </div></span>
   
 </li>
@@ -770,7 +770,7 @@ on_exploit_success.</p>
   <span class='id identifier rubyid_found'>found</span> <span class='op'>=</span> <span class='kw'>false</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_event'>event</span>
   <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>on</span><span class='tstring_end'>&quot;</span></span>
-    <span class='kw'>if</span> <span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='id identifier rubyid_subscribers'>subscribers</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='id identifier rubyid_subscribers'>subscribers</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
       <span class='id identifier rubyid_found'>found</span> <span class='op'>=</span> <span class='kw'>true</span>
       <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='id identifier rubyid_subscribers'>subscribers</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_sub'>sub</span><span class='op'>|</span>
         <span class='kw'>next</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_sub'>sub</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
@@ -835,12 +835,12 @@ on_exploit_success.</p>
       <pre class="lines">
 
 
+224
 225
-226
-227</pre>
+226</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/event_dispatcher.rb', line 225</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/event_dispatcher.rb', line 224</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_custom_event_subscribers'>custom_event_subscribers</span>
   <span class='ivar'>@custom_event_subscribers</span>
@@ -864,7 +864,7 @@ on_exploit_success.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute db_event_subscribers</p>
+<p>:nodoc:</p>
 
 
   </div>
@@ -878,12 +878,12 @@ on_exploit_success.</p>
       <pre class="lines">
 
 
-228
-229
-230</pre>
+225
+226
+227</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/event_dispatcher.rb', line 228</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/event_dispatcher.rb', line 225</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_db_event_subscribers'>db_event_subscribers</span>
   <span class='ivar'>@db_event_subscribers</span>
@@ -950,7 +950,7 @@ on_exploit_success.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>:nodoc:</p>
+<p>Returns the value of attribute general_event_subscribers</p>
 
 
   </div>
@@ -964,12 +964,12 @@ on_exploit_success.</p>
       <pre class="lines">
 
 
-224
-225
-226</pre>
+227
+228
+229</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/event_dispatcher.rb', line 224</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/event_dispatcher.rb', line 227</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_general_event_subscribers'>general_event_subscribers</span>
   <span class='ivar'>@general_event_subscribers</span>
@@ -993,7 +993,7 @@ on_exploit_success.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>:nodoc: :nodoc:</p>
+<p>:nodoc: :nodoc: :nodoc:</p>
 
 
   </div>
@@ -1007,12 +1007,12 @@ on_exploit_success.</p>
       <pre class="lines">
 
 
-227
 228
-229</pre>
+229
+230</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/event_dispatcher.rb', line 227</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/event_dispatcher.rb', line 228</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_session_event_subscribers'>session_event_subscribers</span>
   <span class='ivar'>@session_event_subscribers</span>
@@ -1036,7 +1036,7 @@ on_exploit_success.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>:nodoc: :nodoc:</p>
+<p>:nodoc:</p>
 
 
   </div>
@@ -1544,7 +1544,7 @@ reduces startup time by about 10%.</p>
 </div>
 
     <div id="footer">
-  Generated on Mon Dec  8 15:51:27 2014 by
+  Generated on Wed Dec 17 15:15:04 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>

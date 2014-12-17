@@ -608,12 +608,12 @@ active on sub-urls.</p>
       <pre class="lines">
 
 
-181
 182
-183</pre>
+183
+184</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 181</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 182</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_service'>service</span>
   <span class='ivar'>@service</span>
@@ -657,12 +657,12 @@ active on sub-urls.</p>
       <pre class="lines">
 
 
-30
 31
-32</pre>
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 30</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_general_handler_type'>general_handler_type</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>tunnel</span><span class='tstring_end'>&quot;</span></span>
@@ -698,12 +698,12 @@ active on sub-urls.</p>
       <pre class="lines">
 
 
-22
 23
-24</pre>
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_handler_type'>handler_type</span>
   <span class='kw'>return</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>reverse_http</span><span class='tstring_end'>&quot;</span></span>
@@ -734,13 +734,13 @@ active on sub-urls.</p>
       <pre class="lines">
 
 
-385
-386
-387
-388</pre>
+328
+329
+330
+331</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 385</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 328</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_bind_port'>bind_port</span>
   <span class='id identifier rubyid_port'>port</span> <span class='op'>=</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ReverseListenerBindPort</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
@@ -777,12 +777,12 @@ active on sub-urls.</p>
       <pre class="lines">
 
 
-162
 163
-164</pre>
+164
+165</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 162</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 163</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cleanup_handler'>cleanup_handler</span>
   <span class='id identifier rubyid_stop_handler'>stop_handler</span>
@@ -818,7 +818,6 @@ active on sub-urls.</p>
       <pre class="lines">
 
 
-37
 38
 39
 40
@@ -838,10 +837,11 @@ active on sub-urls.</p>
 54
 55
 56
-57</pre>
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 37</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 38</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_info'>info</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>super</span>
@@ -908,12 +908,12 @@ active on sub-urls.</p>
       <pre class="lines">
 
 
-61
 62
-63</pre>
+63
+64</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 62</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ipv6?'>ipv6?</span>
   <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Socket</span><span class='period'>.</span><span class='id identifier rubyid_is_ipv6?'>is_ipv6?</span><span class='lparen'>(</span><span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>LHOST</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -962,7 +962,6 @@ active on sub-urls.</p>
       <pre class="lines">
 
 
-68
 69
 70
 71
@@ -970,10 +969,11 @@ active on sub-urls.</p>
 73
 74
 75
-76</pre>
+76
+77</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 68</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 69</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_listener_address'>listener_address</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ReverseListenerBindAddress</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
@@ -1033,17 +1033,17 @@ active on sub-urls.</p>
       <pre class="lines">
 
 
-79
 80
 81
 82
 83
 84
 85
-86</pre>
+86
+87</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 80</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_listener_uri'>listener_uri</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_ipv6?'>ipv6?</span>
@@ -1084,7 +1084,6 @@ active on sub-urls.</p>
       <pre class="lines">
 
 
-188
 189
 190
 191
@@ -1220,67 +1219,10 @@ active on sub-urls.</p>
 321
 322
 323
-324
-325
-326
-327
-328
-329
-330
-331
-332
-333
-334
-335
-336
-337
-338
-339
-340
-341
-342
-343
-344
-345
-346
-347
-348
-349
-350
-351
-352
-353
-354
-355
-356
-357
-358
-359
-360
-361
-362
-363
-364
-365
-366
-367
-368
-369
-370
-371
-372
-373
-374
-375
-376
-377
-378
-379
-380
-381</pre>
+324</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 188</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 189</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_on_request'>on_request</span><span class='lparen'>(</span><span class='id identifier rubyid_cli'>cli</span><span class='comma'>,</span> <span class='id identifier rubyid_req'>req</span><span class='comma'>,</span> <span class='id identifier rubyid_obj'>obj</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_resp'>resp</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Proto</span><span class='op'>::</span><span class='const'>Http</span><span class='op'>::</span><span class='const'>Response</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
@@ -1354,86 +1296,28 @@ active on sub-urls.</p>
       <span class='rbrace'>}</span><span class='rparen'>)</span>
 
     <span class='kw'>when</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^\/A?INITM?</span><span class='regexp_end'>/</span></span>
-      <span class='id identifier rubyid_url'>url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_conn_id'>conn_id</span> <span class='op'>=</span> <span class='id identifier rubyid_generate_uri_checksum'>generate_uri_checksum</span><span class='lparen'>(</span><span class='const'>URI_CHECKSUM_CONN</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>_</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_rand_text_alphanumeric'>rand_text_alphanumeric</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_url'>url</span> <span class='op'>=</span> <span class='id identifier rubyid_payload_uri'>payload_uri</span> <span class='op'>+</span> <span class='id identifier rubyid_conn_id'>conn_id</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/\x00</span><span class='tstring_end'>&quot;</span></span>
 
       <span class='id identifier rubyid_print_status'>print_status</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_cli'>cli</span><span class='period'>.</span><span class='id identifier rubyid_peerhost'>peerhost</span><span class='embexpr_end'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_cli'>cli</span><span class='period'>.</span><span class='id identifier rubyid_peerport'>peerport</span><span class='embexpr_end'>}</span><span class='tstring_content'> Staging connection for target </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_req'>req</span><span class='period'>.</span><span class='id identifier rubyid_relative_resource'>relative_resource</span><span class='embexpr_end'>}</span><span class='tstring_content'> received...</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
       <span class='id identifier rubyid_resp'>resp</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Content-Type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>application/octet-stream</span><span class='tstring_end'>&#39;</span></span>
 
       <span class='id identifier rubyid_blob'>blob</span> <span class='op'>=</span> <span class='id identifier rubyid_obj'>obj</span><span class='period'>.</span><span class='id identifier rubyid_stage_payload'>stage_payload</span>
 
-      <span class='comment'># Replace the user agent string with our option
-</span>      <span class='id identifier rubyid_i'>i</span> <span class='op'>=</span> <span class='id identifier rubyid_blob'>blob</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>METERPRETER_UA\x00</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-      <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span>
-        <span class='id identifier rubyid_str'>str</span> <span class='op'>=</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MeterpreterUserAgent</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>255</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x00</span><span class='tstring_end'>&quot;</span></span>
-        <span class='id identifier rubyid_blob'>blob</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='comma'>,</span> <span class='id identifier rubyid_str'>str</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_str'>str</span>
-        <span class='id identifier rubyid_print_status'>print_status</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Patched user-agent at offset </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_i'>i</span><span class='embexpr_end'>}</span><span class='tstring_content'>...</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-      <span class='kw'>end</span>
-
-      <span class='comment'># Activate a custom proxy
-</span>      <span class='id identifier rubyid_i'>i</span> <span class='op'>=</span> <span class='id identifier rubyid_blob'>blob</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>METERPRETER_PROXY\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-      <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span>
-        <span class='kw'>if</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXYHOST</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-          <span class='kw'>if</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXYHOST</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>!=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
-            <span class='id identifier rubyid_proxyhost'>proxyhost</span> <span class='op'>=</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXYHOST</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
-            <span class='id identifier rubyid_proxyport'>proxyport</span> <span class='op'>=</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXYPORT</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>8080</span><span class='tstring_end'>&quot;</span></span>
-            <span class='id identifier rubyid_proxyinfo'>proxyinfo</span> <span class='op'>=</span> <span class='id identifier rubyid_proxyhost'>proxyhost</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>:</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_proxyport'>proxyport</span>
-            <span class='kw'>if</span> <span class='id identifier rubyid_proxyport'>proxyport</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>80</span><span class='tstring_end'>&quot;</span></span>
-              <span class='id identifier rubyid_proxyinfo'>proxyinfo</span> <span class='op'>=</span> <span class='id identifier rubyid_proxyhost'>proxyhost</span>
-            <span class='kw'>end</span>
-            <span class='kw'>if</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXY_TYPE</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>HTTP</span><span class='tstring_end'>&#39;</span></span>
-              <span class='id identifier rubyid_proxyinfo'>proxyinfo</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>http://</span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_proxyinfo'>proxyinfo</span>
-            <span class='kw'>else</span> <span class='comment'>#socks
-</span>              <span class='id identifier rubyid_proxyinfo'>proxyinfo</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>socks=</span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_proxyinfo'>proxyinfo</span>
-            <span class='kw'>end</span>
-            <span class='id identifier rubyid_proxyinfo'>proxyinfo</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x00</span><span class='tstring_end'>&quot;</span></span>
-            <span class='id identifier rubyid_blob'>blob</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='comma'>,</span> <span class='id identifier rubyid_proxyinfo'>proxyinfo</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_proxyinfo'>proxyinfo</span>
-            <span class='id identifier rubyid_print_status'>print_status</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Activated custom proxy </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_proxyinfo'>proxyinfo</span><span class='embexpr_end'>}</span><span class='tstring_content'>, patch at offset </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_i'>i</span><span class='embexpr_end'>}</span><span class='tstring_content'>...</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-            <span class='comment'>#Optional authentification
-</span>            <span class='kw'>unless</span> <span class='lparen'>(</span><span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXY_USERNAME</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>or</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXY_USERNAME</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span><span class='rparen'>)</span> <span class='kw'>or</span>
-              <span class='lparen'>(</span><span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXY_PASSWORD</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>or</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXY_PASSWORD</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span><span class='rparen'>)</span> <span class='kw'>or</span>
-              <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXY_TYPE</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SOCKS</span><span class='tstring_end'>&#39;</span></span>
-
-              <span class='id identifier rubyid_proxy_username_loc'>proxy_username_loc</span> <span class='op'>=</span> <span class='id identifier rubyid_blob'>blob</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>METERPRETER_USERNAME_PROXY\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-              <span class='id identifier rubyid_proxy_username'>proxy_username</span> <span class='op'>=</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXY_USERNAME</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x00</span><span class='tstring_end'>&quot;</span></span>
-              <span class='id identifier rubyid_blob'>blob</span><span class='lbracket'>[</span><span class='id identifier rubyid_proxy_username_loc'>proxy_username_loc</span><span class='comma'>,</span> <span class='id identifier rubyid_proxy_username'>proxy_username</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_proxy_username'>proxy_username</span>
-
-              <span class='id identifier rubyid_proxy_password_loc'>proxy_password_loc</span> <span class='op'>=</span> <span class='id identifier rubyid_blob'>blob</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>METERPRETER_PASSWORD_PROXY\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-              <span class='id identifier rubyid_proxy_password'>proxy_password</span> <span class='op'>=</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXY_PASSWORD</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x00</span><span class='tstring_end'>&quot;</span></span>
-              <span class='id identifier rubyid_blob'>blob</span><span class='lbracket'>[</span><span class='id identifier rubyid_proxy_password_loc'>proxy_password_loc</span><span class='comma'>,</span> <span class='id identifier rubyid_proxy_password'>proxy_password</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_proxy_password'>proxy_password</span>
-            <span class='kw'>end</span>
-          <span class='kw'>end</span>
-        <span class='kw'>end</span>
-      <span class='kw'>end</span>
-
-      <span class='comment'># Replace the transport string first (TRANSPORT_SOCKET_SSL)
-</span>      <span class='id identifier rubyid_i'>i</span> <span class='op'>=</span> <span class='id identifier rubyid_blob'>blob</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>METERPRETER_TRANSPORT_SSL</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-      <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span>
-        <span class='id identifier rubyid_str'>str</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>METERPRETER_TRANSPORT_HTTP</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_ssl?'>ssl?</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>S</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='embexpr_end'>}</span><span class='tstring_content'>\x00</span><span class='tstring_end'>&quot;</span></span>
-        <span class='id identifier rubyid_blob'>blob</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='comma'>,</span> <span class='id identifier rubyid_str'>str</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_str'>str</span>
-      <span class='kw'>end</span>
-      <span class='id identifier rubyid_print_status'>print_status</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Patched transport at offset </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_i'>i</span><span class='embexpr_end'>}</span><span class='tstring_content'>...</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-
-      <span class='id identifier rubyid_conn_id'>conn_id</span> <span class='op'>=</span> <span class='id identifier rubyid_generate_uri_checksum'>generate_uri_checksum</span><span class='lparen'>(</span><span class='const'>URI_CHECKSUM_CONN</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>_</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_rand_text_alphanumeric'>rand_text_alphanumeric</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span>
-      <span class='id identifier rubyid_i'>i</span> <span class='op'>=</span> <span class='id identifier rubyid_blob'>blob</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>X</span><span class='tstring_end'>&quot;</span></span> <span class='op'>*</span> <span class='int'>256</span><span class='rparen'>)</span><span class='rparen'>)</span>
-      <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span>
-        <span class='id identifier rubyid_url'>url</span> <span class='op'>=</span> <span class='id identifier rubyid_payload_uri'>payload_uri</span> <span class='op'>+</span> <span class='id identifier rubyid_conn_id'>conn_id</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/\x00</span><span class='tstring_end'>&quot;</span></span>
-        <span class='id identifier rubyid_blob'>blob</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_url'>url</span>
-      <span class='kw'>end</span>
-      <span class='id identifier rubyid_print_status'>print_status</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Patched URL at offset </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_i'>i</span><span class='embexpr_end'>}</span><span class='tstring_content'>...</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-
-      <span class='id identifier rubyid_i'>i</span> <span class='op'>=</span> <span class='id identifier rubyid_blob'>blob</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>0xb64be661</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>V</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
-      <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span>
-        <span class='id identifier rubyid_str'>str</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SessionExpirationTimeout</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>V</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-        <span class='id identifier rubyid_blob'>blob</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='comma'>,</span> <span class='id identifier rubyid_str'>str</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_str'>str</span>
-      <span class='kw'>end</span>
-      <span class='id identifier rubyid_print_status'>print_status</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Patched Expiration Timeout at offset </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_i'>i</span><span class='embexpr_end'>}</span><span class='tstring_content'>...</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-
-      <span class='id identifier rubyid_i'>i</span> <span class='op'>=</span> <span class='id identifier rubyid_blob'>blob</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>0xaf79257f</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>V</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
-      <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span>
-        <span class='id identifier rubyid_str'>str</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SessionCommunicationTimeout</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_pack'>pack</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>V</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-        <span class='id identifier rubyid_blob'>blob</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='comma'>,</span> <span class='id identifier rubyid_str'>str</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_str'>str</span>
-      <span class='kw'>end</span>
-      <span class='id identifier rubyid_print_status'>print_status</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Patched Communication Timeout at offset </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_i'>i</span><span class='embexpr_end'>}</span><span class='tstring_content'>...</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+      <span class='comment'>#
+</span>      <span class='comment'># Patch options into the payload
+</span>      <span class='comment'>#
+</span>      <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Payloads</span><span class='op'>::</span><span class='const'>Meterpreter</span><span class='op'>::</span><span class='const'>Patch</span><span class='period'>.</span><span class='id identifier rubyid_patch_passive_service!'>patch_passive_service!</span> <span class='id identifier rubyid_blob'>blob</span><span class='comma'>,</span>
+        <span class='symbol'>:ssl</span>            <span class='op'>=&gt;</span> <span class='id identifier rubyid_ssl?'>ssl?</span><span class='comma'>,</span>
+        <span class='symbol'>:url</span>            <span class='op'>=&gt;</span> <span class='id identifier rubyid_url'>url</span><span class='comma'>,</span>
+        <span class='symbol'>:expiration</span>     <span class='op'>=&gt;</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SessionExpirationTimeout</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+        <span class='symbol'>:comm_timeout</span>   <span class='op'>=&gt;</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SessionCommunicationTimeout</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+        <span class='symbol'>:ua</span>             <span class='op'>=&gt;</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MeterpreterUserAgent</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+        <span class='symbol'>:proxyhost</span>      <span class='op'>=&gt;</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXYHOST</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+        <span class='symbol'>:proxyport</span>      <span class='op'>=&gt;</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXYPORT</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+        <span class='symbol'>:proxy_type</span>     <span class='op'>=&gt;</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXY_TYPE</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+        <span class='symbol'>:proxy_username</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXY_USERNAME</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+        <span class='symbol'>:proxy_password</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXY_PASSWORD</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
 
       <span class='id identifier rubyid_resp'>resp</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='id identifier rubyid_encode_stage'>encode_stage</span><span class='lparen'>(</span><span class='id identifier rubyid_blob'>blob</span><span class='rparen'>)</span>
 
@@ -1527,17 +1411,17 @@ active on sub-urls.</p>
       <pre class="lines">
 
 
-94
 95
 96
 97
 98
 99
 100
-101</pre>
+101
+102</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 94</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 95</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_payload_uri'>payload_uri</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_ipv6?'>ipv6?</span>
@@ -1596,12 +1480,12 @@ active on sub-urls.</p>
       <pre class="lines">
 
 
-113
 114
-115</pre>
+115
+116</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 114</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_scheme'>scheme</span>
   <span class='lparen'>(</span><span class='id identifier rubyid_ssl?'>ssl?</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http</span><span class='tstring_end'>&quot;</span></span>
@@ -1637,7 +1521,6 @@ active on sub-urls.</p>
       <pre class="lines">
 
 
-119
 120
 121
 122
@@ -1675,10 +1558,11 @@ active on sub-urls.</p>
 154
 155
 156
-157</pre>
+157
+158</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 119</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 120</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_setup_handler'>setup_handler</span>
 
@@ -1702,7 +1586,7 @@ active on sub-urls.</p>
       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MsfExploit</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='kw'>self</span><span class='comma'>,</span>
     <span class='rbrace'>}</span><span class='comma'>,</span>
     <span class='id identifier rubyid_comm'>comm</span><span class='comma'>,</span>
-    <span class='lparen'>(</span><span class='id identifier rubyid_ssl?'>ssl?</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SSLCert</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='kw'>nil</span>
+    <span class='lparen'>(</span><span class='id identifier rubyid_ssl?'>ssl?</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>HandlerSSLCert</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='kw'>nil</span>
   <span class='rparen'>)</span>
 
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_service'>service</span><span class='period'>.</span><span class='id identifier rubyid_server_name'>server_name</span> <span class='op'>=</span> <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MeterpreterServerName</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
@@ -1763,12 +1647,12 @@ active on sub-urls.</p>
       <pre class="lines">
 
 
-105
 106
-107</pre>
+107
+108</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 105</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 106</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ssl?'>ssl?</span>
   <span class='op'>!</span><span class='op'>!</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_refname'>refname</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -1805,11 +1689,11 @@ during set up.</p>
       <pre class="lines">
 
 
-170
-171</pre>
+171
+172</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 170</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 171</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_start_handler'>start_handler</span>
 <span class='kw'>end</span></pre>
@@ -1845,12 +1729,12 @@ active on sub-urls.</p>
       <pre class="lines">
 
 
-177
 178
-179</pre>
+179
+180</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 177</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_http.rb', line 178</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_stop_handler'>stop_handler</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_service'>service</span><span class='period'>.</span><span class='id identifier rubyid_remove_resource'>remove_resource</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_service'>service</span>
@@ -1865,7 +1749,7 @@ active on sub-urls.</p>
 </div>
 
     <div id="footer">
-  Generated on Mon Dec  8 15:50:59 2014 by
+  Generated on Wed Dec 17 15:14:33 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>

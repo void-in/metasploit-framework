@@ -413,6 +413,31 @@
 </li>
 
       
+        <li class="protected ">
+  <span class="summary_signature">
+    
+      <a href="#to_table_row-instance_method" title="#to_table_row (instance method)">- (Array[String]) <strong>to_table_row</strong>(result) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title protected">protected</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Convert an ADSI result row to a table row so that it can   be rendered to
+screen appropriately.</p>
+</div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -747,7 +772,7 @@
   <span class='rparen'>)</span>
 
   <span class='id identifier rubyid_objects'>objects</span><span class='lbracket'>[</span><span class='symbol'>:results</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_c'>c</span><span class='op'>|</span>
-    <span class='id identifier rubyid_table'>table</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_c'>c</span>
+    <span class='id identifier rubyid_table'>table</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_to_table_row'>to_table_row</span><span class='lparen'>(</span><span class='id identifier rubyid_c'>c</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 
   <span class='id identifier rubyid_print_line'>print_line</span>
@@ -927,12 +952,149 @@
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="to_table_row-instance_method">
+  
+    - (<tt>Array[String]</tt>) <strong>to_table_row</strong>(result)  <span class="extras">(protected)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Convert an ADSI result row to a table row so that it can</p>
+
+<pre class="code ruby"><code class="ruby">be rendered to screen appropriately.</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>result</span>
+      
+      
+        <span class='type'>(<tt>Array[Hash]</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Array of type/value pairs.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array[String]</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Renderable view of the value.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/extapi/adsi.rb', line 202</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_table_row'>to_table_row</span><span class='lparen'>(</span><span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_values'>values</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_v'>v</span><span class='op'>|</span>
+    <span class='kw'>case</span> <span class='id identifier rubyid_v'>v</span><span class='lbracket'>[</span><span class='symbol'>:type</span><span class='rbracket'>]</span>
+    <span class='kw'>when</span> <span class='symbol'>:string</span><span class='comma'>,</span> <span class='symbol'>:number</span><span class='comma'>,</span> <span class='symbol'>:bool</span>
+      <span class='id identifier rubyid_values'>values</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_v'>v</span><span class='lbracket'>[</span><span class='symbol'>:value</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+    <span class='kw'>when</span> <span class='symbol'>:raw</span>
+      <span class='comment'># for UI level stuff, rendering raw as hex is really the only option
+</span>      <span class='id identifier rubyid_values'>values</span> <span class='op'>&lt;&lt;</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_hex'>to_hex</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='lbracket'>[</span><span class='symbol'>:value</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:array</span>
+      <span class='id identifier rubyid_val'>val</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_to_table_row'>to_table_row</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='lbracket'>[</span><span class='symbol'>:value</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>, </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+
+      <span class='comment'># we&#39;ll truncate the output of the array because it could be excessive if we
+</span>      <span class='comment'># don&#39;t. Users who want the detail of this stuff should probably script it.
+</span>      <span class='kw'>if</span> <span class='id identifier rubyid_val'>val</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>50</span>
+        <span class='id identifier rubyid_val'>val</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_val'>val</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>50</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>...</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>end</span>
+
+      <span class='id identifier rubyid_values'>values</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_val'>val</span>
+    <span class='kw'>when</span> <span class='symbol'>:dn</span>
+      <span class='id identifier rubyid_values'>values</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_value'>value</span><span class='lbracket'>[</span><span class='symbol'>:label</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_value'>value</span><span class='lbracket'>[</span><span class='symbol'>:string</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_to_hex'>to_hex</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='lbracket'>[</span><span class='symbol'>:raw</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>when</span> <span class='symbol'>:path</span>
+      <span class='id identifier rubyid_values'>values</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Vol: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_v'>v</span><span class='lbracket'>[</span><span class='symbol'>:volume</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>, Path: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_v'>v</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>, Type: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_v'>v</span><span class='lbracket'>[</span><span class='symbol'>:vol_type</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>when</span> <span class='symbol'>:unknown</span>
+      <span class='id identifier rubyid_values'>values</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>(unknown)</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_values'>values</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
     <div id="footer">
-  Generated on Mon Dec  8 15:52:10 2014 by
+  Generated on Wed Dec 17 15:15:52 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>

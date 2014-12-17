@@ -182,6 +182,80 @@ managing desktop windows.</p>
 </li>
 
       
+        <li class="protected ">
+  <span class="summary_signature">
+    
+      <a href="#extract_results-instance_method" title="#extract_results (instance method)">- (Array[Array[[Hash]]] Collection of results from the ADSI query.) <strong>extract_results</strong>(response) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title protected">protected</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Retrieve the results of the query from the response   packet that was
+returned from Meterpreter.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="protected ">
+  <span class="summary_signature">
+    
+      <a href="#extract_value-instance_method" title="#extract_value (instance method)">- (Hash) <strong>extract_value</strong>(v) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title protected">protected</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Convert a single ADSI result value into a usable   value that also
+describes its type.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="protected ">
+  <span class="summary_signature">
+    
+      <a href="#extract_values-instance_method" title="#extract_values (instance method)">- (Array[Hash]) <strong>extract_values</strong>(tlv_container) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title protected">protected</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Extract a single row of results from a TLV group.</p>
+</div></span>
+  
+</li>
+
+      
         <li class="public ">
   <span class="summary_signature">
     
@@ -288,12 +362,12 @@ managing desktop windows.</p>
       <pre class="lines">
 
 
-66
-67
-68</pre>
+59
+60
+61</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/extapi/adsi/adsi.rb', line 66</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/extapi/adsi/adsi.rb', line 59</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_client'>client</span>
   <span class='ivar'>@client</span>
@@ -458,14 +532,7 @@ managing desktop windows.</p>
 54
 55
 56
-57
-58
-59
-60
-61
-62
-63
-64</pre>
+57</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/extapi/adsi/adsi.rb', line 37</span>
@@ -484,14 +551,7 @@ managing desktop windows.</p>
 
   <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_send_request'>send_request</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='rparen'>)</span>
 
-  <span class='id identifier rubyid_results'>results</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lparen'>(</span><span class='const'>TLV_TYPE_EXT_ADSI_RESULT</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_r'>r</span><span class='op'>|</span>
-    <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
-    <span class='id identifier rubyid_r'>r</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lparen'>(</span><span class='const'>TLV_TYPE_EXT_ADSI_VALUE</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_v'>v</span><span class='op'>|</span>
-      <span class='id identifier rubyid_result'>result</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span>
-    <span class='rbrace'>}</span>
-    <span class='id identifier rubyid_results'>results</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_result'>result</span>
-  <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_results'>results</span> <span class='op'>=</span> <span class='id identifier rubyid_extract_results'>extract_results</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
 
   <span class='kw'>return</span> <span class='lbrace'>{</span>
     <span class='symbol'>:fields</span>  <span class='op'>=&gt;</span> <span class='id identifier rubyid_fields'>fields</span><span class='comma'>,</span>
@@ -503,12 +563,378 @@ managing desktop windows.</p>
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="extract_results-instance_method">
+  
+    - (<tt>Array[Array[[Hash]]] Collection of results from
+the ADSI query.</tt>) <strong>extract_results</strong>(response)  <span class="extras">(protected)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Retrieve the results of the query from the response</p>
+
+<pre class="code ruby"><code class="ruby">packet that was returned from Meterpreter.</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>response</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../../Packet.html" title="Rex::Post::Meterpreter::Packet (class)">Packet</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Reference to the received packet that was returned from Meterpreter.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array[Array[[Hash]]] Collection of results from
+the ADSI query.</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p><a href="http://Hash">Array[Array[</a>]] Collection of results from the
+ADSI query.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+73
+74
+75
+76
+77
+78
+79
+80
+81</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/extapi/adsi/adsi.rb', line 73</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_extract_results'>extract_results</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_results'>results</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lparen'>(</span><span class='const'>TLV_TYPE_EXT_ADSI_RESULT</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_r'>r</span><span class='op'>|</span>
+    <span class='id identifier rubyid_results'>results</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_extract_values'>extract_values</span><span class='lparen'>(</span><span class='id identifier rubyid_r'>r</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_results'>results</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="extract_value-instance_method">
+  
+    - (<tt>Hash</tt>) <strong>extract_value</strong>(v)  <span class="extras">(protected)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Convert a single ADSI result value into a usable</p>
+
+<pre class="code ruby"><code class="ruby">value that also describes its type.</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>v</span>
+      
+      
+        <span class='type'>(<tt>TLV</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The TLV item that contains the value.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The type/value pair from the TLV.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/extapi/adsi/adsi.rb', line 108</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_extract_value'>extract_value</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='symbol'>:type</span> <span class='op'>=&gt;</span> <span class='symbol'>:unknown</span>
+  <span class='rbrace'>}</span>
+
+  <span class='kw'>case</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span>
+  <span class='kw'>when</span> <span class='const'>TLV_TYPE_EXT_ADSI_STRING</span>
+    <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+      <span class='symbol'>:type</span>  <span class='op'>=&gt;</span> <span class='symbol'>:string</span><span class='comma'>,</span>
+      <span class='symbol'>:value</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span>
+    <span class='rbrace'>}</span>
+  <span class='kw'>when</span> <span class='const'>TLV_TYPE_EXT_ADSI_NUMBER</span><span class='comma'>,</span> <span class='const'>TLV_TYPE_EXT_ADSI_BIGNUMBER</span>
+    <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+      <span class='symbol'>:type</span>  <span class='op'>=&gt;</span> <span class='symbol'>:number</span><span class='comma'>,</span>
+      <span class='symbol'>:value</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span>
+    <span class='rbrace'>}</span>
+  <span class='kw'>when</span> <span class='const'>TLV_TYPE_EXT_ADSI_BOOL</span>
+    <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+      <span class='symbol'>:type</span>  <span class='op'>=&gt;</span> <span class='symbol'>:bool</span><span class='comma'>,</span>
+      <span class='symbol'>:value</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span>
+    <span class='rbrace'>}</span>
+  <span class='kw'>when</span> <span class='const'>TLV_TYPE_EXT_ADSI_RAW</span>
+    <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+      <span class='symbol'>:type</span>  <span class='op'>=&gt;</span> <span class='symbol'>:raw</span><span class='comma'>,</span>
+      <span class='symbol'>:value</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span>
+    <span class='rbrace'>}</span>
+  <span class='kw'>when</span> <span class='const'>TLV_TYPE_EXT_ADSI_ARRAY</span>
+    <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+      <span class='symbol'>:type</span>  <span class='op'>=&gt;</span> <span class='symbol'>:array</span><span class='comma'>,</span>
+      <span class='symbol'>:value</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_extract_values'>extract_values</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
+    <span class='rbrace'>}</span>
+  <span class='kw'>when</span> <span class='const'>TLV_TYPE_EXT_ADSI_PATH</span>
+    <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+      <span class='symbol'>:type</span>     <span class='op'>=&gt;</span> <span class='symbol'>:path</span><span class='comma'>,</span>
+      <span class='symbol'>:volume</span>   <span class='op'>=&gt;</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_get_tlv_value'>get_tlv_value</span><span class='lparen'>(</span><span class='const'>TLV_TYPE_EXT_ADSI_PATH_VOL</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='symbol'>:path</span>     <span class='op'>=&gt;</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_get_tlv_value'>get_tlv_value</span><span class='lparen'>(</span><span class='const'>TLV_TYPE_EXT_ADSI_PATH_PATH</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='symbol'>:vol_type</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_get_tlv_value'>get_tlv_value</span><span class='lparen'>(</span><span class='const'>TLV_TYPE_EXT_ADSI_PATH_TYPE</span><span class='rparen'>)</span>
+    <span class='rbrace'>}</span>
+  <span class='kw'>when</span> <span class='const'>TLV_TYPE_EXT_ADSI_DN</span>
+    <span class='id identifier rubyid_values'>values</span> <span class='op'>=</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_get_tlvs'>get_tlvs</span><span class='lparen'>(</span><span class='const'>TLV_TYPE_ALL</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+      <span class='symbol'>:type</span>   <span class='op'>=&gt;</span> <span class='symbol'>:dn</span><span class='comma'>,</span>
+      <span class='symbol'>:label</span>  <span class='op'>=&gt;</span> <span class='id identifier rubyid_values'>values</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span>
+    <span class='rbrace'>}</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_values'>values</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span> <span class='op'>==</span> <span class='const'>TLV_TYPE_EXT_ADSI_STRING</span>
+      <span class='id identifier rubyid_value'>value</span><span class='lbracket'>[</span><span class='symbol'>:string</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_value'>value</span><span class='lbracket'>[</span><span class='symbol'>:raw</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_value'>value</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_value'>value</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="extract_values-instance_method">
+  
+    - (<tt>Array[Hash]</tt>) <strong>extract_values</strong>(tlv_container)  <span class="extras">(protected)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Extract a single row of results from a TLV group.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>tlv_container</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../../../Packet.html" title="Rex::Post::Meterpreter::Packet (class)">Packet</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Reference to the TLV group to pull the values from.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array[Hash]</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Collection of values from the single ADSI query result row.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+92
+93
+94
+95
+96
+97
+98</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/extapi/adsi/adsi.rb', line 92</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_extract_values'>extract_values</span><span class='lparen'>(</span><span class='id identifier rubyid_tlv_container'>tlv_container</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_values'>values</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_tlv_container'>tlv_container</span><span class='period'>.</span><span class='id identifier rubyid_get_tlvs'>get_tlvs</span><span class='lparen'>(</span><span class='const'>TLV_TYPE_ANY</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_v'>v</span><span class='op'>|</span>
+    <span class='id identifier rubyid_values'>values</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_extract_value'>extract_value</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_values'>values</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
     <div id="footer">
-  Generated on Mon Dec  8 15:51:56 2014 by
+  Generated on Wed Dec 17 15:15:38 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>

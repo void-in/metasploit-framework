@@ -254,6 +254,30 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#can_preserve_registers%3F-instance_method" title="#can_preserve_registers? (instance method)">- (Boolean) <strong>can_preserve_registers?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Determines whether the encoder can preserve registers at all.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#decoder_block_size-instance_method" title="#decoder_block_size (instance method)">- (Object) <strong>decoder_block_size</strong> </a>
     
 
@@ -917,30 +941,6 @@ buffer before returning it to callers.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#preserves_registers%3F-instance_method" title="#preserves_registers? (instance method)">- (Boolean) <strong>preserves_registers?</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Determines whether the encoder can preserve registers at all.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
       <a href="#preserves_stack%3F-instance_method" title="#preserves_stack? (instance method)">- (Boolean) <strong>preserves_stack?</strong> </a>
     
 
@@ -1374,7 +1374,61 @@ the format the code will be in when it executes on the target).</p>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="decoder_block_size-instance_method">
+  <h3 class="signature first" id="can_preserve_registers?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>can_preserve_registers?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Determines whether the encoder can preserve registers at all</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+419
+420
+421</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/encoder.rb', line 419</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_can_preserve_registers?'>can_preserve_registers?</span>
+  <span class='kw'>false</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="decoder_block_size-instance_method">
   
     - (<tt>Object</tt>) <strong>decoder_block_size</strong> 
   
@@ -2964,60 +3018,6 @@ buffer before returning it to callers.</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="preserves_registers?-instance_method">
-  
-    - (<tt>Boolean</tt>) <strong>preserves_registers?</strong> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Determines whether the encoder can preserve registers at all</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-419
-420
-421</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/encoder.rb', line 419</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_preserves_registers?'>preserves_registers?</span>
-  <span class='kw'>false</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
   <h3 class="signature " id="preserves_stack?-instance_method">
   
     - (<tt>Boolean</tt>) <strong>preserves_stack?</strong> 
@@ -3161,7 +3161,7 @@ like unicode, the buffer is unicod encoded and then returned.</p>
 </div>
 
     <div id="footer">
-  Generated on Mon Dec  8 15:51:20 2014 by
+  Generated on Wed Dec 17 15:14:57 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>

