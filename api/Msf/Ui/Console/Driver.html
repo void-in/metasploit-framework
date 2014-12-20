@@ -1244,7 +1244,9 @@ default resource script, &#39;msfconsole.rc&#39; in the user&#39;s
 246
 247
 248
-249</pre>
+249
+250
+251</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 56</span>
@@ -1257,7 +1259,7 @@ default resource script, &#39;msfconsole.rc&#39; in the user&#39;s
   <span class='comment'># Initialize attributes
 </span>
   <span class='comment'># Defer loading of modules until paths from opts can be added below
-</span>  <span class='id identifier rubyid_framework_create_options'>framework_create_options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DeferModuleLoads</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+</span>  <span class='id identifier rubyid_framework_create_options'>framework_create_options</span> <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DeferModuleLoads</span><span class='tstring_end'>&#39;</span></span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='rparen'>)</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_framework'>framework</span> <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Framework</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='const'>Msf</span><span class='op'>::</span><span class='const'>Simple</span><span class='op'>::</span><span class='const'>Framework</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_framework_create_options'>framework_create_options</span><span class='rparen'>)</span>
 
   <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Prompt</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
@@ -1383,10 +1385,12 @@ default resource script, &#39;msfconsole.rc&#39; in the user&#39;s
     <span class='comment'># framework.db.active will be true if after_establish_connection ran directly when connection_established? was
 </span>    <span class='comment'># already true or if framework.db.connect called after_establish_connection.
 </span>    <span class='kw'>if</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_active'>active</span>
-      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_modules'>modules</span><span class='period'>.</span><span class='id identifier rubyid_refresh_cache_from_database'>refresh_cache_from_database</span>
+      <span class='kw'>unless</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DeferModuleLoads</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+        <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_modules'>modules</span><span class='period'>.</span><span class='id identifier rubyid_refresh_cache_from_database'>refresh_cache_from_database</span>
 
-      <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_modules'>modules</span><span class='period'>.</span><span class='id identifier rubyid_cache_empty?'>cache_empty?</span>
-        <span class='id identifier rubyid_print_status'>print_status</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The initial module cache will be built in the background, this can take 2-5 minutes...</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+        <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_modules'>modules</span><span class='period'>.</span><span class='id identifier rubyid_cache_empty?'>cache_empty?</span>
+          <span class='id identifier rubyid_print_status'>print_status</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The initial module cache will be built in the background, this can take 2-5 minutes...</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+        <span class='kw'>end</span>
       <span class='kw'>end</span>
     <span class='kw'>elsif</span> <span class='op'>!</span><span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
       <span class='kw'>if</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>RubyGem version.*pg.*0\.11</span><span class='regexp_end'>/i</span></span>
@@ -1408,8 +1412,8 @@ default resource script, &#39;msfconsole.rc&#39; in the user&#39;s
     <span class='kw'>end</span>
   <span class='kw'>end</span>
 
-  <span class='comment'># Initialize the module paths only if we didn&#39;t get passed a Framework instance
-</span>  <span class='kw'>unless</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Framework</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+  <span class='comment'># Initialize the module paths only if we didn&#39;t get passed a Framework instance and &#39;DeferModuleLoads&#39; is false
+</span>  <span class='kw'>unless</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Framework</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DeferModuleLoads</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
     <span class='comment'># Configure the framework module paths
 </span>    <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_init_module_paths'>init_module_paths</span>
     <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_modules'>modules</span><span class='period'>.</span><span class='id identifier rubyid_add_module_path'>add_module_path</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ModulePath</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ModulePath</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
@@ -1481,12 +1485,12 @@ default resource script, &#39;msfconsole.rc&#39; in the user&#39;s
       <pre class="lines">
 
 
-601
-602
-603</pre>
+603
+604
+605</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 601</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 603</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_active_module'>active_module</span>
   <span class='ivar'>@active_module</span>
@@ -1524,12 +1528,12 @@ default resource script, &#39;msfconsole.rc&#39; in the user&#39;s
       <pre class="lines">
 
 
-609
-610
-611</pre>
+611
+612
+613</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 609</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 611</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_active_resource'>active_resource</span>
   <span class='ivar'>@active_resource</span>
@@ -1567,12 +1571,12 @@ default resource script, &#39;msfconsole.rc&#39; in the user&#39;s
       <pre class="lines">
 
 
-605
-606
-607</pre>
+607
+608
+609</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 605</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 607</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_active_session'>active_session</span>
   <span class='ivar'>@active_session</span>
@@ -1610,12 +1614,12 @@ default resource script, &#39;msfconsole.rc&#39; in the user&#39;s
       <pre class="lines">
 
 
-597
-598
-599</pre>
+599
+600
+601</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 597</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 599</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_command_passthru'>command_passthru</span>
   <span class='ivar'>@command_passthru</span>
@@ -1653,12 +1657,12 @@ default resource script, &#39;msfconsole.rc&#39; in the user&#39;s
       <pre class="lines">
 
 
-593
-594
-595</pre>
+595
+596
+597</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 593</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 595</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_confirm_exit'>confirm_exit</span>
   <span class='ivar'>@confirm_exit</span>
@@ -1696,12 +1700,12 @@ default resource script, &#39;msfconsole.rc&#39; in the user&#39;s
       <pre class="lines">
 
 
-589
-590
-591</pre>
+591
+592
+593</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 589</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 591</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_framework'>framework</span>
   <span class='ivar'>@framework</span>
@@ -1745,8 +1749,6 @@ preference.</p>
       <pre class="lines">
 
 
-714
-715
 716
 717
 718
@@ -1778,10 +1780,12 @@ preference.</p>
 744
 745
 746
-747</pre>
+747
+748
+749</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 714</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 716</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_choose_readline'>choose_readline</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
   <span class='comment'># Choose a readline library before calling the parent
@@ -1863,14 +1867,14 @@ raised.</p>
       <pre class="lines">
 
 
-616
-617
 618
 619
-620</pre>
+620
+621
+622</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 616</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 618</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_defanged?'>defanged?</span>
   <span class='kw'>if</span> <span class='ivar'>@defanged</span>
@@ -1908,8 +1912,6 @@ raised.</p>
       <pre class="lines">
 
 
-685
-686
 687
 688
 689
@@ -1924,10 +1926,12 @@ raised.</p>
 698
 699
 700
-701</pre>
+701
+702
+703</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 685</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 687</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_handle_console_logging'>handle_console_logging</span><span class='lparen'>(</span><span class='id identifier rubyid_val'>val</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_val'>val</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^(y|t|1)</span><span class='regexp_end'>/i</span></span><span class='rparen'>)</span>
@@ -1977,13 +1981,13 @@ raised.</p>
       <pre class="lines">
 
 
-706
-707
 708
-709</pre>
+709
+710
+711</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 706</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 708</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_handle_loglevel'>handle_loglevel</span><span class='lparen'>(</span><span class='id identifier rubyid_val'>val</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_set_log_level'>set_log_level</span><span class='lparen'>(</span><span class='const'>Rex</span><span class='op'>::</span><span class='const'>LogSource</span><span class='comma'>,</span> <span class='id identifier rubyid_val'>val</span><span class='rparen'>)</span>
@@ -2020,18 +2024,18 @@ raised.</p>
       <pre class="lines">
 
 
-672
-673
 674
 675
 676
 677
 678
 679
-680</pre>
+680
+681
+682</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 672</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 674</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_handle_session_logging'>handle_session_logging</span><span class='lparen'>(</span><span class='id identifier rubyid_val'>val</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_val'>val</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^(y|t|1)</span><span class='regexp_end'>/i</span></span><span class='rparen'>)</span>
@@ -2073,8 +2077,6 @@ raised.</p>
       <pre class="lines">
 
 
-269
-270
 271
 272
 273
@@ -2109,10 +2111,12 @@ raised.</p>
 302
 303
 304
-305</pre>
+305
+306
+307</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 269</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 271</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_junit_error'>junit_error</span><span class='lparen'>(</span><span class='id identifier rubyid_tname'>tname</span><span class='comma'>,</span> <span class='id identifier rubyid_ftype'>ftype</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
 
@@ -2182,14 +2186,14 @@ raised.</p>
       <pre class="lines">
 
 
-347
-348
 349
 350
-351</pre>
+351
+352
+353</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 347</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 349</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_junit_fatal_error'>junit_fatal_error</span><span class='lparen'>(</span><span class='id identifier rubyid_tname'>tname</span><span class='comma'>,</span> <span class='id identifier rubyid_ftype'>ftype</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_junit_error'>junit_error</span><span class='lparen'>(</span><span class='id identifier rubyid_tname'>tname</span><span class='comma'>,</span> <span class='id identifier rubyid_ftype'>ftype</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
@@ -2227,8 +2231,6 @@ raised.</p>
       <pre class="lines">
 
 
-310
-311
 312
 313
 314
@@ -2258,10 +2260,12 @@ raised.</p>
 338
 339
 340
-341</pre>
+341
+342
+343</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 310</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 312</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_junit_pass'>junit_pass</span><span class='lparen'>(</span><span class='id identifier rubyid_tname'>tname</span><span class='rparen'>)</span>
 
@@ -2326,8 +2330,6 @@ raised.</p>
       <pre class="lines">
 
 
-254
-255
 256
 257
 258
@@ -2336,10 +2338,12 @@ raised.</p>
 261
 262
 263
-264</pre>
+264
+265
+266</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 254</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 256</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_junit_setup'>junit_setup</span><span class='lparen'>(</span><span class='id identifier rubyid_output_path'>output_path</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_output_path'>output_path</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span><span class='id identifier rubyid_output_path'>output_path</span><span class='rparen'>)</span>
@@ -2383,8 +2387,6 @@ raised.</p>
       <pre class="lines">
 
 
-375
-376
 377
 378
 379
@@ -2400,10 +2402,12 @@ raised.</p>
 389
 390
 391
-392</pre>
+392
+393
+394</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 375</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 377</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_load_config'>load_config</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>begin</span>
@@ -2455,8 +2459,6 @@ is created.</p>
       <pre class="lines">
 
 
-357
-358
 359
 360
 361
@@ -2468,10 +2470,12 @@ is created.</p>
 367
 368
 369
-370</pre>
+370
+371
+372</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 357</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 359</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_load_preconfig'>load_preconfig</span>
   <span class='kw'>begin</span>
@@ -2538,8 +2542,6 @@ is created.</p>
       <pre class="lines">
 
 
-417
-418
 419
 420
 421
@@ -2593,10 +2595,12 @@ is created.</p>
 469
 470
 471
-472</pre>
+472
+473
+474</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 417</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 419</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_load_resource'>load_resource</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='op'>::</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_readable?'>readable?</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
@@ -2686,8 +2690,6 @@ displayed, scripts can be processed, and other fun can be had.</p>
       <pre class="lines">
 
 
-515
-516
 517
 518
 519
@@ -2710,10 +2712,12 @@ displayed, scripts can be processed, and other fun can be had.</p>
 536
 537
 538
-539</pre>
+539
+540
+541</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 515</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 517</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_on_startup'>on_startup</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='comment'># Check for modules that failed to load
@@ -2774,8 +2778,6 @@ is not being set to a valid value.</p>
       <pre class="lines">
 
 
-547
-548
 549
 550
 551
@@ -2796,10 +2798,12 @@ is not being set to a valid value.</p>
 566
 567
 568
-569</pre>
+569
+570
+571</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 547</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 549</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_on_variable_set'>on_variable_set</span><span class='lparen'>(</span><span class='id identifier rubyid_glob'>glob</span><span class='comma'>,</span> <span class='id identifier rubyid_var'>var</span><span class='comma'>,</span> <span class='id identifier rubyid_val'>val</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_var'>var</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
@@ -2856,8 +2860,6 @@ indication that the variable should not be allowed to be unset.</p>
       <pre class="lines">
 
 
-575
-576
 577
 578
 579
@@ -2865,10 +2867,12 @@ indication that the variable should not be allowed to be unset.</p>
 581
 582
 583
-584</pre>
+584
+585
+586</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 575</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 577</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_on_variable_unset'>on_variable_unset</span><span class='lparen'>(</span><span class='id identifier rubyid_glob'>glob</span><span class='comma'>,</span> <span class='id identifier rubyid_var'>var</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_var'>var</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
@@ -2911,8 +2915,6 @@ indication that the variable should not be allowed to be unset.</p>
       <pre class="lines">
 
 
-397
-398
 399
 400
 401
@@ -2925,10 +2927,12 @@ indication that the variable should not be allowed to be unset.</p>
 408
 409
 410
-411</pre>
+411
+412
+413</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 397</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 399</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_save_config'>save_config</span>
   <span class='comment'># Build out the console config group
@@ -2976,8 +2980,6 @@ indication that the variable should not be allowed to be unset.</p>
       <pre class="lines">
 
 
-477
-478
 479
 480
 481
@@ -2994,10 +2996,12 @@ indication that the variable should not be allowed to be unset.</p>
 492
 493
 494
-495</pre>
+495
+496
+497</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 477</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 479</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_save_recent_history'>save_recent_history</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_num'>num</span> <span class='op'>=</span> <span class='const'>Readline</span><span class='op'>::</span><span class='const'>HISTORY</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>-</span> <span class='id identifier rubyid_hist_last_saved'>hist_last_saved</span> <span class='op'>-</span> <span class='int'>1</span>
@@ -3049,8 +3053,6 @@ indication that the variable should not be allowed to be unset.</p>
       <pre class="lines">
 
 
-500
-501
 502
 503
 504
@@ -3058,10 +3060,12 @@ indication that the variable should not be allowed to be unset.</p>
 506
 507
 508
-509</pre>
+509
+510
+511</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 500</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 502</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_save_resource'>save_resource</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_path'>path</span> <span class='op'>||=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>Msf</span><span class='op'>::</span><span class='const'>Config</span><span class='period'>.</span><span class='id identifier rubyid_config_directory'>config_directory</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>msfconsole.rc</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -3093,13 +3097,13 @@ indication that the variable should not be allowed to be unset.</p>
       <pre class="lines">
 
 
-622
-623
 624
-625</pre>
+625
+626
+627</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 622</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 624</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_stop'>stop</span>
   <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_on_ui_stop'>on_ui_stop</span><span class='lparen'>(</span><span class='rparen'>)</span>
@@ -3137,8 +3141,6 @@ executable.  This is only allowed if command passthru has been permitted</p>
       <pre class="lines">
 
 
-637
-638
 639
 640
 641
@@ -3161,10 +3163,12 @@ executable.  This is only allowed if command passthru has been permitted</p>
 658
 659
 660
-661</pre>
+661
+662
+663</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 637</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/driver.rb', line 639</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unknown_command'>unknown_command</span><span class='lparen'>(</span><span class='id identifier rubyid_method'>method</span><span class='comma'>,</span> <span class='id identifier rubyid_line'>line</span><span class='rparen'>)</span>
 
@@ -3201,7 +3205,7 @@ executable.  This is only allowed if command passthru has been permitted</p>
 </div>
 
     <div id="footer">
-  Generated on Wed Dec 17 15:15:01 2014 by
+  Generated on Sat Dec 20 10:05:04 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>

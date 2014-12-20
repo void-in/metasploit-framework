@@ -5848,7 +5848,7 @@ itself has been completed</p>
     <span class='kw'>return</span> <span class='cvar'>@@jobs_opts</span><span class='period'>.</span><span class='id identifier rubyid_fmt'>fmt</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span>
   <span class='kw'>end</span>
 
-  <span class='kw'>if</span> <span class='cvar'>@@jobs_opts</span><span class='period'>.</span><span class='id identifier rubyid_fmt'>fmt</span><span class='lbracket'>[</span><span class='id identifier rubyid_words'>words</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='kw'>and</span> <span class='lparen'>(</span><span class='id identifier rubyid_words'>words</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>2</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_words'>words</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>2</span> <span class='kw'>and</span> <span class='lparen'>(</span><span class='cvar'>@@jobs_opts</span><span class='period'>.</span><span class='id identifier rubyid_fmt'>fmt</span><span class='lbracket'>[</span><span class='id identifier rubyid_words'>words</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='lbracket'>[</span><span class='kw'>false</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
     <span class='kw'>return</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_jobs'>jobs</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span>
   <span class='kw'>end</span>
 
@@ -10531,7 +10531,7 @@ itself has been completed</p>
     <span class='kw'>return</span> <span class='cvar'>@@threads_opts</span><span class='period'>.</span><span class='id identifier rubyid_fmt'>fmt</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span>
   <span class='kw'>end</span>
 
-  <span class='kw'>if</span> <span class='cvar'>@@threads_opts</span><span class='period'>.</span><span class='id identifier rubyid_fmt'>fmt</span><span class='lbracket'>[</span><span class='id identifier rubyid_words'>words</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='kw'>and</span> <span class='lparen'>(</span><span class='id identifier rubyid_words'>words</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>2</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_words'>words</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>2</span> <span class='kw'>and</span> <span class='lparen'>(</span><span class='cvar'>@@threads_opts</span><span class='period'>.</span><span class='id identifier rubyid_fmt'>fmt</span><span class='lbracket'>[</span><span class='id identifier rubyid_words'>words</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='lbracket'>[</span><span class='kw'>false</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
     <span class='kw'>return</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_threads'>threads</span><span class='period'>.</span><span class='id identifier rubyid_each_index'>each_index</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_idx'>idx</span><span class='op'>|</span> <span class='id identifier rubyid_idx'>idx</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='rbrace'>}</span>
   <span class='kw'>end</span>
 
@@ -14108,7 +14108,7 @@ match an interactive session</p>
 </div>
 
     <div id="footer">
-  Generated on Wed Dec 17 15:15:11 2014 by
+  Generated on Sat Dec 20 10:05:13 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>

@@ -236,7 +236,7 @@ information that is directly necessary to drive the framework-core.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#create-class_method" title="create (class method)">+ (Object) <strong>create</strong>(opts = {}) </a>
+      <a href="#create-class_method" title="create (class method)">+ (Msf::Simple::Frameworkt s) <strong>create</strong>(opts = {}) </a>
     
 
     
@@ -260,7 +260,7 @@ information that is directly necessary to drive the framework-core.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#simplify-class_method" title="simplify (class method)">+ (Object) <strong>simplify</strong>(framework, opts) </a>
+      <a href="#simplify-class_method" title="simplify (class method)">+ (Msf::Simple::Framework) <strong>simplify</strong>(framework, opts) </a>
     
 
     
@@ -468,12 +468,12 @@ the simplified module interface.</p>
       <pre class="lines">
 
 
-168
-169
-170</pre>
+176
+177
+178</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/framework.rb', line 168</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/framework.rb', line 176</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cache_initialized'>cache_initialized</span>
   <span class='ivar'>@cache_initialized</span>
@@ -511,12 +511,12 @@ the simplified module interface.</p>
       <pre class="lines">
 
 
-173
-174
-175</pre>
+181
+182
+183</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/framework.rb', line 173</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/framework.rb', line 181</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cache_thread'>cache_thread</span>
   <span class='ivar'>@cache_thread</span>
@@ -554,12 +554,12 @@ the simplified module interface.</p>
       <pre class="lines">
 
 
-163
-164
-165</pre>
+171
+172
+173</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/framework.rb', line 163</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/framework.rb', line 171</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_stats'>stats</span>
   <span class='ivar'>@stats</span>
@@ -579,7 +579,7 @@ the simplified module interface.</p>
       <div class="method_details first">
   <h3 class="signature first" id="create-class_method">
   
-    + (<tt>Object</tt>) <strong>create</strong>(opts = {}) 
+    + (<tt>Msf::Simple::Frameworkt s</tt>) <strong>create</strong>(opts = {}) 
   
 
   
@@ -591,15 +591,108 @@ the simplified module interface.</p>
 <p>Create a simplified instance of the framework.  This routine takes a hash
 of parameters as an argument.  This hash can contain:</p>
 
-<pre class="ruby"><span class="ruby-constant">OnCreateProc</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">A</span> <span class="ruby-identifier">callback</span> <span class="ruby-identifier">procedure</span> <span class="ruby-identifier">that</span> <span class="ruby-identifier">is</span> <span class="ruby-identifier">called</span> <span class="ruby-identifier">once</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">framework</span>
-<span class="ruby-identifier">instance</span> <span class="ruby-identifier">is</span> <span class="ruby-identifier">created</span>.
-</pre>
-
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash{String =&gt; Object}</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>opts</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">'OnCreateProc'</span>
+          <span class="type">(<tt>#call</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Proc to call after <span class='object_link'><a href="#init_simplified-instance_method" title="Msf::Simple::Framework#init_simplified (method)">#init_simplified</a></span>.  Will be passed `framework`.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">'ConfigDirectory'</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Directory where configuration is saved.  The `~/.msf4` directory.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">'DisableLogging'</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>false</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>`true` to disable `Msf::Logging.init`</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">'DeferModuleLoads'</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>false</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>`true` to disable `framework.init_module_paths`.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Msf::Simple::Frameworkt s</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -607,13 +700,13 @@ of parameters as an argument.  This hash can contain:</p>
       <pre class="lines">
 
 
+71
 72
 73
-74
-75</pre>
+74</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/framework.rb', line 72</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/framework.rb', line 71</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_framework'>framework</span> <span class='op'>=</span> <span class='const'>Msf</span><span class='op'>::</span><span class='const'>Framework</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -627,7 +720,7 @@ of parameters as an argument.  This hash can contain:</p>
       <div class="method_details ">
   <h3 class="signature " id="simplify-class_method">
   
-    + (<tt>Object</tt>) <strong>simplify</strong>(framework, opts) 
+    + (<tt><span class='object_link'><a href="" title="Msf::Simple::Framework (module)">Msf::Simple::Framework</a></span></tt>) <strong>simplify</strong>(framework, opts) 
   
 
   
@@ -636,13 +729,141 @@ of parameters as an argument.  This hash can contain:</p>
 </h3><div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>If `<a href="http://'ConfigDirectory'">opts</a>` is set, then `<a
+href="http://'ConfigDirectory'">Msf::Config::Defaults</a>` will be updated
+to `<a href="http://'ConfigDirectory'">opts</a>`.</p>
+</div>
+  </div>
+
+
 <p>Extends a framework object that may already exist.</p>
 
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>framework</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Framework.html" title="Msf::Framework (class)">Msf::Framework</a></span></tt>, <tt><span class='object_link'><a href="" title="Msf::Simple::Framework (module)">Msf::Simple::Framework</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>framework to simplify</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash{String =&gt; Object}</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    
+    
+    <p class="tag_title">Options Hash (<tt>opts</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">'OnCreateProc'</span>
+          <span class="type">(<tt>#call</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Proc to call after <span class='object_link'><a href="#init_simplified-instance_method" title="Msf::Simple::Framework#init_simplified (method)">#init_simplified</a></span>.  Will be passed `framework`.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">'ConfigDirectory'</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Directory where configuration is saved.  The `~/.msf4` directory.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">'DisableLogging'</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>false</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>`true` to disable `Msf::Logging.init`</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">'DeferModuleLoads'</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>false</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>`true` to disable `framework.init_module_paths`.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Msf::Simple::Framework (module)">Msf::Simple::Framework</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>`framework`</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -650,14 +871,6 @@ of parameters as an argument.  This hash can contain:</p>
       <pre class="lines">
 
 
-80
-81
-82
-83
-84
-85
-86
-87
 88
 89
 90
@@ -687,10 +900,18 @@ of parameters as an argument.  This hash can contain:</p>
 114
 115
 116
-117</pre>
+117
+118
+119
+120
+121
+122
+123
+124
+125</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/framework.rb', line 80</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/framework.rb', line 88</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_simplify'>simplify</span><span class='lparen'>(</span><span class='id identifier rubyid_framework'>framework</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
 
@@ -762,17 +983,17 @@ the simplified module interface.</p>
       <pre class="lines">
 
 
-123
-124
-125
-126
-127
-128
-129
-130</pre>
+131
+132
+133
+134
+135
+136
+137
+138</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/framework.rb', line 123</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/framework.rb', line 131</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_simplify_module'>simplify_module</span><span class='lparen'>(</span><span class='id identifier rubyid_instance'>instance</span><span class='comma'>,</span> <span class='id identifier rubyid_load_saved_config'>load_saved_config</span> <span class='op'>=</span> <span class='kw'>true</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='const'>ModuleSimplifiers</span><span class='lbracket'>[</span><span class='id identifier rubyid_instance'>instance</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>and</span>
@@ -819,12 +1040,12 @@ the simplified module interface.</p>
       <pre class="lines">
 
 
-142
-143
-144</pre>
+150
+151
+152</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/framework.rb', line 142</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/framework.rb', line 150</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_init_simplified'>init_simplified</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_stats'>stats</span> <span class='op'>=</span> <span class='const'>Statistics</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
@@ -860,12 +1081,12 @@ the simplified module interface.</p>
       <pre class="lines">
 
 
-149
-150
-151</pre>
+157
+158
+159</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/framework.rb', line 149</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/framework.rb', line 157</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_load_config'>load_config</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_datastore'>datastore</span><span class='period'>.</span><span class='id identifier rubyid_from_file'>from_file</span><span class='lparen'>(</span><span class='const'>Msf</span><span class='op'>::</span><span class='const'>Config</span><span class='period'>.</span><span class='id identifier rubyid_config_file'>config_file</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>framework/core</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -942,12 +1163,12 @@ the simplified module interface.</p>
       <pre class="lines">
 
 
-156
-157
-158</pre>
+164
+165
+166</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/framework.rb', line 156</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/base/simple/framework.rb', line 164</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_save_config'>save_config</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_datastore'>datastore</span><span class='period'>.</span><span class='id identifier rubyid_to_file'>to_file</span><span class='lparen'>(</span><span class='const'>Msf</span><span class='op'>::</span><span class='const'>Config</span><span class='period'>.</span><span class='id identifier rubyid_config_file'>config_file</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>framework/core</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -962,7 +1183,7 @@ the simplified module interface.</p>
 </div>
 
     <div id="footer">
-  Generated on Wed Dec 17 15:14:20 2014 by
+  Generated on Sat Dec 20 10:04:27 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>

@@ -561,7 +561,8 @@ development.</p>
 91
 92
 93
-94</pre>
+94
+95</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/metasploit/framework/parsed_options/base.rb', line 70</span>
@@ -584,6 +585,7 @@ development.</p>
     <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='kw'>nil</span>
 
     <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_modules'>modules</span> <span class='op'>=</span> <span class='const'>ActiveSupport</span><span class='op'>::</span><span class='const'>OrderedOptions</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+    <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_modules'>modules</span><span class='period'>.</span><span class='id identifier rubyid_defer_loads'>defer_loads</span> <span class='op'>=</span> <span class='kw'>false</span>
     <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_modules'>modules</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='kw'>nil</span>
 
     <span class='ivar'>@options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span>
@@ -601,7 +603,7 @@ development.</p>
 </div>
 
     <div id="footer">
-  Generated on Wed Dec 17 15:15:14 2014 by
+  Generated on Sat Dec 20 10:05:16 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>
