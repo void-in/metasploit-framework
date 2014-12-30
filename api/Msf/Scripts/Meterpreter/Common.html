@@ -84,7 +84,7 @@
   
     <dt class="r2 last">Defined in:</dt>
     <dd class="r2 last">lib/msf/scripts/meterpreter/file.rb<span class="defines">,<br />
-  lib/msf/scripts/meterpreter/common.rb,<br /> lib/msf/scripts/meterpreter/services.rb,<br /> lib/msf/scripts/meterpreter/registry.rb,<br /> lib/msf/scripts/meterpreter/accounts.rb</span>
+  lib/msf/scripts/meterpreter/common.rb,<br /> lib/msf/scripts/meterpreter/registry.rb,<br /> lib/msf/scripts/meterpreter/accounts.rb,<br /> lib/msf/scripts/meterpreter/services.rb</span>
 </dd>
   
 </dl>
@@ -121,8 +121,8 @@
   
   <h2>Method Summary</h2>
   
-  <h3 class="inherited">Methods included from <span class='object_link'><a href="../../Post/Windows/Accounts.html" title="Msf::Post::Windows::Accounts (module)">Post::Windows::Accounts</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../../Post/Windows/Accounts.html#delete_user-instance_method" title="Msf::Post::Windows::Accounts#delete_user (method)">#delete_user</a></span>, <span class='object_link'><a href="../../Post/Windows/Accounts.html#get_domain-instance_method" title="Msf::Post::Windows::Accounts#get_domain (method)">#get_domain</a></span>, <span class='object_link'><a href="../../Post/Windows/Accounts.html#resolve_sid-instance_method" title="Msf::Post::Windows::Accounts#resolve_sid (method)">#resolve_sid</a></span></p>
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="../../Post/Windows/Services.html" title="Msf::Post::Windows::Services (module)">Post::Windows::Services</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../../Post/Windows/Services.html#close_sc_manager-instance_method" title="Msf::Post::Windows::Services#close_sc_manager (method)">#close_sc_manager</a></span>, <span class='object_link'><a href="../../Post/Windows/Services.html#open_sc_manager-instance_method" title="Msf::Post::Windows::Services#open_sc_manager (method)">#open_sc_manager</a></span>, <span class='object_link'><a href="../../Post/Windows/Services.html#service_change_startup-instance_method" title="Msf::Post::Windows::Services#service_change_startup (method)">#service_change_startup</a></span>, <span class='object_link'><a href="../../Post/Windows/Services.html#service_create-instance_method" title="Msf::Post::Windows::Services#service_create (method)">#service_create</a></span>, <span class='object_link'><a href="../../Post/Windows/Services.html#service_delete-instance_method" title="Msf::Post::Windows::Services#service_delete (method)">#service_delete</a></span>, <span class='object_link'><a href="../../Post/Windows/Services.html#service_info-instance_method" title="Msf::Post::Windows::Services#service_info (method)">#service_info</a></span>, <span class='object_link'><a href="../../Post/Windows/Services.html#service_list-instance_method" title="Msf::Post::Windows::Services#service_list (method)">#service_list</a></span>, <span class='object_link'><a href="../../Post/Windows/Services.html#service_start-instance_method" title="Msf::Post::Windows::Services#service_start (method)">#service_start</a></span>, <span class='object_link'><a href="../../Post/Windows/Services.html#service_status-instance_method" title="Msf::Post::Windows::Services#service_status (method)">#service_status</a></span>, <span class='object_link'><a href="../../Post/Windows/Services.html#service_stop-instance_method" title="Msf::Post::Windows::Services#service_stop (method)">#service_stop</a></span></p>
 
   
   
@@ -154,8 +154,8 @@
   
   
   
-  <h3 class="inherited">Methods included from <span class='object_link'><a href="../../Post/Windows/Services.html" title="Msf::Post::Windows::Services (module)">Post::Windows::Services</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../../Post/Windows/Services.html#close_sc_manager-instance_method" title="Msf::Post::Windows::Services#close_sc_manager (method)">#close_sc_manager</a></span>, <span class='object_link'><a href="../../Post/Windows/Services.html#open_sc_manager-instance_method" title="Msf::Post::Windows::Services#open_sc_manager (method)">#open_sc_manager</a></span>, <span class='object_link'><a href="../../Post/Windows/Services.html#service_change_startup-instance_method" title="Msf::Post::Windows::Services#service_change_startup (method)">#service_change_startup</a></span>, <span class='object_link'><a href="../../Post/Windows/Services.html#service_create-instance_method" title="Msf::Post::Windows::Services#service_create (method)">#service_create</a></span>, <span class='object_link'><a href="../../Post/Windows/Services.html#service_delete-instance_method" title="Msf::Post::Windows::Services#service_delete (method)">#service_delete</a></span>, <span class='object_link'><a href="../../Post/Windows/Services.html#service_info-instance_method" title="Msf::Post::Windows::Services#service_info (method)">#service_info</a></span>, <span class='object_link'><a href="../../Post/Windows/Services.html#service_list-instance_method" title="Msf::Post::Windows::Services#service_list (method)">#service_list</a></span>, <span class='object_link'><a href="../../Post/Windows/Services.html#service_start-instance_method" title="Msf::Post::Windows::Services#service_start (method)">#service_start</a></span>, <span class='object_link'><a href="../../Post/Windows/Services.html#service_status-instance_method" title="Msf::Post::Windows::Services#service_status (method)">#service_status</a></span>, <span class='object_link'><a href="../../Post/Windows/Services.html#service_stop-instance_method" title="Msf::Post::Windows::Services#service_stop (method)">#service_stop</a></span></p>
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="../../Post/Windows/Accounts.html" title="Msf::Post::Windows::Accounts (module)">Post::Windows::Accounts</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../../Post/Windows/Accounts.html#delete_user-instance_method" title="Msf::Post::Windows::Accounts#delete_user (method)">#delete_user</a></span>, <span class='object_link'><a href="../../Post/Windows/Accounts.html#get_domain-instance_method" title="Msf::Post::Windows::Accounts#get_domain (method)">#get_domain</a></span>, <span class='object_link'><a href="../../Post/Windows/Accounts.html#resolve_sid-instance_method" title="Msf::Post::Windows::Accounts#resolve_sid (method)">#resolve_sid</a></span></p>
 
   
   
@@ -205,7 +205,7 @@
 </div>
 
     <div id="footer">
-  Generated on Sat Dec 20 10:04:38 2014 by
+  Generated on Tue Dec 30 10:38:07 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>

@@ -790,7 +790,7 @@ connection to the server remains established.</p>
 </span>      <span class='comment'># good bet that migration failed and the remote side is hung.
 </span>      <span class='comment'># Since we have the comm_mutex here, we *must* release it to
 </span>      <span class='comment'># keep from hanging the packet dispatcher thread, which results
-</span>      <span class='comment'># in blocking the entire process. See Redmine #8794
+</span>      <span class='comment'># in blocking the entire process.
 </span>      <span class='kw'>begin</span>
         <span class='const'>Timeout</span><span class='period'>.</span><span class='id identifier rubyid_timeout'>timeout</span><span class='lparen'>(</span><span class='int'>60</span><span class='rparen'>)</span> <span class='kw'>do</span>
           <span class='comment'># Renegotiate SSL over this socket
@@ -995,7 +995,7 @@ from 	memory on the remote machine</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Dec 20 10:05:36 2014 by
+  Generated on Tue Dec 30 10:39:22 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>

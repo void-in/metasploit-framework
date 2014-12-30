@@ -1628,7 +1628,7 @@ and parsers all inbound packets.</p>
         <span class='kw'>begin</span>
         <span class='kw'>if</span> <span class='op'>!</span> <span class='id identifier rubyid_dispatch_inbound_packet'>dispatch_inbound_packet</span><span class='lparen'>(</span><span class='id identifier rubyid_pkt'>pkt</span><span class='rparen'>)</span>
           <span class='comment'># Only requeue packets newer than the timeout
-</span>          <span class='kw'>if</span> <span class='lparen'>(</span><span class='op'>::</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>-</span> <span class='id identifier rubyid_pkt'>pkt</span><span class='period'>.</span><span class='id identifier rubyid_created_at'>created_at</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>&lt;</span> <span class='const'>PacketTimeout</span><span class='rparen'>)</span>
+</span>          <span class='kw'>if</span> <span class='lparen'>(</span><span class='op'>::</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>-</span> <span class='id identifier rubyid_pkt'>pkt</span><span class='period'>.</span><span class='id identifier rubyid_created_at'>created_at</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>&gt;</span> <span class='const'>PacketTimeout</span><span class='rparen'>)</span>
             <span class='id identifier rubyid_incomplete'>incomplete</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_pkt'>pkt</span>
           <span class='kw'>end</span>
         <span class='kw'>end</span>
@@ -2327,7 +2327,7 @@ InboundPacketHandler interface.</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Dec 20 10:04:57 2014 by
+  Generated on Tue Dec 30 10:38:32 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>
