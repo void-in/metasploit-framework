@@ -644,12 +644,12 @@ input.</p>
       <pre class="lines">
 
 
-255
-256
-257</pre>
+267
+268
+269</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/ui.rb', line 255</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/ui.rb', line 267</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_client'>client</span>
   <span class='ivar'>@client</span>
@@ -1056,14 +1056,14 @@ input.</p>
       <pre class="lines">
 
 
-216
-217
-218
-219
-220</pre>
+228
+229
+230
+231
+232</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/ui.rb', line 216</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/ui.rb', line 228</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_keyscan_dump'>keyscan_dump</span>
   <span class='id identifier rubyid_request'>request</span>  <span class='op'>=</span> <span class='const'>Packet</span><span class='period'>.</span><span class='id identifier rubyid_create_request'>create_request</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>stdapi_ui_get_keys</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -1101,18 +1101,6 @@ input.</p>
       <pre class="lines">
 
 
-225
-226
-227
-228
-229
-230
-231
-232
-233
-234
-235
-236
 237
 238
 239
@@ -1128,10 +1116,22 @@ input.</p>
 249
 250
 251
-252</pre>
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/ui.rb', line 225</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/ui.rb', line 237</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_keyscan_extract'>keyscan_extract</span><span class='lparen'>(</span><span class='id identifier rubyid_buffer_data'>buffer_data</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_outp'>outp</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
@@ -1192,14 +1192,14 @@ input.</p>
       <pre class="lines">
 
 
-198
-199
-200
-201
-202</pre>
+210
+211
+212
+213
+214</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/ui.rb', line 198</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/ui.rb', line 210</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_keyscan_start'>keyscan_start</span>
   <span class='id identifier rubyid_request'>request</span>  <span class='op'>=</span> <span class='const'>Packet</span><span class='period'>.</span><span class='id identifier rubyid_create_request'>create_request</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>stdapi_ui_start_keyscan</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -1237,14 +1237,14 @@ input.</p>
       <pre class="lines">
 
 
-207
-208
-209
-210
-211</pre>
+219
+220
+221
+222
+223</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/ui.rb', line 207</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/ui.rb', line 219</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_keyscan_stop'>keyscan_stop</span>
   <span class='id identifier rubyid_request'>request</span>  <span class='op'>=</span> <span class='const'>Packet</span><span class='period'>.</span><span class='id identifier rubyid_create_request'>create_request</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>stdapi_ui_stop_keyscan</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -1311,7 +1311,19 @@ input.</p>
 180
 181
 182
-183</pre>
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/ui.rb', line 154</span>
@@ -1319,31 +1331,43 @@ input.</p>
 <span class='kw'>def</span> <span class='id identifier rubyid_screenshot'>screenshot</span><span class='lparen'>(</span> <span class='id identifier rubyid_quality'>quality</span><span class='op'>=</span><span class='int'>50</span> <span class='rparen'>)</span>
   <span class='id identifier rubyid_request'>request</span> <span class='op'>=</span> <span class='const'>Packet</span><span class='period'>.</span><span class='id identifier rubyid_create_request'>create_request</span><span class='lparen'>(</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>stdapi_ui_desktop_screenshot</span><span class='tstring_end'>&#39;</span></span> <span class='rparen'>)</span>
   <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_add_tlv'>add_tlv</span><span class='lparen'>(</span> <span class='const'>TLV_TYPE_DESKTOP_SCREENSHOT_QUALITY</span><span class='comma'>,</span> <span class='id identifier rubyid_quality'>quality</span> <span class='rparen'>)</span>
+
   <span class='comment'># include the x64 screenshot dll if the host OS is x64
 </span>  <span class='kw'>if</span><span class='lparen'>(</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_sys'>sys</span><span class='period'>.</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_sysinfo'>sysinfo</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Architecture</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^\S*x64\S*</span><span class='regexp_end'>/</span></span> <span class='rparen'>)</span>
     <span class='id identifier rubyid_screenshot_path'>screenshot_path</span> <span class='op'>=</span> <span class='const'>MeterpreterBinaries</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>screenshot</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>x64.dll</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_screenshot_path'>screenshot_path</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span> <span class='id identifier rubyid_screenshot_path'>screenshot_path</span> <span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_screenshot_path'>screenshot_path</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>screenshot.x64.dll not found</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
+    <span class='kw'>end</span>
+
     <span class='id identifier rubyid_screenshot_dll'>screenshot_dll</span>  <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
     <span class='op'>::</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span> <span class='id identifier rubyid_screenshot_path'>screenshot_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rb</span><span class='tstring_end'>&#39;</span></span> <span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
       <span class='id identifier rubyid_screenshot_dll'>screenshot_dll</span> <span class='op'>+=</span> <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span> <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_stat'>stat</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='rparen'>)</span>
     <span class='kw'>end</span>
+
     <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_add_tlv'>add_tlv</span><span class='lparen'>(</span> <span class='const'>TLV_TYPE_DESKTOP_SCREENSHOT_PE64DLL_BUFFER</span><span class='comma'>,</span> <span class='id identifier rubyid_screenshot_dll'>screenshot_dll</span><span class='comma'>,</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='kw'>true</span> <span class='rparen'>)</span>
     <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_add_tlv'>add_tlv</span><span class='lparen'>(</span> <span class='const'>TLV_TYPE_DESKTOP_SCREENSHOT_PE64DLL_LENGTH</span><span class='comma'>,</span> <span class='id identifier rubyid_screenshot_dll'>screenshot_dll</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='rparen'>)</span>
   <span class='kw'>end</span>
-  <span class='comment'># but allways include the x86 screenshot dll as we can use it for wow64 processes if we are on x64
+
+  <span class='comment'># but always include the x86 screenshot dll as we can use it for wow64 processes if we are on x64
 </span>  <span class='id identifier rubyid_screenshot_path'>screenshot_path</span> <span class='op'>=</span> <span class='const'>MeterpreterBinaries</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>screenshot</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>x86.dll</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_screenshot_path'>screenshot_path</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span> <span class='id identifier rubyid_screenshot_path'>screenshot_path</span> <span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_screenshot_path'>screenshot_path</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>screenshot.x86.dll not found</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
+  <span class='kw'>end</span>
+
   <span class='id identifier rubyid_screenshot_dll'>screenshot_dll</span>  <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
   <span class='op'>::</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span> <span class='id identifier rubyid_screenshot_path'>screenshot_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rb</span><span class='tstring_end'>&#39;</span></span> <span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
     <span class='id identifier rubyid_screenshot_dll'>screenshot_dll</span> <span class='op'>+=</span> <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span> <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_stat'>stat</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='rparen'>)</span>
   <span class='kw'>end</span>
+
   <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_add_tlv'>add_tlv</span><span class='lparen'>(</span> <span class='const'>TLV_TYPE_DESKTOP_SCREENSHOT_PE32DLL_BUFFER</span><span class='comma'>,</span> <span class='id identifier rubyid_screenshot_dll'>screenshot_dll</span><span class='comma'>,</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='kw'>true</span> <span class='rparen'>)</span>
   <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_add_tlv'>add_tlv</span><span class='lparen'>(</span> <span class='const'>TLV_TYPE_DESKTOP_SCREENSHOT_PE32DLL_LENGTH</span><span class='comma'>,</span> <span class='id identifier rubyid_screenshot_dll'>screenshot_dll</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='rparen'>)</span>
+
   <span class='comment'># send the request and return the jpeg image if successfull.
 </span>  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_send_request'>send_request</span><span class='lparen'>(</span> <span class='id identifier rubyid_request'>request</span> <span class='rparen'>)</span>
   <span class='kw'>if</span><span class='lparen'>(</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_result'>result</span> <span class='op'>==</span> <span class='int'>0</span> <span class='rparen'>)</span>
     <span class='kw'>return</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_get_tlv_value'>get_tlv_value</span><span class='lparen'>(</span> <span class='const'>TLV_TYPE_DESKTOP_SCREENSHOT</span> <span class='rparen'>)</span>
   <span class='kw'>end</span>
+
   <span class='kw'>return</span> <span class='kw'>nil</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1438,15 +1462,15 @@ screen/keyboard/mouse control).</p>
       <pre class="lines">
 
 
-188
-189
-190
-191
-192
-193</pre>
+200
+201
+202
+203
+204
+205</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/ui.rb', line 188</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/ui.rb', line 200</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unlock_desktop'>unlock_desktop</span><span class='lparen'>(</span><span class='id identifier rubyid_unlock'>unlock</span><span class='op'>=</span><span class='kw'>true</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_request'>request</span>  <span class='op'>=</span> <span class='const'>Packet</span><span class='period'>.</span><span class='id identifier rubyid_create_request'>create_request</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>stdapi_ui_unlock_desktop</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -1464,7 +1488,7 @@ screen/keyboard/mouse control).</p>
 </div>
 
     <div id="footer">
-  Generated on Tue Dec 30 10:39:25 2014 by
+  Generated on Mon Jan  5 13:22:25 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>

@@ -115,6 +115,23 @@ the interaction with channels.</p>
   
 
 </div>
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="UNIX_PATH_MAX-constant" class="">UNIX_PATH_MAX =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>108</span></pre></dd>
+      
+        <dt id="DEFAULT_SOCK_PATH-constant" class="">DEFAULT_SOCK_PATH =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/tmp/meterpreter.sock</span><span class='tstring_end'>&quot;</span></span></pre></dd>
+      
+    </dl>
+  
+
 
 
 
@@ -187,7 +204,7 @@ the interaction with channels.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#migrate-instance_method" title="#migrate (instance method)">- (Object) <strong>migrate</strong>(pid) </a>
+      <a href="#migrate-instance_method" title="#migrate (instance method)">- (Object) <strong>migrate</strong>(pid, writable_dir = nil) </a>
     
 
     
@@ -295,12 +312,12 @@ the client-side extension handlers.</p>
       <pre class="lines">
 
 
-31
-32
-33</pre>
+34
+35
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/client_core.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/client_core.rb', line 34</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='rparen'>)</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>core</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -359,9 +376,6 @@ specified</p>
       <pre class="lines">
 
 
-65
-66
-67
 68
 69
 70
@@ -430,10 +444,13 @@ specified</p>
 133
 134
 135
-136</pre>
+136
+137
+138
+139</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/client_core.rb', line 65</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/client_core.rb', line 68</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_load_library'>load_library</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_library_path'>library_path</span> <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>LibraryFilePath</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
@@ -441,18 +458,18 @@ specified</p>
   <span class='id identifier rubyid_load_flags'>load_flags</span>   <span class='op'>=</span> <span class='const'>LOAD_LIBRARY_FLAG_LOCAL</span>
 
   <span class='comment'># No library path, no cookie.
-</span>  <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_library_path'>library_path</span> <span class='op'>==</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+</span>  <span class='kw'>if</span> <span class='id identifier rubyid_library_path'>library_path</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>No library file path was supplied</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
   <span class='kw'>end</span>
 
   <span class='comment'># Set up the proper loading flags
-</span>  <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>UploadLibrary</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+</span>  <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>UploadLibrary</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
     <span class='id identifier rubyid_load_flags'>load_flags</span> <span class='op'>&amp;=</span> <span class='op'>~</span><span class='const'>LOAD_LIBRARY_FLAG_LOCAL</span>
   <span class='kw'>end</span>
-  <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SaveToDisk</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SaveToDisk</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
     <span class='id identifier rubyid_load_flags'>load_flags</span> <span class='op'>|=</span> <span class='const'>LOAD_LIBRARY_FLAG_ON_DISK</span>
   <span class='kw'>end</span>
-  <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Extension</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Extension</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
     <span class='id identifier rubyid_load_flags'>load_flags</span> <span class='op'>|=</span> <span class='const'>LOAD_LIBRARY_FLAG_EXTENSION</span>
   <span class='kw'>end</span>
 
@@ -460,14 +477,14 @@ specified</p>
 </span>  <span class='id identifier rubyid_request'>request</span> <span class='op'>=</span> <span class='const'>Packet</span><span class='period'>.</span><span class='id identifier rubyid_create_request'>create_request</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>core_loadlib</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 
   <span class='comment'># If we must upload the library, do so now
-</span>  <span class='kw'>if</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_load_flags'>load_flags</span> <span class='op'>&amp;</span> <span class='const'>LOAD_LIBRARY_FLAG_LOCAL</span><span class='rparen'>)</span> <span class='op'>!=</span> <span class='const'>LOAD_LIBRARY_FLAG_LOCAL</span><span class='rparen'>)</span>
+</span>  <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_load_flags'>load_flags</span> <span class='op'>&amp;</span> <span class='const'>LOAD_LIBRARY_FLAG_LOCAL</span><span class='rparen'>)</span> <span class='op'>!=</span> <span class='const'>LOAD_LIBRARY_FLAG_LOCAL</span>
     <span class='id identifier rubyid_image'>image</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
 
     <span class='op'>::</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='id identifier rubyid_library_path'>library_path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
       <span class='id identifier rubyid_image'>image</span> <span class='op'>=</span> <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span>
     <span class='rbrace'>}</span>
 
-    <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_image'>image</span> <span class='op'>!=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_image'>image</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
       <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_add_tlv'>add_tlv</span><span class='lparen'>(</span><span class='const'>TLV_TYPE_DATA</span><span class='comma'>,</span> <span class='id identifier rubyid_image'>image</span><span class='comma'>,</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_capabilities'>capabilities</span><span class='lbracket'>[</span><span class='symbol'>:zlib</span><span class='rbracket'>]</span><span class='rparen'>)</span>
     <span class='kw'>else</span>
       <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failed to serialize library </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_library_path'>library_path</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
@@ -476,7 +493,7 @@ specified</p>
     <span class='comment'># If it&#39;s an extension we&#39;re dealing with, rename the library
 </span>    <span class='comment'># path of the local and target so that it gets loaded with a random
 </span>    <span class='comment'># name
-</span>    <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Extension</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+</span>    <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Extension</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
       <span class='id identifier rubyid_library_path'>library_path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ext</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_rand'>rand</span><span class='lparen'>(</span><span class='int'>1000000</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_binary_suffix'>binary_suffix</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
       <span class='id identifier rubyid_target_path'>target_path</span>  <span class='op'>=</span> <span class='id identifier rubyid_library_path'>library_path</span>
     <span class='kw'>end</span>
@@ -486,7 +503,7 @@ specified</p>
 </span>  <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_add_tlv'>add_tlv</span><span class='lparen'>(</span><span class='const'>TLV_TYPE_LIBRARY_PATH</span><span class='comma'>,</span> <span class='id identifier rubyid_library_path'>library_path</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_add_tlv'>add_tlv</span><span class='lparen'>(</span><span class='const'>TLV_TYPE_FLAGS</span><span class='comma'>,</span> <span class='id identifier rubyid_load_flags'>load_flags</span><span class='rparen'>)</span>
 
-  <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_target_path'>target_path</span> <span class='op'>!=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_target_path'>target_path</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_add_tlv'>add_tlv</span><span class='lparen'>(</span><span class='const'>TLV_TYPE_TARGET_PATH</span><span class='comma'>,</span> <span class='id identifier rubyid_target_path'>target_path</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 
@@ -494,9 +511,9 @@ specified</p>
 </span>  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_send_packet_wait_response'>send_packet_wait_response</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_response_timeout'>response_timeout</span><span class='rparen'>)</span>
 
   <span class='comment'># No response?
-</span>  <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span> <span class='op'>==</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+</span>  <span class='kw'>if</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>No response was received to the core_loadlib request.</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
-  <span class='kw'>elsif</span> <span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_result'>result</span> <span class='op'>!=</span> <span class='int'>0</span><span class='rparen'>)</span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_result'>result</span> <span class='op'>!=</span> <span class='int'>0</span>
     <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The core_loadlib request failed with result: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_result'>result</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
   <span class='kw'>end</span>
 
@@ -515,7 +532,7 @@ specified</p>
       <div class="method_details ">
   <h3 class="signature " id="migrate-instance_method">
   
-    - (<tt>Object</tt>) <strong>migrate</strong>(pid) 
+    - (<tt>Object</tt>) <strong>migrate</strong>(pid, writable_dir = nil) 
   
 
   
@@ -539,11 +556,6 @@ connection to the server remains established.</p>
       <pre class="lines">
 
 
-179
-180
-181
-182
-183
 184
 185
 186
@@ -681,89 +693,111 @@ connection to the server remains established.</p>
 318
 319
 320
-321</pre>
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/client_core.rb', line 179</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/client_core.rb', line 184</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_migrate'>migrate</span><span class='lparen'>(</span> <span class='id identifier rubyid_pid'>pid</span> <span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_migrate'>migrate</span><span class='lparen'>(</span><span class='id identifier rubyid_pid'>pid</span><span class='comma'>,</span> <span class='id identifier rubyid_writable_dir'>writable_dir</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_keepalive'>keepalive</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_send_keepalives'>send_keepalives</span>
   <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_send_keepalives'>send_keepalives</span> <span class='op'>=</span> <span class='kw'>false</span>
   <span class='id identifier rubyid_process'>process</span>       <span class='op'>=</span> <span class='kw'>nil</span>
   <span class='id identifier rubyid_binary_suffix'>binary_suffix</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='id identifier rubyid_old_platform'>old_platform</span>      <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span>
+  <span class='id identifier rubyid_old_binary_suffix'>old_binary_suffix</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_binary_suffix'>binary_suffix</span>
 
   <span class='comment'># Load in the stdapi extension if not allready present so we can determine the target pid architecture...
 </span>  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_core'>core</span><span class='period'>.</span><span class='id identifier rubyid_use'>use</span><span class='lparen'>(</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>stdapi</span><span class='tstring_end'>&quot;</span></span> <span class='rparen'>)</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_ext'>ext</span><span class='period'>.</span><span class='id identifier rubyid_aliases'>aliases</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>stdapi</span><span class='tstring_end'>&quot;</span></span> <span class='rparen'>)</span>
 
   <span class='comment'># Determine the architecture for the pid we are going to migrate into...
 </span>  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_sys'>sys</span><span class='period'>.</span><span class='id identifier rubyid_process'>process</span><span class='period'>.</span><span class='id identifier rubyid_processes'>processes</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span> <span class='id identifier rubyid_p'>p</span> <span class='op'>|</span>
-    <span class='kw'>if</span><span class='lparen'>(</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>pid</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='id identifier rubyid_pid'>pid</span> <span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_p'>p</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>pid</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='id identifier rubyid_pid'>pid</span>
       <span class='id identifier rubyid_process'>process</span> <span class='op'>=</span> <span class='id identifier rubyid_p'>p</span>
       <span class='kw'>break</span>
     <span class='kw'>end</span>
   <span class='rbrace'>}</span>
 
   <span class='comment'># We cant migrate into a process that does not exist.
-</span>  <span class='kw'>if</span><span class='lparen'>(</span> <span class='id identifier rubyid_process'>process</span> <span class='op'>==</span> <span class='kw'>nil</span> <span class='rparen'>)</span>
+</span>  <span class='kw'>if</span> <span class='id identifier rubyid_process'>process</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cannot migrate into non existent process</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
   <span class='kw'>end</span>
 
-  <span class='comment'># We cant migrate into a process that we are unable to open
-</span>  <span class='kw'>if</span><span class='lparen'>(</span> <span class='id identifier rubyid_process'>process</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>arch</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='kw'>nil</span> <span class='kw'>or</span> <span class='id identifier rubyid_process'>process</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>arch</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span> <span class='rparen'>)</span>
-    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cannot migrate into this process (insufficient privileges)</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
+  <span class='comment'># We cannot migrate into a process that we are unable to open
+</span>  <span class='comment'># On linux, arch is empty even if we can access the process
+</span>  <span class='kw'>if</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>win</span><span class='regexp_end'>/</span></span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_process'>process</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>arch</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='kw'>nil</span> <span class='op'>||</span> <span class='id identifier rubyid_process'>process</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>arch</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cannot migrate into this process (insufficient privileges)</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
+    <span class='kw'>end</span>
   <span class='kw'>end</span>
 
-  <span class='comment'># And we also cant migrate into our own current process...
-</span>  <span class='kw'>if</span><span class='lparen'>(</span> <span class='id identifier rubyid_process'>process</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>pid</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_sys'>sys</span><span class='period'>.</span><span class='id identifier rubyid_process'>process</span><span class='period'>.</span><span class='id identifier rubyid_getpid'>getpid</span> <span class='rparen'>)</span>
+  <span class='comment'># And we also cannot migrate into our own current process...
+</span>  <span class='kw'>if</span> <span class='id identifier rubyid_process'>process</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>pid</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_sys'>sys</span><span class='period'>.</span><span class='id identifier rubyid_process'>process</span><span class='period'>.</span><span class='id identifier rubyid_getpid'>getpid</span>
     <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cannot migrate into current process</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
   <span class='kw'>end</span>
 
-  <span class='comment'># Create a new payload stub
-</span>  <span class='id identifier rubyid_c'>c</span> <span class='op'>=</span> <span class='const'>Class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span> <span class='op'>::</span><span class='const'>Msf</span><span class='op'>::</span><span class='const'>Payload</span> <span class='rparen'>)</span>
-  <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_include'>include</span><span class='lparen'>(</span> <span class='op'>::</span><span class='const'>Msf</span><span class='op'>::</span><span class='const'>Payload</span><span class='op'>::</span><span class='const'>Stager</span> <span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>linux</span><span class='regexp_end'>/</span></span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_writable_dir'>writable_dir</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
+      <span class='id identifier rubyid_writable_dir'>writable_dir</span> <span class='op'>=</span> <span class='id identifier rubyid_tmp_folder'>tmp_folder</span>
+    <span class='kw'>end</span>
 
-  <span class='comment'># Include the appropriate reflective dll injection module for the target process architecture...
-</span>  <span class='kw'>if</span><span class='lparen'>(</span> <span class='id identifier rubyid_process'>process</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>arch</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='const'>ARCH_X86</span> <span class='rparen'>)</span>
-    <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_include'>include</span><span class='lparen'>(</span> <span class='op'>::</span><span class='const'>Msf</span><span class='op'>::</span><span class='const'>Payload</span><span class='op'>::</span><span class='const'>Windows</span><span class='op'>::</span><span class='const'>ReflectiveDllInject</span> <span class='rparen'>)</span>
-    <span class='id identifier rubyid_binary_suffix'>binary_suffix</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>x86.dll</span><span class='tstring_end'>&quot;</span></span>
-  <span class='kw'>elsif</span><span class='lparen'>(</span> <span class='id identifier rubyid_process'>process</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>arch</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='const'>ARCH_X86_64</span> <span class='rparen'>)</span>
-    <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_include'>include</span><span class='lparen'>(</span> <span class='op'>::</span><span class='const'>Msf</span><span class='op'>::</span><span class='const'>Payload</span><span class='op'>::</span><span class='const'>Windows</span><span class='op'>::</span><span class='const'>ReflectiveDllInject_x64</span> <span class='rparen'>)</span>
-    <span class='id identifier rubyid_binary_suffix'>binary_suffix</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>x64.dll</span><span class='tstring_end'>&quot;</span></span>
-  <span class='kw'>else</span>
-    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unsupported target architecture &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_process'>process</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>arch</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39; for process &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_process'>process</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>name</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;.</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
-  <span class='kw'>end</span>
+    <span class='id identifier rubyid_stat_dir'>stat_dir</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_fs'>fs</span><span class='period'>.</span><span class='id identifier rubyid_filestat'>filestat</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_writable_dir'>writable_dir</span><span class='rparen'>)</span>
 
-  <span class='comment'># Create the migrate stager
-</span>  <span class='id identifier rubyid_migrate_stager'>migrate_stager</span> <span class='op'>=</span> <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_migrate_stager'>migrate_stager</span><span class='period'>.</span><span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DLL</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'>MeterpreterBinaries</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>metsrv</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span><span class='id identifier rubyid_binary_suffix'>binary_suffix</span><span class='rparen'>)</span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_stat_dir'>stat_dir</span><span class='period'>.</span><span class='id identifier rubyid_directory?'>directory?</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Directory </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_writable_dir'>writable_dir</span><span class='embexpr_end'>}</span><span class='tstring_content'> not found</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
+    <span class='kw'>end</span>
+    <span class='comment'># Rex::Post::FileStat#writable? isn&#39;t available
+</span>  <span class='kw'>end</span>
 
-  <span class='id identifier rubyid_blob'>blob</span> <span class='op'>=</span> <span class='id identifier rubyid_migrate_stager'>migrate_stager</span><span class='period'>.</span><span class='id identifier rubyid_stage_payload'>stage_payload</span>
-
-  <span class='kw'>if</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_passive_service'>passive_service</span>
-
-    <span class='comment'>#
-</span>    <span class='comment'># Patch options into metsrv for reverse HTTP payloads
-</span>    <span class='comment'>#
-</span>    <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Payloads</span><span class='op'>::</span><span class='const'>Meterpreter</span><span class='op'>::</span><span class='const'>Patch</span><span class='period'>.</span><span class='id identifier rubyid_patch_passive_service!'>patch_passive_service!</span> <span class='id identifier rubyid_blob'>blob</span><span class='comma'>,</span>
-      <span class='symbol'>:ssl</span>            <span class='op'>=&gt;</span>  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_ssl'>ssl</span><span class='comma'>,</span>
-      <span class='symbol'>:url</span>            <span class='op'>=&gt;</span>  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_url'>url</span><span class='comma'>,</span>
-      <span class='symbol'>:expiration</span>     <span class='op'>=&gt;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_expiration'>expiration</span><span class='comma'>,</span>
-      <span class='symbol'>:comm_timeout</span>   <span class='op'>=&gt;</span>  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_comm_timeout'>comm_timeout</span><span class='comma'>,</span>
-      <span class='symbol'>:ua</span>             <span class='op'>=&gt;</span>  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_exploit_datastore'>exploit_datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>MeterpreterUserAgent</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
-      <span class='symbol'>:proxyhost</span>      <span class='op'>=&gt;</span>  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_exploit_datastore'>exploit_datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXYHOST</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
-      <span class='symbol'>:proxyport</span>      <span class='op'>=&gt;</span>  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_exploit_datastore'>exploit_datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXYPORT</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
-      <span class='symbol'>:proxy_type</span>     <span class='op'>=&gt;</span>  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_exploit_datastore'>exploit_datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXY_TYPE</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
-      <span class='symbol'>:proxy_username</span> <span class='op'>=&gt;</span>  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_exploit_datastore'>exploit_datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXY_USERNAME</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
-      <span class='symbol'>:proxy_password</span> <span class='op'>=&gt;</span>  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_exploit_datastore'>exploit_datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROXY_PASSWORD</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-
-  <span class='kw'>end</span>
+  <span class='id identifier rubyid_blob'>blob</span> <span class='op'>=</span> <span class='id identifier rubyid_generate_payload_stub'>generate_payload_stub</span><span class='lparen'>(</span><span class='id identifier rubyid_process'>process</span><span class='rparen'>)</span>
 
   <span class='comment'># Build the migration request
 </span>  <span class='id identifier rubyid_request'>request</span> <span class='op'>=</span> <span class='const'>Packet</span><span class='period'>.</span><span class='id identifier rubyid_create_request'>create_request</span><span class='lparen'>(</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>core_migrate</span><span class='tstring_end'>&#39;</span></span> <span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>linux</span><span class='regexp_end'>/i</span></span>
+    <span class='id identifier rubyid_socket_path'>socket_path</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_writable_dir'>writable_dir</span><span class='comma'>,</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_rand_text_alpha_lower'>rand_text_alpha_lower</span><span class='lparen'>(</span><span class='int'>5</span> <span class='op'>+</span> <span class='id identifier rubyid_rand'>rand</span><span class='lparen'>(</span><span class='int'>5</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_socket_path'>socket_path</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='const'>UNIX_PATH_MAX</span> <span class='op'>-</span> <span class='int'>1</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The writable dir is too long</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_pos'>pos</span> <span class='op'>=</span> <span class='id identifier rubyid_blob'>blob</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='const'>DEFAULT_SOCK_PATH</span><span class='rparen'>)</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_pos'>pos</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The meterpreter binary is wrong</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_blob'>blob</span><span class='lbracket'>[</span><span class='id identifier rubyid_pos'>pos</span><span class='comma'>,</span> <span class='id identifier rubyid_socket_path'>socket_path</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>+</span> <span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_socket_path'>socket_path</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\x00</span><span class='tstring_end'>&quot;</span></span>
+
+    <span class='id identifier rubyid_ep'>ep</span> <span class='op'>=</span> <span class='id identifier rubyid_elf_ep'>elf_ep</span><span class='lparen'>(</span><span class='id identifier rubyid_blob'>blob</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_add_tlv'>add_tlv</span><span class='lparen'>(</span><span class='const'>TLV_TYPE_MIGRATE_BASE_ADDR</span><span class='comma'>,</span> <span class='int'>0x20040000</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_add_tlv'>add_tlv</span><span class='lparen'>(</span><span class='const'>TLV_TYPE_MIGRATE_ENTRY_POINT</span><span class='comma'>,</span> <span class='id identifier rubyid_ep'>ep</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_add_tlv'>add_tlv</span><span class='lparen'>(</span><span class='const'>TLV_TYPE_MIGRATE_SOCKET_PATH</span><span class='comma'>,</span> <span class='id identifier rubyid_socket_path'>socket_path</span><span class='comma'>,</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_capabilities'>capabilities</span><span class='lbracket'>[</span><span class='symbol'>:zlib</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
   <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_add_tlv'>add_tlv</span><span class='lparen'>(</span> <span class='const'>TLV_TYPE_MIGRATE_PID</span><span class='comma'>,</span> <span class='id identifier rubyid_pid'>pid</span> <span class='rparen'>)</span>
   <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_add_tlv'>add_tlv</span><span class='lparen'>(</span> <span class='const'>TLV_TYPE_MIGRATE_LEN</span><span class='comma'>,</span> <span class='id identifier rubyid_blob'>blob</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='rparen'>)</span>
   <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_add_tlv'>add_tlv</span><span class='lparen'>(</span> <span class='const'>TLV_TYPE_MIGRATE_PAYLOAD</span><span class='comma'>,</span> <span class='id identifier rubyid_blob'>blob</span><span class='comma'>,</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_capabilities'>capabilities</span><span class='lbracket'>[</span><span class='symbol'>:zlib</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-  <span class='kw'>if</span><span class='lparen'>(</span> <span class='id identifier rubyid_process'>process</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>arch</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='const'>ARCH_X86_64</span> <span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_process'>process</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>arch</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='const'>ARCH_X86_64</span>
     <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_add_tlv'>add_tlv</span><span class='lparen'>(</span> <span class='const'>TLV_TYPE_MIGRATE_ARCH</span><span class='comma'>,</span> <span class='int'>2</span> <span class='rparen'>)</span> <span class='comment'># PROCESS_ARCH_X64
 </span>  <span class='kw'>else</span>
     <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_add_tlv'>add_tlv</span><span class='lparen'>(</span> <span class='const'>TLV_TYPE_MIGRATE_ARCH</span><span class='comma'>,</span> <span class='int'>1</span> <span class='rparen'>)</span> <span class='comment'># PROCESS_ARCH_X86
@@ -808,15 +842,28 @@ connection to the server remains established.</p>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
 
-  <span class='comment'># Update the meterpreter platform/suffix for loading extensions as we may have changed target architecture
-</span>  <span class='comment'># sf: this is kinda hacky but it works. As ruby doesnt let you un-include a module this is the simplest solution I could think of.
-</span>  <span class='comment'># If the platform specific modules Meterpreter_x64_Win/Meterpreter_x86_Win change significantly we will need a better way to do this.
-</span>  <span class='kw'>if</span><span class='lparen'>(</span> <span class='id identifier rubyid_process'>process</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>arch</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='const'>ARCH_X86_64</span> <span class='rparen'>)</span>
-    <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span>      <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>x64/win64</span><span class='tstring_end'>&#39;</span></span>
-    <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_binary_suffix'>binary_suffix</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>x64.dll</span><span class='tstring_end'>&#39;</span></span>
+  <span class='comment'># Update the meterpreter platform/suffix for loading extensions as we may
+</span>  <span class='comment'># have changed target architecture
+</span>  <span class='comment'># sf: this is kinda hacky but it works. As ruby doesnt let you un-include a
+</span>  <span class='comment'># module this is the simplest solution I could think of. If the platform
+</span>  <span class='comment'># specific modules Meterpreter_x64_Win/Meterpreter_x86_Win change
+</span>  <span class='comment'># significantly we will need a better way to do this.
+</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>win</span><span class='regexp_end'>/i</span></span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_process'>process</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>arch</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='const'>ARCH_X86_64</span>
+      <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span>      <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>x64/win64</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_binary_suffix'>binary_suffix</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>x64.dll</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span>      <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>x86/win32</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_binary_suffix'>binary_suffix</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>x86.dll</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>linux</span><span class='regexp_end'>/i</span></span>
+    <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span>        <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>x86/linux</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_binary_suffix'>binary_suffix</span>   <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>lso</span><span class='tstring_end'>&#39;</span></span>
   <span class='kw'>else</span>
-    <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span>      <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>x86/win32</span><span class='tstring_end'>&#39;</span></span>
-    <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_binary_suffix'>binary_suffix</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>x86.dll</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span>        <span class='op'>=</span> <span class='id identifier rubyid_old_platform'>old_platform</span>
+    <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_binary_suffix'>binary_suffix</span>   <span class='op'>=</span> <span class='id identifier rubyid_old_binary_suffix'>old_binary_suffix</span>
   <span class='kw'>end</span>
 
   <span class='comment'># Load all the extensions that were loaded in the previous instance (using the correct platform/binary_suffix)
@@ -860,24 +907,24 @@ connection to the server remains established.</p>
       <pre class="lines">
 
 
-326
-327
-328
-329
-330
-331
-332
-333
-334
-335
-336
-337
-338
-339
-340</pre>
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/client_core.rb', line 326</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/client_core.rb', line 346</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_shutdown'>shutdown</span>
   <span class='id identifier rubyid_request'>request</span>  <span class='op'>=</span> <span class='const'>Packet</span><span class='period'>.</span><span class='id identifier rubyid_create_request'>create_request</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>core_shutdown</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -931,9 +978,6 @@ from 	memory on the remote machine</p>
       <pre class="lines">
 
 
-149
-150
-151
 152
 153
 154
@@ -955,13 +999,18 @@ from 	memory on the remote machine</p>
 170
 171
 172
-173</pre>
+173
+174
+175
+176
+177
+178</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/client_core.rb', line 149</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/client_core.rb', line 152</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_use'>use</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span> <span class='op'>==</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_mod'>mod</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
     <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>No modules were specified</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
   <span class='kw'>end</span>
   <span class='comment'># Get us to the installation root and then into data/meterpreter, where
@@ -969,11 +1018,13 @@ from 	memory on the remote machine</p>
 </span>  <span class='id identifier rubyid_modname'>modname</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ext_server_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_mod'>mod</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'>MeterpreterBinaries</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span><span class='lparen'>(</span><span class='id identifier rubyid_modname'>modname</span><span class='comma'>,</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_binary_suffix'>binary_suffix</span><span class='rparen'>)</span>
 
-  <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ExtensionPath</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ExtensionPath</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ExtensionPath</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ExtensionPath</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 
-  <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>No module of the name </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_modname'>modname</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_binary_suffix'>binary_suffix</span><span class='embexpr_end'>}</span><span class='tstring_content'> found</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_caller'>caller</span>
+  <span class='kw'>end</span>
 
   <span class='comment'># Load the extension DLL
 </span>  <span class='id identifier rubyid_commands'>commands</span> <span class='op'>=</span> <span class='id identifier rubyid_load_library'>load_library</span><span class='lparen'>(</span>
@@ -995,7 +1046,7 @@ from 	memory on the remote machine</p>
 </div>
 
     <div id="footer">
-  Generated on Tue Dec 30 10:39:22 2014 by
+  Generated on Mon Jan  5 13:22:18 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>

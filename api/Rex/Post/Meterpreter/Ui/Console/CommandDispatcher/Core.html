@@ -1493,12 +1493,12 @@ for interactivity.</p>
       <pre class="lines">
 
 
-865
-866
-867</pre>
+878
+879
+880</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 865</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 878</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_bgjob_id'>bgjob_id</span>
   <span class='ivar'>@bgjob_id</span>
@@ -1536,12 +1536,12 @@ for interactivity.</p>
       <pre class="lines">
 
 
-865
-866
-867</pre>
+878
+879
+880</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 865</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 878</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_bgjobs'>bgjobs</span>
   <span class='ivar'>@bgjobs</span>
@@ -1579,12 +1579,12 @@ for interactivity.</p>
       <pre class="lines">
 
 
-864
-865
-866</pre>
+877
+878
+879</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 864</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 877</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_extensions'>extensions</span>
   <span class='ivar'>@extensions</span>
@@ -1616,12 +1616,12 @@ for interactivity.</p>
       <pre class="lines">
 
 
-855
-856
-857</pre>
+868
+869
+870</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 855</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 868</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_add_client_extension_search_path'>add_client_extension_search_path</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
   <span class='cvar'>@@client_extension_search_paths</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_path'>path</span> <span class='kw'>unless</span> <span class='cvar'>@@client_extension_search_paths</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
@@ -1646,12 +1646,12 @@ for interactivity.</p>
       <pre class="lines">
 
 
-858
-859
-860</pre>
+871
+872
+873</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 858</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 871</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_client_extension_search_paths'>client_extension_search_paths</span>
   <span class='cvar'>@@client_extension_search_paths</span>
@@ -1693,19 +1693,6 @@ for interactivity.</p>
       <pre class="lines">
 
 
-872
-873
-874
-875
-876
-877
-878
-879
-880
-881
-882
-883
-884
 885
 886
 887
@@ -1734,10 +1721,23 @@ for interactivity.</p>
 910
 911
 912
-913</pre>
+913
+914
+915
+916
+917
+918
+919
+920
+921
+922
+923
+924
+925
+926</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 872</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 885</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_extension_client'>add_extension_client</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_loaded'>loaded</span> <span class='op'>=</span> <span class='kw'>false</span>
@@ -1880,26 +1880,26 @@ for interactivity.</p>
       <pre class="lines">
 
 
-647
-648
-649
-650
-651
-652
-653
-654
-655
-656
-657
-658
-659
 660
 661
 662
-663</pre>
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 647</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 660</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_bgkill'>cmd_bgkill</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>0</span>
@@ -1949,16 +1949,16 @@ for interactivity.</p>
       <pre class="lines">
 
 
-668
-669
-670
-671
-672
-673
-674</pre>
+681
+682
+683
+684
+685
+686
+687</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 668</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 681</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_bglist'>cmd_bglist</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_bgjobs'>bgjobs</span><span class='period'>.</span><span class='id identifier rubyid_each_index'>each_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_jid'>jid</span><span class='op'>|</span>
@@ -1999,19 +1999,6 @@ background</p>
       <pre class="lines">
 
 
-608
-609
-610
-611
-612
-613
-614
-615
-616
-617
-618
-619
-620
 621
 622
 623
@@ -2026,10 +2013,23 @@ background</p>
 632
 633
 634
-635</pre>
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 608</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 621</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_bgrun'>cmd_bgrun</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>0</span>
@@ -2090,12 +2090,12 @@ background</p>
       <pre class="lines">
 
 
-640
-641
-642</pre>
+653
+654
+655</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 640</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 653</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_bgrun_tabs'>cmd_bgrun_tabs</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_cmd_run_tabs'>cmd_run_tabs</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
@@ -2625,13 +2625,13 @@ background</p>
       <pre class="lines">
 
 
-848
-849
-850
-851</pre>
+861
+862
+863
+864</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 848</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 861</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_disable_unicode_encoding'>cmd_disable_unicode_encoding</span>
   <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_encode_unicode'>encode_unicode</span> <span class='op'>=</span> <span class='kw'>false</span>
@@ -2657,13 +2657,13 @@ background</p>
       <pre class="lines">
 
 
-843
-844
-845
-846</pre>
+856
+857
+858
+859</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 843</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 856</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_enable_unicode_encoding'>cmd_enable_unicode_encoding</span>
   <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_encode_unicode'>encode_unicode</span> <span class='op'>=</span> <span class='kw'>true</span>
@@ -2754,19 +2754,6 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-688
-689
-690
-691
-692
-693
-694
-695
-696
-697
-698
-699
-700
 701
 702
 703
@@ -2774,10 +2761,23 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
 705
 706
 707
-708</pre>
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 688</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 701</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_info'>cmd_info</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_msf_loaded?'>msf_loaded?</span>
@@ -2820,15 +2820,15 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-676
-677
-678
-679
-680
-681</pre>
+689
+690
+691
+692
+693
+694</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 676</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 689</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_info_help'>cmd_info_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Usage: info &lt;module&gt;</span><span class='tstring_end'>&#39;</span></span>
@@ -2856,13 +2856,13 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-710
-711
-712
-713</pre>
+723
+724
+725
+726</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 710</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 723</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_info_tabs'>cmd_info_tabs</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_msf_loaded?'>msf_loaded?</span>
@@ -3055,19 +3055,6 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-412
-413
-414
-415
-416
-417
-418
-419
-420
-421
-422
-423
-424
 425
 426
 427
@@ -3108,10 +3095,23 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
 462
 463
 464
-465</pre>
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 412</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 425</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_load'>cmd_load</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>0</span><span class='rparen'>)</span>
@@ -3191,15 +3191,15 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-402
-403
-404
-405
-406
-407</pre>
+415
+416
+417
+418
+419
+420</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 402</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 415</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_load_help'>cmd_load_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: load ext1 ext2 ext3 ...</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -3231,24 +3231,24 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-467
-468
-469
-470
-471
-472
-473
-474
-475
-476
-477
-478
-479
 480
-481</pre>
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 467</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 480</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_load_tabs'>cmd_load_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_tabs'>tabs</span> <span class='op'>=</span> <span class='const'>SortedSet</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
@@ -3302,7 +3302,8 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       
         &mdash;
         <div class='inline'>
-<p>Commandline arguments, only -h or a pid</p>
+<p>Commandline arguments, -h or a pid. On linux platforms a path for the unix
+domain socket used for IPC.</p>
 </div>
       
     </li>
@@ -3316,11 +3317,6 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-336
-337
-338
-339
-340
 341
 342
 343
@@ -3380,10 +3376,23 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
 397
 398
 399
-400</pre>
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 336</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 341</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_migrate'>cmd_migrate</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='lparen'>(</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>0</span> <span class='kw'>or</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-h</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rparen'>)</span>
@@ -3395,6 +3404,10 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
   <span class='kw'>if</span><span class='lparen'>(</span><span class='id identifier rubyid_pid'>pid</span> <span class='op'>==</span> <span class='int'>0</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_print_error'>print_error</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A process ID must be specified, not a process name</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
     <span class='kw'>return</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>linux</span><span class='regexp_end'>/</span></span>
+    <span class='id identifier rubyid_writable_dir'>writable_dir</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;=</span> <span class='int'>2</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='kw'>nil</span>
   <span class='kw'>end</span>
 
   <span class='kw'>begin</span>
@@ -3437,7 +3450,11 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
   <span class='id identifier rubyid_server'>server</span> <span class='op'>?</span> <span class='id identifier rubyid_print_status'>print_status</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Migrating from </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_server'>server</span><span class='period'>.</span><span class='id identifier rubyid_pid'>pid</span><span class='embexpr_end'>}</span><span class='tstring_content'> to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_pid'>pid</span><span class='embexpr_end'>}</span><span class='tstring_content'>...</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_print_status'>print_status</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Migrating to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_pid'>pid</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 
   <span class='comment'># Do this thang.
-</span>  <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_core'>core</span><span class='period'>.</span><span class='id identifier rubyid_migrate'>migrate</span><span class='lparen'>(</span><span class='id identifier rubyid_pid'>pid</span><span class='rparen'>)</span>
+</span>  <span class='kw'>if</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>linux</span><span class='regexp_end'>/</span></span>
+    <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_core'>core</span><span class='period'>.</span><span class='id identifier rubyid_migrate'>migrate</span><span class='lparen'>(</span><span class='id identifier rubyid_pid'>pid</span><span class='comma'>,</span> <span class='id identifier rubyid_writable_dir'>writable_dir</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_core'>core</span><span class='period'>.</span><span class='id identifier rubyid_migrate'>migrate</span><span class='lparen'>(</span><span class='id identifier rubyid_pid'>pid</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 
   <span class='id identifier rubyid_print_status'>print_status</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Migration completed successfully.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 
@@ -3476,13 +3493,21 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
 326
 327
 328
-329</pre>
+329
+330
+331
+332
+333</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 323</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_migrate_help'>cmd_migrate_help</span>
-  <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: migrate &lt;pid&gt;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>linux</span><span class='regexp_end'>/</span></span>
+    <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: migrate &lt;pid&gt; [writable_path]</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: migrate &lt;pid&gt;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
   <span class='id identifier rubyid_print_line'>print_line</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Migrates the server instance to another process.</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>NOTE: Any open channels or other dynamic state will be lost.</span><span class='tstring_end'>&quot;</span></span>
@@ -3519,19 +3544,6 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-500
-501
-502
-503
-504
-505
-506
-507
-508
-509
-510
-511
-512
 513
 514
 515
@@ -3543,10 +3555,23 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
 521
 522
 523
-524</pre>
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 500</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 513</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_read'>cmd_read</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>0</span><span class='rparen'>)</span>
@@ -3593,15 +3618,15 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-490
-491
-492
-493
-494
-495</pre>
+503
+504
+505
+506
+507
+508</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 490</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 503</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_read_help'>cmd_read_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: read &lt;channel_id&gt; [length]</span><span class='tstring_end'>&quot;</span></span>
@@ -3629,19 +3654,6 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-805
-806
-807
-808
-809
-810
-811
-812
-813
-814
-815
-816
-817
 818
 819
 820
@@ -3659,10 +3671,23 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
 832
 833
 834
-835</pre>
+835
+836
+837
+838
+839
+840
+841
+842
+843
+844
+845
+846
+847
+848</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 805</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 818</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_resource'>cmd_resource</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
@@ -3715,15 +3740,15 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-798
-799
-800
-801
-802
-803</pre>
+811
+812
+813
+814
+815
+816</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 798</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 811</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_resource_help'>cmd_resource_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: resource &lt;path1&gt; [path2 ...]</span><span class='tstring_end'>&quot;</span></span>
@@ -3751,14 +3776,14 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-837
-838
-839
-840
-841</pre>
+850
+851
+852
+853
+854</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 837</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 850</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_resource_tabs'>cmd_resource_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='lbracket'>[</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id identifier rubyid_words'>words</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>1</span>
@@ -3796,19 +3821,6 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-540
-541
-542
-543
-544
-545
-546
-547
-548
-549
-550
-551
-552
 553
 554
 555
@@ -3835,10 +3847,23 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
 576
 577
 578
-579</pre>
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 540</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 553</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_run'>cmd_run</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>0</span>
@@ -3900,17 +3925,17 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-528
-529
-530
-531
-532
-533
-534
-535</pre>
+541
+542
+543
+544
+545
+546
+547
+548</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 528</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 541</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_run_help'>cmd_run_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: run &lt;script&gt; [arguments]</span><span class='tstring_end'>&quot;</span></span>
@@ -3940,19 +3965,6 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-581
-582
-583
-584
-585
-586
-587
-588
-589
-590
-591
-592
-593
 594
 595
 596
@@ -3961,10 +3973,23 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
 599
 600
 601
-602</pre>
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 581</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 594</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_run_tabs'>cmd_run_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_tabs'>tabs</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -4008,13 +4033,13 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-483
-484
-485
-486</pre>
+496
+497
+498
+499</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 483</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 496</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_use'>cmd_use</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='comment'>#print_error(&quot;Warning: The &#39;use&#39; command is deprecated in favor of &#39;load&#39;&quot;)
@@ -4040,19 +4065,6 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-729
-730
-731
-732
-733
-734
-735
-736
-737
-738
-739
-740
-741
 742
 743
 744
@@ -4107,10 +4119,23 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
 793
 794
 795
-796</pre>
+796
+797
+798
+799
+800
+801
+802
+803
+804
+805
+806
+807
+808
+809</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 729</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 742</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_write'>cmd_write</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>0</span> <span class='kw'>or</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-h</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -4200,15 +4225,15 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-722
-723
-724
-725
-726
-727</pre>
+735
+736
+737
+738
+739
+740</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 722</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 735</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_write_help'>cmd_write_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: write [options] channel_id</span><span class='tstring_end'>&quot;</span></span>
@@ -4323,7 +4348,7 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
 </span>  <span class='comment'># whatever reason it is not adding core_migrate to its list of commands.
 </span>  <span class='comment'># Use a dumb platform til it gets sorted.
 </span>  <span class='comment'>#if client.commands.include? &quot;core_migrate&quot;
-</span>  <span class='kw'>if</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>win</span><span class='regexp_end'>/</span></span>
+</span>  <span class='kw'>if</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>win</span><span class='regexp_end'>/</span></span> <span class='op'>||</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>linux</span><span class='regexp_end'>/</span></span>
     <span class='id identifier rubyid_c'>c</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>migrate</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Migrate the server to another process</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>end</span>
 
@@ -4394,12 +4419,12 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-929
-930
-931</pre>
+942
+943
+944</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 929</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 942</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_tab_complete_channels'>tab_complete_channels</span>
   <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_channels'>channels</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='op'>|</span> <span class='id identifier rubyid_k'>k</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='rbrace'>}</span>
@@ -4424,22 +4449,22 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
       <pre class="lines">
 
 
-915
-916
-917
-918
-919
-920
-921
-922
-923
-924
-925
-926
-927</pre>
+928
+929
+930
+931
+932
+933
+934
+935
+936
+937
+938
+939
+940</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 915</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb', line 928</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_tab_complete_postmods'>tab_complete_postmods</span>
   <span class='id identifier rubyid_tabs'>tabs</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_modules'>modules</span><span class='period'>.</span><span class='id identifier rubyid_post'>post</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span><span class='id identifier rubyid_klass'>klass</span><span class='op'>|</span>
@@ -4464,7 +4489,7 @@ lib/msf/ui/console/command_dispatcher/core.rb</p>
 </div>
 
     <div id="footer">
-  Generated on Tue Dec 30 10:39:30 2014 by
+  Generated on Mon Jan  5 13:22:34 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>

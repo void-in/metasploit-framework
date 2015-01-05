@@ -576,14 +576,14 @@ empty TLV array.</p>
       <pre class="lines">
 
 
-365
-366
-367
 368
-369</pre>
+369
+370
+371
+372</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 365</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 368</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
@@ -628,12 +628,12 @@ empty TLV array.</p>
       <pre class="lines">
 
 
-353
-354
-355</pre>
+356
+357
+358</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 353</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 356</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_tlvs'>tlvs</span>
   <span class='ivar'>@tlvs</span>
@@ -676,9 +676,6 @@ empty TLV array.</p>
       <pre class="lines">
 
 
-433
-434
-435
 436
 437
 438
@@ -696,10 +693,13 @@ empty TLV array.</p>
 450
 451
 452
-453</pre>
+453
+454
+455
+456</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 433</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 436</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_tlv'>add_tlv</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_replace'>replace</span> <span class='op'>=</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='id identifier rubyid_compress'>compress</span><span class='op'>=</span><span class='kw'>false</span><span class='rparen'>)</span>
 
@@ -753,16 +753,16 @@ empty TLV array.</p>
       <pre class="lines">
 
 
-458
-459
-460
 461
 462
 463
-464</pre>
+464
+465
+466
+467</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 458</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 461</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_tlvs'>add_tlvs</span><span class='lparen'>(</span><span class='id identifier rubyid_tlvs'>tlvs</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_tlvs'>tlvs</span> <span class='op'>!=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
@@ -802,12 +802,12 @@ empty TLV array.</p>
       <pre class="lines">
 
 
-380
-381
-382</pre>
+383
+384
+385</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 380</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 383</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_each'>each</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='const'>TLV_TYPE_ANY</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_get_tlvs'>get_tlvs</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
@@ -843,12 +843,12 @@ empty TLV array.</p>
       <pre class="lines">
 
 
-387
-388
-389</pre>
+390
+391
+392</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 387</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 390</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_each_tlv'>each_tlv</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='const'>TLV_TYPE_ANY</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_each'>each</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
@@ -884,12 +884,12 @@ empty TLV array.</p>
       <pre class="lines">
 
 
-401
-402
-403</pre>
+404
+405
+406</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 401</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 404</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_each_tlv_with_index'>each_tlv_with_index</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='const'>TLV_TYPE_ANY</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_each_with_index'>each_with_index</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
@@ -925,12 +925,12 @@ empty TLV array.</p>
       <pre class="lines">
 
 
-394
-395
-396</pre>
+397
+398
+399</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 394</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 397</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_each_with_index'>each_with_index</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='const'>TLV_TYPE_ANY</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_get_tlvs'>get_tlvs</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
@@ -966,9 +966,6 @@ empty TLV array.</p>
       <pre class="lines">
 
 
-533
-534
-535
 536
 537
 538
@@ -995,10 +992,13 @@ empty TLV array.</p>
 559
 560
 561
-562</pre>
+562
+563
+564
+565</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 533</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 536</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_from_r'>from_r</span><span class='lparen'>(</span><span class='id identifier rubyid_raw'>raw</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_offset'>offset</span> <span class='op'>=</span> <span class='int'>8</span>
@@ -1061,18 +1061,18 @@ empty TLV array.</p>
       <pre class="lines">
 
 
-469
-470
-471
 472
 473
 474
 475
 476
-477</pre>
+477
+478
+479
+480</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 469</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 472</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_tlv'>get_tlv</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_index'>index</span> <span class='op'>=</span> <span class='int'>0</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_type_tlvs'>type_tlvs</span> <span class='op'>=</span> <span class='id identifier rubyid_get_tlvs'>get_tlvs</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
@@ -1114,14 +1114,14 @@ empty TLV array.</p>
       <pre class="lines">
 
 
-482
-483
-484
 485
-486</pre>
+486
+487
+488
+489</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 482</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 485</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_tlv_value'>get_tlv_value</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_index'>index</span> <span class='op'>=</span> <span class='int'>0</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_tlv'>tlv</span> <span class='op'>=</span> <span class='id identifier rubyid_get_tlv'>get_tlv</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span>
@@ -1159,12 +1159,12 @@ empty TLV array.</p>
       <pre class="lines">
 
 
-491
-492
-493</pre>
+494
+495
+496</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 491</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 494</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_tlv_values'>get_tlv_values</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_get_tlvs'>get_tlvs</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_collect'>collect</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span> <span class='rbrace'>}</span>
@@ -1200,9 +1200,6 @@ empty TLV array.</p>
       <pre class="lines">
 
 
-408
-409
-410
 411
 412
 413
@@ -1214,10 +1211,13 @@ empty TLV array.</p>
 419
 420
 421
-422</pre>
+422
+423
+424
+425</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 408</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 411</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_tlvs'>get_tlvs</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span> <span class='op'>==</span> <span class='const'>TLV_TYPE_ANY</span><span class='rparen'>)</span>
@@ -1278,12 +1278,12 @@ empty TLV array.</p>
       <pre class="lines">
 
 
-498
-499
-500</pre>
+501
+502
+503</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 498</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 501</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_has_tlv?'>has_tlv?</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_get_tlv'>get_tlv</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span> <span class='op'>!=</span> <span class='kw'>nil</span>
@@ -1319,12 +1319,12 @@ empty TLV array.</p>
       <pre class="lines">
 
 
-505
-506
-507</pre>
+508
+509
+510</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 505</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 508</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reset'>reset</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_tlvs'>tlvs</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -1361,18 +1361,18 @@ container TLV of this instance&#39;s TLV type.</p>
       <pre class="lines">
 
 
-519
-520
-521
 522
 523
 524
 525
 526
-527</pre>
+527
+528
+529
+530</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 519</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet.rb', line 522</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_r'>to_r</span>
   <span class='id identifier rubyid_raw'>raw</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
@@ -1393,7 +1393,7 @@ container TLV of this instance&#39;s TLV type.</p>
 </div>
 
     <div id="footer">
-  Generated on Tue Dec 30 10:39:19 2014 by
+  Generated on Mon Jan  5 13:22:13 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>

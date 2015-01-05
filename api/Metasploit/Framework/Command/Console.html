@@ -149,7 +149,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Provides an animated spinner in a seperate thread.</p>
+</div></span>
   
 </li>
 
@@ -211,29 +213,47 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Provides an animated spinner in a seperate thread.</p>
+
+<p>See GitHub issue #4147, as this may be blocking some Windows instances,
+which is why Windows platforms should simply return immediately.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-11
-12
-13
-14
-15
-16
 17
 18
 19
 20
 21
-22</pre>
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/metasploit/framework/command/console.rb', line 11</span>
+      <pre class="code"><span class="info file"># File 'lib/metasploit/framework/command/console.rb', line 17</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_spinner'>spinner</span>
+  <span class='kw'>return</span> <span class='kw'>if</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Compat</span><span class='period'>.</span><span class='id identifier rubyid_is_windows'>is_windows</span>
+  <span class='kw'>return</span> <span class='kw'>if</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Compat</span><span class='period'>.</span><span class='id identifier rubyid_is_cygwin'>is_cygwin</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='gvar'>$msf_spinner_thread</span>
   <span class='gvar'>$msf_spinner_thread</span> <span class='op'>=</span> <span class='const'>Thread</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>do</span>
     <span class='gvar'>$stderr</span><span class='period'>.</span><span class='id identifier rubyid_print'>print</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[*] Starting the Metasploit Framework console...</span><span class='tstring_end'>&quot;</span></span>
@@ -265,18 +285,18 @@
       <pre class="lines">
 
 
-24
-25
-26
-27
-28
-29
-30
-31
-32</pre>
+32
+33
+34
+35
+36
+37
+38
+39
+40</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/metasploit/framework/command/console.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'lib/metasploit/framework/command/console.rb', line 32</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_start'>start</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_parsed_options'>parsed_options</span><span class='period'>.</span><span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_subcommand'>subcommand</span>
@@ -297,7 +317,7 @@
 </div>
 
     <div id="footer">
-  Generated on Tue Dec 30 10:38:54 2014 by
+  Generated on Mon Jan  5 13:21:23 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>
