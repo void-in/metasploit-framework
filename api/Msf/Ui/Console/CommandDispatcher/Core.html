@@ -3437,16 +3437,16 @@ a tarball/git checkout</p>
       <pre class="lines">
 
 
+3169
 3170
 3171
 3172
 3173
 3174
-3175
-3176</pre>
+3175</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3170</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3169</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_binary_install'>binary_install</span>
   <span class='id identifier rubyid_binary_paths'>binary_paths</span> <span class='op'>=</span> <span class='lbracket'>[</span>
@@ -3525,6 +3525,7 @@ returns an Array.</p>
       <pre class="lines">
 
 
+3448
 3449
 3450
 3451
@@ -3546,11 +3547,10 @@ returns an Array.</p>
 3467
 3468
 3469
-3470
-3471</pre>
+3470</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3449</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3448</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_build_range_array'>build_range_array</span><span class='lparen'>(</span><span class='id identifier rubyid_id_list'>id_list</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_item_list'>item_list</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -4690,6 +4690,7 @@ the core or database backend stack context.</p>
       <pre class="lines">
 
 
+3024
 3025
 3026
 3027
@@ -4722,11 +4723,10 @@ the core or database backend stack context.</p>
 3054
 3055
 3056
-3057
-3058</pre>
+3057</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3025</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3024</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_go_pro'>cmd_go_pro</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='cvar'>@@go_pro_opts</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_opt'>opt</span><span class='comma'>,</span> <span class='id identifier rubyid_idx'>idx</span><span class='comma'>,</span> <span class='id identifier rubyid_val'>val</span><span class='op'>|</span>
@@ -4782,15 +4782,15 @@ the core or database backend stack context.</p>
       <pre class="lines">
 
 
+3017
 3018
 3019
 3020
 3021
-3022
-3023</pre>
+3022</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3018</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3017</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_go_pro_help'>cmd_go_pro_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: go_pro</span><span class='tstring_end'>&quot;</span></span>
@@ -11757,6 +11757,7 @@ itself has been completd</p>
       <pre class="lines">
 
 
+3414
 3415
 3416
 3417
@@ -11764,11 +11765,10 @@ itself has been completd</p>
 3419
 3420
 3421
-3422
-3423</pre>
+3422</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3415</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3414</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_generate_module_table'>generate_module_table</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='const'>Table</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
@@ -11810,12 +11810,12 @@ itself has been completd</p>
       <pre class="lines">
 
 
+3161
 3162
-3163
-3164</pre>
+3163</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3162</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3161</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_is_apt'>is_apt</span>
   <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>Msf</span><span class='op'>::</span><span class='const'>Config</span><span class='period'>.</span><span class='id identifier rubyid_install_root'>install_root</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>.apt</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -11840,6 +11840,7 @@ itself has been completd</p>
       <pre class="lines">
 
 
+3148
 3149
 3150
 3151
@@ -11849,11 +11850,10 @@ itself has been completd</p>
 3155
 3156
 3157
-3158
-3159</pre>
+3158</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3149</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3148</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_is_metasploit_debian_package_installed'>is_metasploit_debian_package_installed</span>
   <span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/usr/bin/dpkg</span><span class='tstring_end'>&quot;</span></span>
@@ -11886,13 +11886,13 @@ itself has been completd</p>
       <pre class="lines">
 
 
+3143
 3144
 3145
-3146
-3147</pre>
+3146</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3144</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3143</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_is_metasploit_service_running'>is_metasploit_service_running</span>
   <span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/usr/sbin/service</span><span class='tstring_end'>&quot;</span></span>
@@ -11929,6 +11929,7 @@ itself has been completd</p>
       <pre class="lines">
 
 
+3094
 3095
 3096
 3097
@@ -11967,11 +11968,10 @@ itself has been completd</p>
 3130
 3131
 3132
-3133
-3134</pre>
+3133</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3095</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3094</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_launch_metasploit_browser'>launch_metasploit_browser</span>
   <span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/usr/bin/xdg-open</span><span class='tstring_end'>&quot;</span></span>
@@ -12115,16 +12115,16 @@ itself has been completd</p>
       <pre class="lines">
 
 
+2943
 2944
 2945
 2946
 2947
 2948
-2949
-2950</pre>
+2949</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2944</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2943</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_option_values_actions'>option_values_actions</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -12238,8 +12238,7 @@ itself has been completd</p>
 2903
 2904
 2905
-2906
-2907</pre>
+2906</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2832</span>
@@ -12249,73 +12248,72 @@ itself has been completd</p>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_o'>o</span><span class='period'>.</span><span class='id identifier rubyid_default'>default</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='kw'>if</span> <span class='id identifier rubyid_o'>o</span><span class='period'>.</span><span class='id identifier rubyid_default'>default</span>
 
-  <span class='kw'>case</span> <span class='id identifier rubyid_o'>o</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
-
-    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Msf::OptAddress</span><span class='tstring_end'>&#39;</span></span>
-      <span class='kw'>case</span> <span class='id identifier rubyid_o'>o</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span>
-        <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>RHOST</span><span class='tstring_end'>&#39;</span></span>
-          <span class='id identifier rubyid_option_values_target_addrs'>option_values_target_addrs</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_addr'>addr</span><span class='op'>|</span>
-            <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_addr'>addr</span>
-          <span class='kw'>end</span>
-        <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>LHOST</span><span class='tstring_end'>&#39;</span></span>
-          <span class='id identifier rubyid_rh'>rh</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_module'>active_module</span><span class='period'>.</span><span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>RHOST</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
-          <span class='kw'>if</span> <span class='id identifier rubyid_rh'>rh</span> <span class='kw'>and</span> <span class='kw'>not</span> <span class='id identifier rubyid_rh'>rh</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
-            <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Socket</span><span class='period'>.</span><span class='id identifier rubyid_source_address'>source_address</span><span class='lparen'>(</span><span class='id identifier rubyid_rh'>rh</span><span class='rparen'>)</span>
-          <span class='kw'>else</span>
-            <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Socket</span><span class='period'>.</span><span class='id identifier rubyid_source_address'>source_address</span><span class='lparen'>(</span><span class='rparen'>)</span>
-          <span class='kw'>end</span>
-        <span class='kw'>else</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_o'>o</span>
+  <span class='kw'>when</span> <span class='const'>Msf</span><span class='op'>::</span><span class='const'>OptAddress</span>
+    <span class='kw'>case</span> <span class='id identifier rubyid_o'>o</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>RHOST</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_option_values_target_addrs'>option_values_target_addrs</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_addr'>addr</span><span class='op'>|</span>
+        <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_addr'>addr</span>
       <span class='kw'>end</span>
-
-    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Msf::OptAddressRange</span><span class='tstring_end'>&#39;</span></span>
-      <span class='kw'>case</span> <span class='id identifier rubyid_str'>str</span>
-        <span class='kw'>when</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^file:(.*)</span><span class='regexp_end'>/</span></span>
-          <span class='id identifier rubyid_files'>files</span> <span class='op'>=</span> <span class='id identifier rubyid_tab_complete_filenames'>tab_complete_filenames</span><span class='lparen'>(</span><span class='backref'>$1</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
-          <span class='id identifier rubyid_res'>res</span> <span class='op'>+=</span> <span class='id identifier rubyid_files'>files</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>file:</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_f'>f</span> <span class='rbrace'>}</span> <span class='kw'>if</span> <span class='id identifier rubyid_files'>files</span>
-        <span class='kw'>when</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\/$</span><span class='regexp_end'>/</span></span>
-          <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_str'>str</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>32</span><span class='tstring_end'>&#39;</span></span>
-          <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_str'>str</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>24</span><span class='tstring_end'>&#39;</span></span>
-          <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_str'>str</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>16</span><span class='tstring_end'>&#39;</span></span>
-        <span class='kw'>when</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\-$</span><span class='regexp_end'>/</span></span>
-          <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_str'>str</span><span class='op'>+</span><span class='id identifier rubyid_str'>str</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_str'>str</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>-</span> <span class='int'>1</span><span class='rbracket'>]</span>
-        <span class='kw'>else</span>
-          <span class='id identifier rubyid_option_values_target_addrs'>option_values_target_addrs</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_addr'>addr</span><span class='op'>|</span>
-            <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_addr'>addr</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/32</span><span class='tstring_end'>&#39;</span></span>
-            <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_addr'>addr</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/24</span><span class='tstring_end'>&#39;</span></span>
-            <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_addr'>addr</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/16</span><span class='tstring_end'>&#39;</span></span>
-          <span class='kw'>end</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>LHOST</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_rh'>rh</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_module'>active_module</span><span class='period'>.</span><span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>RHOST</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_rh'>rh</span> <span class='kw'>and</span> <span class='kw'>not</span> <span class='id identifier rubyid_rh'>rh</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+        <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Socket</span><span class='period'>.</span><span class='id identifier rubyid_source_address'>source_address</span><span class='lparen'>(</span><span class='id identifier rubyid_rh'>rh</span><span class='rparen'>)</span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Socket</span><span class='period'>.</span><span class='id identifier rubyid_source_address'>source_address</span><span class='lparen'>(</span><span class='rparen'>)</span>
       <span class='kw'>end</span>
+    <span class='kw'>else</span>
+    <span class='kw'>end</span>
 
-    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Msf::OptPort</span><span class='tstring_end'>&#39;</span></span>
-      <span class='kw'>case</span> <span class='id identifier rubyid_o'>o</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span>
-        <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>RPORT</span><span class='tstring_end'>&#39;</span></span>
-        <span class='id identifier rubyid_option_values_target_ports'>option_values_target_ports</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_port'>port</span><span class='op'>|</span>
-          <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_port'>port</span>
-        <span class='kw'>end</span>
+  <span class='kw'>when</span> <span class='const'>Msf</span><span class='op'>::</span><span class='const'>OptAddressRange</span>
+    <span class='kw'>case</span> <span class='id identifier rubyid_str'>str</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^file:(.*)</span><span class='regexp_end'>/</span></span>
+      <span class='id identifier rubyid_files'>files</span> <span class='op'>=</span> <span class='id identifier rubyid_tab_complete_filenames'>tab_complete_filenames</span><span class='lparen'>(</span><span class='backref'>$1</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_res'>res</span> <span class='op'>+=</span> <span class='id identifier rubyid_files'>files</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>file:</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_f'>f</span> <span class='rbrace'>}</span> <span class='kw'>if</span> <span class='id identifier rubyid_files'>files</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\/$</span><span class='regexp_end'>/</span></span>
+      <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_str'>str</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>32</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_str'>str</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>24</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_str'>str</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>16</span><span class='tstring_end'>&#39;</span></span>
+    <span class='kw'>when</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\-$</span><span class='regexp_end'>/</span></span>
+      <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_str'>str</span><span class='op'>+</span><span class='id identifier rubyid_str'>str</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_str'>str</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>-</span> <span class='int'>1</span><span class='rbracket'>]</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_option_values_target_addrs'>option_values_target_addrs</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_addr'>addr</span><span class='op'>|</span>
+        <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_addr'>addr</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/32</span><span class='tstring_end'>&#39;</span></span>
+        <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_addr'>addr</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/24</span><span class='tstring_end'>&#39;</span></span>
+        <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_addr'>addr</span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/16</span><span class='tstring_end'>&#39;</span></span>
       <span class='kw'>end</span>
+    <span class='kw'>end</span>
 
-      <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span><span class='rparen'>)</span>
-        <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='lparen'>(</span><span class='id identifier rubyid_rand'>rand</span><span class='lparen'>(</span><span class='int'>65534</span><span class='rparen'>)</span><span class='op'>+</span><span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='kw'>when</span> <span class='const'>Msf</span><span class='op'>::</span><span class='const'>OptPort</span>
+    <span class='kw'>case</span> <span class='id identifier rubyid_o'>o</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>RPORT</span><span class='tstring_end'>&#39;</span></span>
+      <span class='id identifier rubyid_option_values_target_ports'>option_values_target_ports</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_port'>port</span><span class='op'>|</span>
+        <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_port'>port</span>
       <span class='kw'>end</span>
+    <span class='kw'>end</span>
 
-    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Msf::OptEnum</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_o'>o</span><span class='period'>.</span><span class='id identifier rubyid_enums'>enums</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_val'>val</span><span class='op'>|</span>
-        <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_val'>val</span>
-      <span class='kw'>end</span>
+    <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_res'>res</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='lparen'>(</span><span class='id identifier rubyid_rand'>rand</span><span class='lparen'>(</span><span class='int'>65534</span><span class='rparen'>)</span><span class='op'>+</span><span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+    <span class='kw'>end</span>
 
-    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Msf::OptPath</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_files'>files</span> <span class='op'>=</span> <span class='id identifier rubyid_tab_complete_filenames'>tab_complete_filenames</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
-      <span class='id identifier rubyid_res'>res</span> <span class='op'>+=</span> <span class='id identifier rubyid_files'>files</span> <span class='kw'>if</span> <span class='id identifier rubyid_files'>files</span>
+  <span class='kw'>when</span> <span class='const'>Msf</span><span class='op'>::</span><span class='const'>OptEnum</span>
+    <span class='id identifier rubyid_o'>o</span><span class='period'>.</span><span class='id identifier rubyid_enums'>enums</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_val'>val</span><span class='op'>|</span>
+      <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_val'>val</span>
+    <span class='kw'>end</span>
 
-    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Msf::OptBool</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>true</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>false</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>when</span> <span class='const'>Msf</span><span class='op'>::</span><span class='const'>OptPath</span>
+    <span class='id identifier rubyid_files'>files</span> <span class='op'>=</span> <span class='id identifier rubyid_tab_complete_filenames'>tab_complete_filenames</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_res'>res</span> <span class='op'>+=</span> <span class='id identifier rubyid_files'>files</span> <span class='kw'>if</span> <span class='id identifier rubyid_files'>files</span>
 
-    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Msf::OptString</span><span class='tstring_end'>&#39;</span></span>
-      <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^file:(.*)</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span>
-        <span class='id identifier rubyid_files'>files</span> <span class='op'>=</span> <span class='id identifier rubyid_tab_complete_filenames'>tab_complete_filenames</span><span class='lparen'>(</span><span class='backref'>$1</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
-        <span class='id identifier rubyid_res'>res</span> <span class='op'>+=</span> <span class='id identifier rubyid_files'>files</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>file:</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_f'>f</span> <span class='rbrace'>}</span> <span class='kw'>if</span> <span class='id identifier rubyid_files'>files</span>
-      <span class='kw'>end</span>
+  <span class='kw'>when</span> <span class='const'>Msf</span><span class='op'>::</span><span class='const'>OptBool</span>
+    <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>true</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_res'>res</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>false</span><span class='tstring_end'>&#39;</span></span>
+
+  <span class='kw'>when</span> <span class='const'>Msf</span><span class='op'>::</span><span class='const'>OptString</span>
+    <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^file:(.*)</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_files'>files</span> <span class='op'>=</span> <span class='id identifier rubyid_tab_complete_filenames'>tab_complete_filenames</span><span class='lparen'>(</span><span class='backref'>$1</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_res'>res</span> <span class='op'>+=</span> <span class='id identifier rubyid_files'>files</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>file:</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_f'>f</span> <span class='rbrace'>}</span> <span class='kw'>if</span> <span class='id identifier rubyid_files'>files</span>
+    <span class='kw'>end</span>
   <span class='kw'>end</span>
 
   <span class='kw'>return</span> <span class='id identifier rubyid_res'>res</span>
@@ -12351,12 +12349,12 @@ itself has been completd</p>
       <pre class="lines">
 
 
+2961
 2962
-2963
-2964</pre>
+2963</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2962</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2961</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_option_values_encoders'>option_values_encoders</span>
   <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_encoders'>encoders</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_refname'>refname</span><span class='comma'>,</span> <span class='id identifier rubyid_mod'>mod</span><span class='op'>|</span> <span class='id identifier rubyid_refname'>refname</span> <span class='rbrace'>}</span>
@@ -12392,12 +12390,12 @@ itself has been completd</p>
       <pre class="lines">
 
 
+2954
 2955
-2956
-2957</pre>
+2956</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2955</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2954</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_option_values_nops'>option_values_nops</span>
   <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_nops'>nops</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_refname'>refname</span><span class='comma'>,</span> <span class='id identifier rubyid_mod'>mod</span><span class='op'>|</span> <span class='id identifier rubyid_refname'>refname</span> <span class='rbrace'>}</span>
@@ -12433,6 +12431,7 @@ itself has been completd</p>
       <pre class="lines">
 
 
+2911
 2912
 2913
 2914
@@ -12440,11 +12439,10 @@ itself has been completd</p>
 2916
 2917
 2918
-2919
-2920</pre>
+2919</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2912</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2911</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_option_values_payloads'>option_values_payloads</span>
   <span class='kw'>return</span> <span class='ivar'>@cache_payloads</span> <span class='kw'>if</span> <span class='ivar'>@cache_payloads</span>
@@ -12486,12 +12484,12 @@ itself has been completd</p>
       <pre class="lines">
 
 
+2924
 2925
-2926
-2927</pre>
+2926</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2925</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2924</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_option_values_sessions'>option_values_sessions</span>
   <span class='id identifier rubyid_active_module'>active_module</span><span class='period'>.</span><span class='id identifier rubyid_compatible_sessions'>compatible_sessions</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_sid'>sid</span><span class='op'>|</span> <span class='id identifier rubyid_sid'>sid</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='rbrace'>}</span>
@@ -12527,6 +12525,7 @@ itself has been completd</p>
       <pre class="lines">
 
 
+2968
 2969
 2970
 2971
@@ -12554,11 +12553,10 @@ itself has been completd</p>
 2993
 2994
 2995
-2996
-2997</pre>
+2996</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2969</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2968</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_option_values_target_addrs'>option_values_target_addrs</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='rbracket'>]</span>
@@ -12620,6 +12618,7 @@ itself has been completd</p>
       <pre class="lines">
 
 
+3001
 3002
 3003
 3004
@@ -12633,11 +12632,10 @@ itself has been completd</p>
 3012
 3013
 3014
-3015
-3016</pre>
+3015</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3002</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3001</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_option_values_target_ports'>option_values_target_ports</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='rbracket'>]</span>
@@ -12685,16 +12683,16 @@ itself has been completd</p>
       <pre class="lines">
 
 
+2931
 2932
 2933
 2934
 2935
 2936
-2937
-2938</pre>
+2937</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2932</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2931</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_option_values_targets'>option_values_targets</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -12830,17 +12828,17 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
+3433
 3434
 3435
 3436
 3437
 3438
 3439
-3440
-3441</pre>
+3440</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3434</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3433</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_retrieve_grep_lines'>retrieve_grep_lines</span><span class='lparen'>(</span><span class='id identifier rubyid_all_lines'>all_lines</span><span class='comma'>,</span><span class='id identifier rubyid_line_num'>line_num</span><span class='comma'>,</span> <span class='id identifier rubyid_before'>before</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_after'>after</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_after'>after</span> <span class='op'>=</span> <span class='id identifier rubyid_after'>after</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='period'>.</span><span class='id identifier rubyid_abs'>abs</span>
@@ -12930,13 +12928,13 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
+3306
 3307
 3308
-3309
-3310</pre>
+3309</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3307</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3306</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_actions'>show_actions</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_mod_actions'>mod_actions</span> <span class='op'>=</span> <span class='const'>Serializer</span><span class='op'>::</span><span class='const'>ReadableText</span><span class='period'>.</span><span class='id identifier rubyid_dump_module_actions'>dump_module_actions</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>   </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -12973,6 +12971,7 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
+3311
 3312
 3313
 3314
@@ -12993,11 +12992,10 @@ and/or <code>after</code></p>
 3329
 3330
 3331
-3332
-3333</pre>
+3332</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3312</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3311</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_advanced_options'>show_advanced_options</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_mod_opt'>mod_opt</span> <span class='op'>=</span> <span class='const'>Serializer</span><span class='op'>::</span><span class='const'>ReadableText</span><span class='period'>.</span><span class='id identifier rubyid_dump_advanced_options'>dump_advanced_options</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>   </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -13052,12 +13050,12 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
+3209
 3210
-3211
-3212</pre>
+3211</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3210</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3209</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_auxiliary'>show_auxiliary</span><span class='lparen'>(</span><span class='id identifier rubyid_regex'>regex</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_show_module_set'>show_module_set</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Auxiliary</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_auxiliary'>auxiliary</span><span class='comma'>,</span> <span class='id identifier rubyid_regex'>regex</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -13093,6 +13091,7 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
+3181
 3182
 3183
 3184
@@ -13100,11 +13099,10 @@ and/or <code>after</code></p>
 3186
 3187
 3188
-3189
-3190</pre>
+3189</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3182</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3181</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_encoders'>show_encoders</span><span class='lparen'>(</span><span class='id identifier rubyid_regex'>regex</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='comment'># If an active module has been selected and it&#39;s an exploit, get the
@@ -13146,6 +13144,7 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
+3334
 3335
 3336
 3337
@@ -13166,11 +13165,10 @@ and/or <code>after</code></p>
 3352
 3353
 3354
-3355
-3356</pre>
+3355</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3335</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3334</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_evasion_options'>show_evasion_options</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_mod_opt'>mod_opt</span> <span class='op'>=</span> <span class='const'>Serializer</span><span class='op'>::</span><span class='const'>ReadableText</span><span class='period'>.</span><span class='id identifier rubyid_dump_evasion_options'>dump_evasion_options</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>   </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -13225,12 +13223,12 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
+3195
 3196
-3197
-3198</pre>
+3197</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3196</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3195</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_exploits'>show_exploits</span><span class='lparen'>(</span><span class='id identifier rubyid_regex'>regex</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_show_module_set'>show_module_set</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Exploits</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_exploits'>exploits</span><span class='comma'>,</span> <span class='id identifier rubyid_regex'>regex</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -13255,6 +13253,7 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
+3278
 3279
 3280
 3281
@@ -13275,11 +13274,10 @@ and/or <code>after</code></p>
 3296
 3297
 3298
-3299
-3300</pre>
+3299</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3279</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3278</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_global_options'>show_global_options</span>
   <span class='id identifier rubyid_columns'>columns</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Option</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Current Setting</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Description</span><span class='tstring_end'>&#39;</span></span> <span class='rbracket'>]</span>
@@ -13334,6 +13332,7 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
+3255
 3256
 3257
 3258
@@ -13354,11 +13353,10 @@ and/or <code>after</code></p>
 3273
 3274
 3275
-3276
-3277</pre>
+3276</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3256</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3255</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_missing'>show_missing</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_mod_opt'>mod_opt</span> <span class='op'>=</span> <span class='const'>Serializer</span><span class='op'>::</span><span class='const'>ReadableText</span><span class='period'>.</span><span class='id identifier rubyid_dump_options'>dump_options</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>   </span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
@@ -13413,6 +13411,7 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
+3373
 3374
 3375
 3376
@@ -13451,11 +13450,10 @@ and/or <code>after</code></p>
 3409
 3410
 3411
-3412
-3413</pre>
+3412</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3374</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3373</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_module_set'>show_module_set</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_module_set'>module_set</span><span class='comma'>,</span> <span class='id identifier rubyid_regex'>regex</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_tbl'>tbl</span> <span class='op'>=</span> <span class='id identifier rubyid_generate_module_table'>generate_module_table</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
@@ -13528,12 +13526,12 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
+3191
 3192
-3193
-3194</pre>
+3193</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3192</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3191</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_nops'>show_nops</span><span class='lparen'>(</span><span class='id identifier rubyid_regex'>regex</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_show_module_set'>show_module_set</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>NOP Generators</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_nops'>nops</span><span class='comma'>,</span> <span class='id identifier rubyid_regex'>regex</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -13569,6 +13567,7 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
+3217
 3218
 3219
 3220
@@ -13604,11 +13603,10 @@ and/or <code>after</code></p>
 3250
 3251
 3252
-3253
-3254</pre>
+3253</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3218</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3217</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_options'>show_options</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_mod_opt'>mod_opt</span> <span class='op'>=</span> <span class='const'>Serializer</span><span class='op'>::</span><span class='const'>ReadableText</span><span class='period'>.</span><span class='id identifier rubyid_dump_options'>dump_options</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>   </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -13678,6 +13676,7 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
+3199
 3200
 3201
 3202
@@ -13685,11 +13684,10 @@ and/or <code>after</code></p>
 3204
 3205
 3206
-3207
-3208</pre>
+3207</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3200</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3199</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_payloads'>show_payloads</span><span class='lparen'>(</span><span class='id identifier rubyid_regex'>regex</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='comment'># If an active module has been selected and it&#39;s an exploit, get the
@@ -13731,6 +13729,7 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
+3357
 3358
 3359
 3360
@@ -13744,11 +13743,10 @@ and/or <code>after</code></p>
 3368
 3369
 3370
-3371
-3372</pre>
+3371</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3358</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3357</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_plugins'>show_plugins</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_tbl'>tbl</span> <span class='op'>=</span> <span class='const'>Table</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
@@ -13796,12 +13794,12 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
+3213
 3214
-3215
-3216</pre>
+3215</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3214</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3213</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_post'>show_post</span><span class='lparen'>(</span><span class='id identifier rubyid_regex'>regex</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_show_module_set'>show_module_set</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Post</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_post'>post</span><span class='comma'>,</span> <span class='id identifier rubyid_regex'>regex</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -13837,13 +13835,13 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
+3301
 3302
 3303
-3304
-3305</pre>
+3304</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3302</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3301</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_targets'>show_targets</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_mod_targs'>mod_targs</span> <span class='op'>=</span> <span class='const'>Serializer</span><span class='op'>::</span><span class='const'>ReadableText</span><span class='period'>.</span><span class='id identifier rubyid_dump_exploit_targets'>dump_exploit_targets</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>   </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -13869,16 +13867,16 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
+3135
 3136
 3137
 3138
 3139
 3140
-3141
-3142</pre>
+3141</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3136</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3135</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_start_metasploit_service'>start_metasploit_service</span>
   <span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>METASPLOIT_ROOT</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>scripts</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>start.sh</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -14203,6 +14201,7 @@ match an interactive session</p>
       <pre class="lines">
 
 
+3073
 3074
 3075
 3076
@@ -14215,11 +14214,10 @@ match an interactive session</p>
 3083
 3084
 3085
-3086
-3087</pre>
+3086</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3074</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3073</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_verify_session'>verify_session</span><span class='lparen'>(</span><span class='id identifier rubyid_session_id'>session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_quiet'>quiet</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_session'>session</span> <span class='op'>=</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_sessions'>sessions</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_session_id'>session_id</span><span class='rparen'>)</span>
@@ -14245,7 +14243,7 @@ match an interactive session</p>
 </div>
 
     <div id="footer">
-  Generated on Mon Jan  5 13:21:20 2015 by
+  Generated on Tue Jan  6 12:46:11 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>
