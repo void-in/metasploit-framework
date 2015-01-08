@@ -318,7 +318,10 @@ an active db.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>This Legacy method is responsible for creating credentials from data
+supplied by a module.</p>
+</div></span>
   
 </li>
 
@@ -1050,31 +1053,361 @@ an active db</p>
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This Legacy method is responsible for creating credentials from data
+supplied by a module. This method is deprecated and the new
+Metasploit::Credential methods should be used directly instead.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>:opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the option hash</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>a customizable set of options</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>opts</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:host</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>the address of the host (also takes a Mdm::Host)</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:port</span>
+          <span class="type">(<tt>Fixnum</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>the port of the connected service</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:service</span>
+          <span class="type">(<tt>Mdm::Service</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>an optional Service object to build the cred for</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:type</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>What type of private credential this is (e.g. "password", "hash",
+"ssh_key")</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:proto</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Which transport protocol the service uses</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:sname</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The &#39;name&#39; of the service</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:user</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The username for the cred</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:pass</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The private part of the credential (e.g. password)</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-128
-129
-130
-131
-132
-133
-134
-135</pre>
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 128</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 141</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_report_auth_info'>report_auth_info</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_print_error'>print_error</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>*** </span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_fullname'>fullname</span><span class='embexpr_end'>}</span><span class='tstring_content'> is still calling the deprecated report_auth_info method! This needs to be updated!</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_db'>db</span>
-  <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span>
-      <span class='symbol'>:workspace</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_myworkspace'>myworkspace</span><span class='comma'>,</span>
-      <span class='symbol'>:task</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_mytask'>mytask</span>
-  <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_report_auth_info'>report_auth_info</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Missing required option :host</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:host</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Missing required option :port</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:port</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>and</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:service</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:host</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='op'>::</span><span class='const'>Mdm</span><span class='op'>::</span><span class='const'>Host</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_host'>host</span> <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:host</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_address'>address</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_host'>host</span> <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:host</span><span class='rbracket'>]</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='symbol'>:password</span>
+  <span class='kw'>case</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:type</span><span class='rbracket'>]</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>password</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='symbol'>:password</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hash</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='symbol'>:nonreplayable_hash</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ssh_key</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='symbol'>:ssh_key</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>case</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:proto</span><span class='rbracket'>]</span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>tcp</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_proto'>proto</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>tcp</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>udp</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_proto'>proto</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>udp</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_proto'>proto</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>tcp</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:service</span><span class='rbracket'>]</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:service</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>Mdm</span><span class='op'>::</span><span class='const'>Service</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_port'>port</span>         <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:service</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_port'>port</span>
+    <span class='id identifier rubyid_proto'>proto</span>        <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:service</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_proto'>proto</span>
+    <span class='id identifier rubyid_service_name'>service_name</span> <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:service</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
+    <span class='id identifier rubyid_host'>host</span>         <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:service</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_host'>host</span><span class='period'>.</span><span class='id identifier rubyid_address'>address</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_port'>port</span>         <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='symbol'>:port</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_service_name'>service_name</span> <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='symbol'>:sname</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_username'>username</span> <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='symbol'>:user</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_private'>private</span>  <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='symbol'>:pass</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_service_data'>service_data</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='label'>address:</span> <span class='id identifier rubyid_host'>host</span><span class='comma'>,</span>
+    <span class='label'>port:</span> <span class='id identifier rubyid_port'>port</span><span class='comma'>,</span>
+    <span class='label'>service_name:</span> <span class='id identifier rubyid_service_name'>service_name</span><span class='comma'>,</span>
+    <span class='label'>protocol:</span> <span class='id identifier rubyid_proto'>proto</span><span class='comma'>,</span>
+    <span class='label'>workspace_id:</span> <span class='id identifier rubyid_myworkspace_id'>myworkspace_id</span>
+  <span class='rbrace'>}</span>
+
+  <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>post</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_credential_data'>credential_data</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+      <span class='label'>origin_type:</span> <span class='symbol'>:session</span><span class='comma'>,</span>
+      <span class='label'>session_id:</span> <span class='id identifier rubyid_session_db_id'>session_db_id</span><span class='comma'>,</span>
+      <span class='label'>post_reference_name:</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_refname'>refname</span>
+    <span class='rbrace'>}</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_credential_data'>credential_data</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+      <span class='label'>origin_type:</span> <span class='symbol'>:service</span><span class='comma'>,</span>
+      <span class='label'>module_fullname:</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_fullname'>fullname</span>
+    <span class='rbrace'>}</span>
+    <span class='id identifier rubyid_credential_data'>credential_data</span><span class='period'>.</span><span class='id identifier rubyid_merge!'>merge!</span><span class='lparen'>(</span><span class='id identifier rubyid_service_data'>service_data</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>unless</span> <span class='id identifier rubyid_private'>private</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_credential_data'>credential_data</span><span class='lbracket'>[</span><span class='symbol'>:private_type</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_type'>type</span>
+    <span class='id identifier rubyid_credential_data'>credential_data</span><span class='lbracket'>[</span><span class='symbol'>:private_data</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_private'>private</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>unless</span> <span class='id identifier rubyid_username'>username</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_credential_data'>credential_data</span><span class='lbracket'>[</span><span class='symbol'>:username</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_username'>username</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_credential_core'>credential_core</span> <span class='op'>=</span> <span class='id identifier rubyid_create_credential'>create_credential</span><span class='lparen'>(</span><span class='id identifier rubyid_credential_data'>credential_data</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_login_data'>login_data</span> <span class='op'>=</span><span class='lbrace'>{</span>
+    <span class='label'>core:</span> <span class='id identifier rubyid_credential_core'>credential_core</span><span class='comma'>,</span>
+    <span class='label'>status:</span> <span class='const'>Metasploit</span><span class='op'>::</span><span class='const'>Model</span><span class='op'>::</span><span class='const'>Login</span><span class='op'>::</span><span class='const'>Status</span><span class='op'>::</span><span class='const'>UNTRIED</span>
+  <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_login_data'>login_data</span><span class='period'>.</span><span class='id identifier rubyid_merge!'>merge!</span><span class='lparen'>(</span><span class='id identifier rubyid_service_data'>service_data</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_create_credential_login'>create_credential_login</span><span class='lparen'>(</span><span class='id identifier rubyid_login_data'>login_data</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1164,17 +1497,17 @@ longer implemented.</p>
       <pre class="lines">
 
 
-148
-149
-150
-151
-152
-153
-154
-155</pre>
+237
+238
+239
+240
+241
+242
+243
+244</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 148</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 237</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_report_exploit'>report_exploit</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_db'>db</span>
@@ -1261,17 +1594,17 @@ you&#39;re reporting about</p>
       <pre class="lines">
 
 
-157
-158
-159
-160
-161
-162
-163
-164</pre>
+246
+247
+248
+249
+250
+251
+252
+253</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 157</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 246</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_report_loot'>report_loot</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_db'>db</span>
@@ -1392,17 +1725,17 @@ you&#39;re reporting about</p>
       <pre class="lines">
 
 
-137
-138
-139
-140
-141
-142
-143
-144</pre>
+226
+227
+228
+229
+230
+231
+232
+233</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 137</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 226</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_report_vuln'>report_vuln</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_db'>db</span>
@@ -1432,17 +1765,17 @@ you&#39;re reporting about</p>
       <pre class="lines">
 
 
-184
-185
-186
-187
-188
-189
-190
-191</pre>
+273
+274
+275
+276
+277
+278
+279
+280</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 184</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 273</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_report_web_form'>report_web_form</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_db'>db</span>
@@ -1472,17 +1805,17 @@ you&#39;re reporting about</p>
       <pre class="lines">
 
 
-175
-176
-177
-178
-179
-180
-181
-182</pre>
+264
+265
+266
+267
+268
+269
+270
+271</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 175</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 264</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_report_web_page'>report_web_page</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_db'>db</span>
@@ -1512,17 +1845,17 @@ you&#39;re reporting about</p>
       <pre class="lines">
 
 
-166
-167
-168
-169
-170
-171
-172
-173</pre>
+255
+256
+257
+258
+259
+260
+261
+262</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 166</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 255</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_report_web_site'>report_web_site</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_db'>db</span>
@@ -1552,17 +1885,17 @@ you&#39;re reporting about</p>
       <pre class="lines">
 
 
-193
-194
-195
-196
-197
-198
-199
-200</pre>
+282
+283
+284
+285
+286
+287
+288
+289</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 193</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 282</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_report_web_vuln'>report_web_vuln</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_db'>db</span>
@@ -1606,67 +1939,67 @@ correlated with the Session.id</p>
       <pre class="lines">
 
 
-347
-348
-349
-350
-351
-352
-353
-354
-355
-356
-357
-358
-359
-360
-361
-362
-363
-364
-365
-366
-367
-368
-369
-370
-371
-372
-373
-374
-375
-376
-377
-378
-379
-380
-381
-382
-383
-384
-385
-386
-387
-388
-389
-390
-391
-392
-393
-394
-395
-396
-397
-398
-399
-400
-401
-402
-403
-404</pre>
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 347</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 436</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_store_cred'>store_cred</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='lbracket'>[</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:port</span><span class='rbracket'>]</span><span class='comma'>,</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:sname</span><span class='rbracket'>]</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_compact'>compact</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
@@ -1771,59 +2104,59 @@ database is connected.</p>
       <pre class="lines">
 
 
-292
-293
-294
-295
-296
-297
-298
-299
-300
-301
-302
-303
-304
-305
-306
-307
-308
-309
-310
-311
-312
-313
-314
-315
-316
-317
-318
-319
-320
-321
-322
-323
-324
-325
-326
-327
-328
-329
-330
-331
-332
-333
-334
-335
-336
-337
-338
-339
-340
-341</pre>
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 292</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 381</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_store_local'>store_local</span><span class='lparen'>(</span><span class='id identifier rubyid_ltype'>ltype</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_ctype'>ctype</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_filename'>filename</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='op'>!</span> <span class='op'>::</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_directory?'>directory?</span><span class='lparen'>(</span><span class='const'>Msf</span><span class='op'>::</span><span class='const'>Config</span><span class='period'>.</span><span class='id identifier rubyid_local_directory'>local_directory</span><span class='rparen'>)</span>
@@ -1920,64 +2253,64 @@ and therefore both are ignored if there is no database</p>
       <pre class="lines">
 
 
-219
-220
-221
-222
-223
-224
-225
-226
-227
-228
-229
-230
-231
-232
-233
-234
-235
-236
-237
-238
-239
-240
-241
-242
-243
-244
-245
-246
-247
-248
-249
-250
-251
-252
-253
-254
-255
-256
-257
-258
-259
-260
-261
-262
-263
-264
-265
-266
-267
-268
-269
-270
-271
-272
-273</pre>
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 219</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/auxiliary/report.rb', line 308</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_store_loot'>store_loot</span><span class='lparen'>(</span><span class='id identifier rubyid_ltype'>ltype</span><span class='comma'>,</span> <span class='id identifier rubyid_ctype'>ctype</span><span class='comma'>,</span> <span class='id identifier rubyid_host'>host</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid_filename'>filename</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_info'>info</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_service'>service</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='op'>!</span> <span class='op'>::</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_directory?'>directory?</span><span class='lparen'>(</span><span class='const'>Msf</span><span class='op'>::</span><span class='const'>Config</span><span class='period'>.</span><span class='id identifier rubyid_loot_directory'>loot_directory</span><span class='rparen'>)</span>
@@ -2044,7 +2377,7 @@ and therefore both are ignored if there is no database</p>
 </div>
 
     <div id="footer">
-  Generated on Tue Jan  6 12:43:49 2015 by
+  Generated on Thu Jan  8 08:55:41 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>
