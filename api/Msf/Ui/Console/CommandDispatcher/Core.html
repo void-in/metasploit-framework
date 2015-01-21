@@ -152,6 +152,22 @@ session interaction, and other general things.</p>
         </dt>
         <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%Y-%m-%d</span><span class='tstring_end'>&quot;</span></span></pre></dd>
       
+        <dt id="CMD_USE_TIMEOUT-constant" class="">CMD_USE_TIMEOUT =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Constant for a retry timeout on using modules before they&#39;re loaded</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='int'>3</span></pre></dd>
+      
         <dt id="sessions_opts-classvariable" class="">@@sessions_opts =
           <div class="docstring">
   <div class="discussion">
@@ -3360,17 +3376,17 @@ interactive.</p>
       <pre class="lines">
 
 
-152
-153
-154
 155
 156
 157
 158
-159</pre>
+159
+160
+161
+162</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 152</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 155</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_driver'>driver</span><span class='rparen'>)</span>
   <span class='kw'>super</span>
@@ -3437,16 +3453,16 @@ a tarball/git checkout</p>
       <pre class="lines">
 
 
-3169
-3170
-3171
-3172
-3173
-3174
-3175</pre>
+3178
+3179
+3180
+3181
+3182
+3183
+3184</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3169</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3178</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_binary_install'>binary_install</span>
   <span class='id identifier rubyid_binary_paths'>binary_paths</span> <span class='op'>=</span> <span class='lbracket'>[</span>
@@ -3525,15 +3541,6 @@ returns an Array.</p>
       <pre class="lines">
 
 
-3448
-3449
-3450
-3451
-3452
-3453
-3454
-3455
-3456
 3457
 3458
 3459
@@ -3547,10 +3554,19 @@ returns an Array.</p>
 3467
 3468
 3469
-3470</pre>
+3470
+3471
+3472
+3473
+3474
+3475
+3476
+3477
+3478
+3479</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3448</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3457</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_build_range_array'>build_range_array</span><span class='lparen'>(</span><span class='id identifier rubyid_id_list'>id_list</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_item_list'>item_list</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -3607,9 +3623,6 @@ the core or database backend stack context.</p>
       <pre class="lines">
 
 
-328
-329
-330
 331
 332
 333
@@ -3632,10 +3645,13 @@ the core or database backend stack context.</p>
 350
 351
 352
-353</pre>
+353
+354
+355
+356</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 328</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 331</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_back'>cmd_back</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_driver'>driver</span><span class='period'>.</span><span class='id identifier rubyid_dispatcher_stack'>dispatcher_stack</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;</span> <span class='int'>1</span> <span class='kw'>and</span>
@@ -3683,15 +3699,15 @@ the core or database backend stack context.</p>
       <pre class="lines">
 
 
-317
-318
-319
 320
 321
-322</pre>
+322
+323
+324
+325</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 317</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 320</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_back_help'>cmd_back_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: back</span><span class='tstring_end'>&quot;</span></span>
@@ -3730,9 +3746,6 @@ the core or database backend stack context.</p>
       <pre class="lines">
 
 
-388
-389
-390
 391
 392
 393
@@ -3786,10 +3799,13 @@ the core or database backend stack context.</p>
 441
 442
 443
-444</pre>
+444
+445
+446
+447</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 388</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 391</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_banner'>cmd_banner</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_banner'>banner</span>  <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%cya</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='const'>Banner</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%clr\n\n</span><span class='tstring_end'>&quot;</span></span>
@@ -3868,15 +3884,15 @@ the core or database backend stack context.</p>
       <pre class="lines">
 
 
-378
-379
-380
 381
 382
-383</pre>
+383
+384
+385
+386</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 378</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 381</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_banner_help'>cmd_banner_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: banner</span><span class='tstring_end'>&quot;</span></span>
@@ -3915,9 +3931,6 @@ the core or database backend stack context.</p>
       <pre class="lines">
 
 
-365
-366
-367
 368
 369
 370
@@ -3926,10 +3939,13 @@ the core or database backend stack context.</p>
 373
 374
 375
-376</pre>
+376
+377
+378
+379</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 365</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 368</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_cd'>cmd_cd</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>0</span><span class='rparen'>)</span>
@@ -3963,15 +3979,15 @@ the core or database backend stack context.</p>
       <pre class="lines">
 
 
-355
-356
-357
 358
 359
-360</pre>
+360
+361
+362
+363</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 355</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 358</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_cd_help'>cmd_cd_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: cd &lt;directory&gt;</span><span class='tstring_end'>&quot;</span></span>
@@ -3999,9 +4015,6 @@ the core or database backend stack context.</p>
       <pre class="lines">
 
 
-176
-177
-178
 179
 180
 181
@@ -4012,10 +4025,13 @@ the core or database backend stack context.</p>
 186
 187
 188
-189</pre>
+189
+190
+191
+192</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 176</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 179</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_color'>cmd_color</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
@@ -4051,15 +4067,15 @@ the core or database backend stack context.</p>
       <pre class="lines">
 
 
-169
-170
-171
 172
 173
-174</pre>
+174
+175
+176
+177</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 169</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 172</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_color_help'>cmd_color_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: color &lt;&#39;true&#39;|&#39;false&#39;|&#39;auto&#39;&gt;</span><span class='tstring_end'>&quot;</span></span>
@@ -4098,9 +4114,6 @@ the core or database backend stack context.</p>
       <pre class="lines">
 
 
-457
-458
-459
 460
 461
 462
@@ -4272,10 +4285,13 @@ the core or database backend stack context.</p>
 628
 629
 630
-631</pre>
+631
+632
+633
+634</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 457</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 460</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_connect'>cmd_connect</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&lt;</span> <span class='int'>2</span> <span class='kw'>or</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-h</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -4472,16 +4488,16 @@ the core or database backend stack context.</p>
       <pre class="lines">
 
 
-446
-447
-448
 449
 450
 451
-452</pre>
+452
+453
+454
+455</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 446</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 449</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_connect_help'>cmd_connect_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: connect [options] &lt;host&gt; &lt;port&gt;</span><span class='tstring_end'>&quot;</span></span>
@@ -4521,9 +4537,6 @@ the core or database backend stack context.</p>
       <pre class="lines">
 
 
-650
-651
-652
 653
 654
 655
@@ -4533,10 +4546,13 @@ the core or database backend stack context.</p>
 659
 660
 661
-662</pre>
+662
+663
+664
+665</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 650</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 653</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_edit'>cmd_edit</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_local_editor'>local_editor</span>
@@ -4571,18 +4587,18 @@ the core or database backend stack context.</p>
       <pre class="lines">
 
 
-637
-638
-639
 640
 641
 642
 643
 644
-645</pre>
+645
+646
+647
+648</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 637</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 640</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_edit_help'>cmd_edit_help</span>
   <span class='id identifier rubyid_msg'>msg</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Edit the currently active module</span><span class='tstring_end'>&quot;</span></span>
@@ -4628,9 +4644,6 @@ the core or database backend stack context.</p>
       <pre class="lines">
 
 
-667
-668
-669
 670
 671
 672
@@ -4646,10 +4659,13 @@ the core or database backend stack context.</p>
 682
 683
 684
-685</pre>
+685
+686
+687
+688</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 667</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 670</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_exit'>cmd_exit</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_forced'>forced</span> <span class='op'>=</span> <span class='kw'>false</span>
@@ -4690,15 +4706,6 @@ the core or database backend stack context.</p>
       <pre class="lines">
 
 
-3024
-3025
-3026
-3027
-3028
-3029
-3030
-3031
-3032
 3033
 3034
 3035
@@ -4723,10 +4730,19 @@ the core or database backend stack context.</p>
 3054
 3055
 3056
-3057</pre>
+3057
+3058
+3059
+3060
+3061
+3062
+3063
+3064
+3065
+3066</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3024</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3033</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_go_pro'>cmd_go_pro</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='cvar'>@@go_pro_opts</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_opt'>opt</span><span class='comma'>,</span> <span class='id identifier rubyid_idx'>idx</span><span class='comma'>,</span> <span class='id identifier rubyid_val'>val</span><span class='op'>|</span>
@@ -4782,15 +4798,15 @@ the core or database backend stack context.</p>
       <pre class="lines">
 
 
-3017
-3018
-3019
-3020
-3021
-3022</pre>
+3026
+3027
+3028
+3029
+3030
+3031</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3017</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3026</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_go_pro_help'>cmd_go_pro_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: go_pro</span><span class='tstring_end'>&quot;</span></span>
@@ -4872,15 +4888,6 @@ search</p>
       <pre class="lines">
 
 
-2624
-2625
-2626
-2627
-2628
-2629
-2630
-2631
-2632
 2633
 2634
 2635
@@ -4987,10 +4994,19 @@ search</p>
 2736
 2737
 2738
-2739</pre>
+2739
+2740
+2741
+2742
+2743
+2744
+2745
+2746
+2747
+2748</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2624</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2633</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_grep'>cmd_grep</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_cmd_grep_help'>cmd_grep_help</span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&lt;</span> <span class='int'>2</span>
@@ -5128,15 +5144,15 @@ search</p>
       <pre class="lines">
 
 
-2609
-2610
-2611
-2612
-2613
-2614</pre>
+2618
+2619
+2620
+2621
+2622
+2623</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2609</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2618</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_grep_help'>cmd_grep_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: grep [options] pattern cmd</span><span class='tstring_end'>&quot;</span></span>
@@ -5214,17 +5230,17 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2748
-2749
-2750
-2751
-2752
-2753
-2754
-2755</pre>
+2757
+2758
+2759
+2760
+2761
+2762
+2763
+2764</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2748</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2757</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_grep_tabs'>cmd_grep_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_tabs'>tabs</span> <span class='op'>=</span> <span class='cvar'>@@grep_opts</span><span class='period'>.</span><span class='id identifier rubyid_fmt'>fmt</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span> <span class='op'>||</span> <span class='lbracket'>[</span><span class='rbracket'>]</span> <span class='comment'># default to use grep&#39;s options
@@ -5265,9 +5281,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-715
-716
-717
 718
 719
 720
@@ -5288,10 +5301,13 @@ itself has been completed</p>
 735
 736
 737
-738</pre>
+738
+739
+740
+741</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 715</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 718</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_info'>cmd_info</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>0</span><span class='rparen'>)</span>
@@ -5337,16 +5353,16 @@ itself has been completed</p>
       <pre class="lines">
 
 
-704
-705
-706
 707
 708
 709
-710</pre>
+710
+711
+712
+713</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 704</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 707</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_info_help'>cmd_info_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: info &lt;module name&gt; [mod2 mod3 ...]</span><span class='tstring_end'>&quot;</span></span>
@@ -5425,12 +5441,12 @@ itself has been completed</p>
       <pre class="lines">
 
 
-747
-748
-749</pre>
+750
+751
+752</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 747</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 750</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_info_tabs'>cmd_info_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_cmd_use_tabs'>cmd_use_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
@@ -5466,9 +5482,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-761
-762
-763
 764
 765
 766
@@ -5481,10 +5494,13 @@ itself has been completed</p>
 773
 774
 775
-776</pre>
+776
+777
+778
+779</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 761</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 764</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_irb'>cmd_irb</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_defanged?'>defanged?</span>
@@ -5522,15 +5538,15 @@ itself has been completed</p>
       <pre class="lines">
 
 
-751
-752
-753
 754
 755
-756</pre>
+756
+757
+758
+759</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 751</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 754</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_irb_help'>cmd_irb_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: irb</span><span class='tstring_end'>&quot;</span></span>
@@ -5569,9 +5585,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-789
-790
-791
 792
 793
 794
@@ -5643,10 +5656,13 @@ itself has been completed</p>
 860
 861
 862
-863</pre>
+863
+864
+865
+866</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 789</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 792</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_jobs'>cmd_jobs</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='comment'># Make the default behavior listing all jobs if there were no options
@@ -5743,15 +5759,15 @@ itself has been completed</p>
       <pre class="lines">
 
 
-778
-779
-780
 781
 782
-783</pre>
+783
+784
+785
+786</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 778</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 781</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_jobs_help'>cmd_jobs_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: jobs [options]</span><span class='tstring_end'>&quot;</span></span>
@@ -5829,9 +5845,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-872
-873
-874
 875
 876
 877
@@ -5839,10 +5852,13 @@ itself has been completed</p>
 879
 880
 881
-882</pre>
+882
+883
+884
+885</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 872</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 875</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_jobs_tabs'>cmd_jobs_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_words'>words</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>1</span>
@@ -5875,12 +5891,12 @@ itself has been completed</p>
       <pre class="lines">
 
 
-891
-892
-893</pre>
+894
+895
+896</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 891</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 894</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_kill'>cmd_kill</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_cmd_jobs'>cmd_jobs</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-k</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
@@ -5905,15 +5921,15 @@ itself has been completed</p>
       <pre class="lines">
 
 
-884
-885
-886
 887
 888
-889</pre>
+889
+890
+891
+892</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 884</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 887</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_kill_help'>cmd_kill_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: kill &lt;job1&gt; [job2 ...]</span><span class='tstring_end'>&quot;</span></span>
@@ -5991,13 +6007,13 @@ itself has been completed</p>
       <pre class="lines">
 
 
-902
-903
-904
-905</pre>
+905
+906
+907
+908</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 902</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 905</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_kill_tabs'>cmd_kill_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='lbracket'>[</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id identifier rubyid_words'>words</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>1</span>
@@ -6035,9 +6051,6 @@ the framework root plugin directory is used.</p>
       <pre class="lines">
 
 
-1050
-1051
-1052
 1053
 1054
 1055
@@ -6080,10 +6093,13 @@ the framework root plugin directory is used.</p>
 1092
 1093
 1094
-1095</pre>
+1095
+1096
+1097
+1098</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1050</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1053</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_load'>cmd_load</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_defanged?'>defanged?</span>
@@ -6151,18 +6167,18 @@ the framework root plugin directory is used.</p>
       <pre class="lines">
 
 
-1036
-1037
-1038
 1039
 1040
 1041
 1042
 1043
-1044</pre>
+1044
+1045
+1046
+1047</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1036</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1039</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_load_help'>cmd_load_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: load &lt;path&gt; [var=val var=val ...]</span><span class='tstring_end'>&quot;</span></span>
@@ -6243,9 +6259,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-1104
-1105
-1106
 1107
 1108
 1109
@@ -6266,10 +6279,13 @@ itself has been completed</p>
 1124
 1125
 1126
-1127</pre>
+1127
+1128
+1129
+1130</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1104</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1107</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_load_tabs'>cmd_load_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_tabs'>tabs</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -6326,9 +6342,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-1348
-1349
-1350
 1351
 1352
 1353
@@ -6365,10 +6378,13 @@ itself has been completed</p>
 1384
 1385
 1386
-1387</pre>
+1387
+1388
+1389
+1390</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1348</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1351</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_loadpath'>cmd_loadpath</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_defanged?'>defanged?</span>
@@ -6430,16 +6446,16 @@ itself has been completed</p>
       <pre class="lines">
 
 
-1337
-1338
-1339
 1340
 1341
 1342
-1343</pre>
+1343
+1344
+1345
+1346</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1337</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1340</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_loadpath_help'>cmd_loadpath_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: loadpath &lt;/path/to/modules&gt;</span><span class='tstring_end'>&quot;</span></span>
@@ -6518,9 +6534,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-1396
-1397
-1398
 1399
 1400
 1401
@@ -6551,10 +6564,13 @@ itself has been completed</p>
 1426
 1427
 1428
-1429</pre>
+1429
+1430
+1431
+1432</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1396</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1399</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_loadpath_tabs'>cmd_loadpath_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='lbracket'>[</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id identifier rubyid_words'>words</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>1</span>
@@ -6621,16 +6637,16 @@ itself has been completed</p>
       <pre class="lines">
 
 
-309
-310
-311
 312
 313
 314
-315</pre>
+315
+316
+317
+318</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 309</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 312</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_makerc'>cmd_makerc</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
@@ -6659,15 +6675,15 @@ itself has been completed</p>
       <pre class="lines">
 
 
-299
-300
-301
 302
 303
-304</pre>
+304
+305
+306
+307</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 299</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 302</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_makerc_help'>cmd_makerc_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: makerc &lt;output rc file&gt;</span><span class='tstring_end'>&quot;</span></span>
@@ -6706,15 +6722,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2547
-2548
-2549
-2550
-2551
-2552
-2553
-2554
-2555
 2556
 2557
 2558
@@ -6726,10 +6733,19 @@ itself has been completed</p>
 2564
 2565
 2566
-2567</pre>
+2567
+2568
+2569
+2570
+2571
+2572
+2573
+2574
+2575
+2576</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2547</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2556</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_popm'>cmd_popm</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span> <span class='op'>&gt;</span> <span class='int'>1</span> <span class='kw'>or</span> <span class='kw'>not</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>to_i</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -6783,16 +6799,16 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2572
-2573
-2574
-2575
-2576
-2577
-2578</pre>
+2581
+2582
+2583
+2584
+2585
+2586
+2587</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2572</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2581</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_popm_help'>cmd_popm_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: popm [n]</span><span class='tstring_end'>&quot;</span></span>
@@ -6832,16 +6848,16 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2484
-2485
-2486
-2487
-2488
-2489
-2490</pre>
+2493
+2494
+2495
+2496
+2497
+2498
+2499</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2484</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2493</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_previous'>cmd_previous</span><span class='lparen'>(</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='ivar'>@previous_module</span>
@@ -6881,15 +6897,15 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2495
-2496
-2497
-2498
-2499
-2500</pre>
+2504
+2505
+2506
+2507
+2508
+2509</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2495</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2504</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_previous_help'>cmd_previous_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: previous</span><span class='tstring_end'>&quot;</span></span>
@@ -6928,15 +6944,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2505
-2506
-2507
-2508
-2509
-2510
-2511
-2512
-2513
 2514
 2515
 2516
@@ -6944,10 +6951,19 @@ itself has been completed</p>
 2518
 2519
 2520
-2521</pre>
+2521
+2522
+2523
+2524
+2525
+2526
+2527
+2528
+2529
+2530</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2505</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2514</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_pushm'>cmd_pushm</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='comment'># could check if each argument is a valid module, but for now let them hang themselves
@@ -6997,15 +7013,15 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2537
-2538
-2539
-2540
-2541
-2542</pre>
+2546
+2547
+2548
+2549
+2550
+2551</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2537</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2546</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_pushm_help'>cmd_pushm_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: pushm [module1 [,module2, module3...]]</span><span class='tstring_end'>&quot;</span></span>
@@ -7083,12 +7099,12 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2530
-2531
-2532</pre>
+2539
+2540
+2541</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2530</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2539</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_pushm_tabs'>cmd_pushm_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_tab_complete_module'>tab_complete_module</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
@@ -7124,9 +7140,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-202
-203
-204
 205
 206
 207
@@ -7142,10 +7155,13 @@ itself has been completed</p>
 217
 218
 219
-220</pre>
+220
+221
+222
+223</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 202</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 205</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_reload_all'>cmd_reload_all</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>0</span>
@@ -7186,16 +7202,16 @@ itself has been completed</p>
       <pre class="lines">
 
 
-191
-192
-193
 194
 195
 196
-197</pre>
+197
+198
+199
+200</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 191</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 194</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_reload_all_help'>cmd_reload_all_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: reload_all</span><span class='tstring_end'>&quot;</span></span>
@@ -7224,9 +7240,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-232
-233
-234
 235
 236
 237
@@ -7254,10 +7267,13 @@ itself has been completed</p>
 259
 260
 261
-262</pre>
+262
+263
+264
+265</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 232</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 235</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_resource'>cmd_resource</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
@@ -7310,18 +7326,18 @@ itself has been completed</p>
       <pre class="lines">
 
 
-222
-223
-224
 225
 226
 227
 228
 229
-230</pre>
+230
+231
+232
+233</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 222</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 225</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_resource_help'>cmd_resource_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: resource path1 [path2 ...]</span><span class='tstring_end'>&quot;</span></span>
@@ -7402,9 +7418,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-271
-272
-273
 274
 275
 276
@@ -7428,10 +7441,13 @@ itself has been completed</p>
 294
 295
 296
-297</pre>
+297
+298
+299
+300</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 271</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 274</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_resource_tabs'>cmd_resource_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_tabs'>tabs</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -7492,9 +7508,6 @@ session a given subnet should route through.</p>
       <pre class="lines">
 
 
-1141
-1142
-1143
 1144
 1145
 1146
@@ -7609,10 +7622,13 @@ session a given subnet should route through.</p>
 1255
 1256
 1257
-1258</pre>
+1258
+1259
+1260
+1261</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1141</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1144</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_route'>cmd_route</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>0</span><span class='rparen'>)</span>
@@ -7752,16 +7768,16 @@ session a given subnet should route through.</p>
       <pre class="lines">
 
 
-1129
-1130
-1131
 1132
 1133
 1134
-1135</pre>
+1135
+1136
+1137
+1138</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1129</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1132</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_route_help'>cmd_route_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: route [add/remove/get/flush/print] subnet netmask [comm/sid]</span><span class='tstring_end'>&quot;</span></span>
@@ -7840,9 +7856,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-1267
-1268
-1269
 1270
 1271
 1272
@@ -7874,10 +7887,13 @@ itself has been completed</p>
 1298
 1299
 1300
-1301</pre>
+1301
+1302
+1303
+1304</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1267</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1270</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_route_tabs'>cmd_route_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_words'>words</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>1</span>
@@ -7946,9 +7962,6 @@ restarts of the console.</p>
       <pre class="lines">
 
 
-1316
-1317
-1318
 1319
 1320
 1321
@@ -7965,10 +7978,13 @@ restarts of the console.</p>
 1332
 1333
 1334
-1335</pre>
+1335
+1336
+1337
+1338</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1316</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1319</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_save'>cmd_save</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_defanged?'>defanged?</span>
@@ -8010,17 +8026,17 @@ restarts of the console.</p>
       <pre class="lines">
 
 
-1303
-1304
-1305
 1306
 1307
 1308
 1309
-1310</pre>
+1310
+1311
+1312
+1313</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1303</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1306</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_save_help'>cmd_save_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: save</span><span class='tstring_end'>&quot;</span></span>
@@ -8061,9 +8077,6 @@ restarts of the console.</p>
       <pre class="lines">
 
 
-1458
-1459
-1460
 1461
 1462
 1463
@@ -8106,10 +8119,13 @@ restarts of the console.</p>
 1500
 1501
 1502
-1503</pre>
+1503
+1504
+1505
+1506</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1458</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1461</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_search'>cmd_search</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_match'>match</span>   <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
@@ -8177,9 +8193,6 @@ restarts of the console.</p>
       <pre class="lines">
 
 
-1431
-1432
-1433
 1434
 1435
 1436
@@ -8199,10 +8212,13 @@ restarts of the console.</p>
 1450
 1451
 1452
-1453</pre>
+1453
+1454
+1455
+1456</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1431</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1434</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_search_help'>cmd_search_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: search [keywords]</span><span class='tstring_end'>&quot;</span></span>
@@ -8297,9 +8313,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-1524
-1525
-1526
 1527
 1528
 1529
@@ -8310,10 +8323,13 @@ itself has been completed</p>
 1534
 1535
 1536
-1537</pre>
+1537
+1538
+1539
+1540</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1524</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1527</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_search_tabs'>cmd_search_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_words'>words</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>1</span>
@@ -8360,9 +8376,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-1592
-1593
-1594
 1595
 1596
 1597
@@ -8671,10 +8684,13 @@ itself has been completed</p>
 1900
 1901
 1902
-1903</pre>
+1903
+1904
+1905
+1906</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1592</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1595</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_sessions'>cmd_sessions</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>begin</span>
@@ -9008,19 +9024,19 @@ itself has been completed</p>
       <pre class="lines">
 
 
-1578
-1579
-1580
 1581
 1582
 1583
 1584
 1585
 1586
-1587</pre>
+1587
+1588
+1589
+1590</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1578</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1581</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_sessions_help'>cmd_sessions_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: sessions [options]</span><span class='tstring_end'>&quot;</span></span>
@@ -9102,9 +9118,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-1912
-1913
-1914
 1915
 1916
 1917
@@ -9120,10 +9133,13 @@ itself has been completed</p>
 1927
 1928
 1929
-1930</pre>
+1930
+1931
+1932
+1933</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1912</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1915</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_sessions_tabs'>cmd_sessions_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_words'>words</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>1</span>
@@ -9175,9 +9191,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-1946
-1947
-1948
 1949
 1950
 1951
@@ -9257,10 +9270,13 @@ itself has been completed</p>
 2025
 2026
 2027
-2028</pre>
+2028
+2029
+2030
+2031</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1946</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1949</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_set'>cmd_set</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
 
@@ -9365,19 +9381,19 @@ itself has been completed</p>
       <pre class="lines">
 
 
-1932
-1933
-1934
 1935
 1936
 1937
 1938
 1939
 1940
-1941</pre>
+1941
+1942
+1943
+1944</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1932</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1935</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_set_help'>cmd_set_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: set [option] [value]</span><span class='tstring_end'>&quot;</span></span>
@@ -9459,9 +9475,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2037
-2038
-2039
 2040
 2041
 2042
@@ -9532,10 +9545,13 @@ itself has been completed</p>
 2107
 2108
 2109
-2110</pre>
+2110
+2111
+2112
+2113</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2037</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2040</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_set_tabs'>cmd_set_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
 
@@ -9642,14 +9658,14 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2122
-2123
-2124
 2125
-2126</pre>
+2126
+2127
+2128
+2129</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2122</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2125</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_setg'>cmd_setg</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_unshift'>unshift</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-g</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -9676,15 +9692,15 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2112
-2113
-2114
 2115
 2116
-2117</pre>
+2117
+2118
+2119
+2120</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2112</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2115</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_setg_help'>cmd_setg_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: setg [option] [value]</span><span class='tstring_end'>&quot;</span></span>
@@ -9762,12 +9778,12 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2135
-2136
-2137</pre>
+2138
+2139
+2140</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2135</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2138</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_setg_tabs'>cmd_setg_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_cmd_set_tabs'>cmd_set_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
@@ -9804,9 +9820,6 @@ is provided.</p>
       <pre class="lines">
 
 
-2151
-2152
-2153
 2154
 2155
 2156
@@ -9885,10 +9898,13 @@ is provided.</p>
 2229
 2230
 2231
-2232</pre>
+2232
+2233
+2234
+2235</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2151</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2154</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_show'>cmd_show</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_mod'>mod</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_active_module'>active_module</span>
@@ -9992,16 +10008,16 @@ is provided.</p>
       <pre class="lines">
 
 
-2139
-2140
-2141
 2142
 2143
 2144
-2145</pre>
+2145
+2146
+2147
+2148</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2139</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2142</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_show_help'>cmd_show_help</span>
   <span class='id identifier rubyid_global_opts'>global_opts</span> <span class='op'>=</span> <span class='qwords_beg'>%w{</span><span class='tstring_content'>all</span><span class='words_sep'> </span><span class='tstring_content'>encoders</span><span class='words_sep'> </span><span class='tstring_content'>nops</span><span class='words_sep'> </span><span class='tstring_content'>exploits</span><span class='words_sep'> </span><span class='tstring_content'>payloads</span><span class='words_sep'> </span><span class='tstring_content'>auxiliary</span><span class='words_sep'> </span><span class='tstring_content'>plugins</span><span class='words_sep'> </span><span class='tstring_content'>options</span><span class='words_sep'>}</span>
@@ -10080,9 +10096,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2241
-2242
-2243
 2244
 2245
 2246
@@ -10091,10 +10104,13 @@ itself has been completed</p>
 2249
 2250
 2251
-2252</pre>
+2252
+2253
+2254
+2255</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2241</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2244</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_show_tabs'>cmd_show_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='lbracket'>[</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id identifier rubyid_words'>words</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>1</span>
@@ -10139,13 +10155,13 @@ itself has been completed</p>
       <pre class="lines">
 
 
-699
-700
-701
-702</pre>
+702
+703
+704
+705</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 699</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 702</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_sleep'>cmd_sleep</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span> <span class='kw'>and</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>1</span><span class='rparen'>)</span>
@@ -10171,15 +10187,15 @@ itself has been completed</p>
       <pre class="lines">
 
 
-689
-690
-691
 692
 693
-694</pre>
+694
+695
+696
+697</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 689</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 692</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_sleep_help'>cmd_sleep_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: sleep &lt;seconds&gt;</span><span class='tstring_end'>&quot;</span></span>
@@ -10207,9 +10223,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-1547
-1548
-1549
 1550
 1551
 1552
@@ -10236,10 +10249,13 @@ itself has been completed</p>
 1573
 1574
 1575
-1576</pre>
+1576
+1577
+1578
+1579</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1547</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1550</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_spool'>cmd_spool</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-h</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>or</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
@@ -10291,16 +10307,16 @@ itself has been completed</p>
       <pre class="lines">
 
 
-1539
-1540
-1541
 1542
 1543
 1544
-1545</pre>
+1545
+1546
+1547
+1548</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1539</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1542</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_spool_help'>cmd_spool_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: spool &lt;off&gt;|&lt;filename&gt;</span><span class='tstring_end'>&quot;</span></span>
@@ -10340,9 +10356,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-917
-918
-919
 920
 921
 922
@@ -10438,10 +10451,13 @@ itself has been completed</p>
 1012
 1013
 1014
-1015</pre>
+1015
+1016
+1017
+1018</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 917</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 920</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_threads'>cmd_threads</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='comment'># Make the default behavior listing all jobs if there were no options
@@ -10562,15 +10578,15 @@ itself has been completed</p>
       <pre class="lines">
 
 
-907
-908
-909
 910
 911
-912</pre>
+912
+913
+914
+915</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 907</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 910</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_threads_help'>cmd_threads_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: threads [options]</span><span class='tstring_end'>&quot;</span></span>
@@ -10648,9 +10664,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-1024
-1025
-1026
 1027
 1028
 1029
@@ -10658,10 +10671,13 @@ itself has been completed</p>
 1031
 1032
 1033
-1034</pre>
+1034
+1035
+1036
+1037</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1024</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1027</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_threads_tabs'>cmd_threads_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_words'>words</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>1</span>
@@ -10705,9 +10721,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2265
-2266
-2267
 2268
 2269
 2270
@@ -10721,10 +10734,13 @@ itself has been completed</p>
 2278
 2279
 2280
-2281</pre>
+2281
+2282
+2283
+2284</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2265</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2268</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_unload'>cmd_unload</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>0</span><span class='rparen'>)</span>
@@ -10763,16 +10779,16 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2254
-2255
-2256
 2257
 2258
 2259
-2260</pre>
+2260
+2261
+2262
+2263</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2254</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2257</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_unload_help'>cmd_unload_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: unload &lt;plugin name&gt;</span><span class='tstring_end'>&quot;</span></span>
@@ -10851,16 +10867,16 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2290
-2291
-2292
 2293
 2294
 2295
-2296</pre>
+2296
+2297
+2298
+2299</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2290</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2293</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_unload_tabs'>cmd_unload_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='lbracket'>[</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id identifier rubyid_words'>words</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>1</span>
@@ -10900,9 +10916,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2310
-2311
-2312
 2313
 2314
 2315
@@ -10948,10 +10961,13 @@ itself has been completed</p>
 2355
 2356
 2357
-2358</pre>
+2358
+2359
+2360
+2361</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2310</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2313</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_unset'>cmd_unset</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
 
@@ -11026,17 +11042,17 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2298
-2299
-2300
 2301
 2302
 2303
 2304
-2305</pre>
+2305
+2306
+2307
+2308</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2298</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2301</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_unset_help'>cmd_unset_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: unset [-g] var1 var2 var3 ...</span><span class='tstring_end'>&quot;</span></span>
@@ -11116,13 +11132,13 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2367
-2368
-2369
-2370</pre>
+2370
+2371
+2372
+2373</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2367</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2370</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_unset_tabs'>cmd_unset_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_datastore'>datastore</span> <span class='op'>=</span> <span class='id identifier rubyid_active_module'>active_module</span> <span class='op'>?</span> <span class='id identifier rubyid_active_module'>active_module</span><span class='period'>.</span><span class='id identifier rubyid_datastore'>datastore</span> <span class='op'>:</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_datastore'>datastore</span>
@@ -11159,14 +11175,14 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2382
-2383
-2384
 2385
-2386</pre>
+2386
+2387
+2388
+2389</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2382</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2385</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_unsetg'>cmd_unsetg</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_unshift'>unshift</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-g</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -11243,12 +11259,12 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2395
-2396
-2397</pre>
+2398
+2399
+2400</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2395</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2398</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_unsetg_tabs'>cmd_unsetg_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_datastore'>datastore</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span>
@@ -11284,9 +11300,6 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2411
-2412
-2413
 2414
 2415
 2416
@@ -11352,10 +11365,19 @@ itself has been completed</p>
 2476
 2477
 2478
-2479</pre>
+2479
+2480
+2481
+2482
+2483
+2484
+2485
+2486
+2487
+2488</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2411</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2414</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_use'>cmd_use</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>0</span><span class='rparen'>)</span>
@@ -11367,9 +11389,15 @@ itself has been completed</p>
 </span>  <span class='id identifier rubyid_mod_name'>mod_name</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
 
   <span class='kw'>begin</span>
-    <span class='kw'>if</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span> <span class='op'>=</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_modules'>modules</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_mod_name'>mod_name</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>==</span> <span class='kw'>nil</span><span class='rparen'>)</span>
-      <span class='id identifier rubyid_print_error'>print_error</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failed to load module: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_mod_name'>mod_name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-      <span class='kw'>return</span> <span class='kw'>false</span>
+    <span class='id identifier rubyid_mod'>mod</span> <span class='op'>=</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_modules'>modules</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_mod_name'>mod_name</span><span class='rparen'>)</span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_mod'>mod</span>
+      <span class='comment'># Try one more time; see #4549
+</span>      <span class='id identifier rubyid_sleep'>sleep</span> <span class='const'>CMD_USE_TIMEOUT</span>
+      <span class='id identifier rubyid_mod'>mod</span> <span class='op'>=</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_modules'>modules</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_mod_name'>mod_name</span><span class='rparen'>)</span>
+      <span class='kw'>unless</span> <span class='id identifier rubyid_mod'>mod</span>
+        <span class='id identifier rubyid_print_error'>print_error</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failed to load module: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_mod_name'>mod_name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+        <span class='kw'>return</span> <span class='kw'>false</span>
+      <span class='kw'>end</span>
     <span class='kw'>end</span>
   <span class='kw'>rescue</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>AmbiguousArgumentError</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_info'>info</span>
     <span class='id identifier rubyid_print_error'>print_error</span><span class='lparen'>(</span><span class='id identifier rubyid_info'>info</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
@@ -11446,15 +11474,15 @@ itself has been completed</p>
       <pre class="lines">
 
 
-2401
-2402
-2403
 2404
 2405
-2406</pre>
+2406
+2407
+2408
+2409</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2401</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2404</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_use_help'>cmd_use_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: use module_name</span><span class='tstring_end'>&quot;</span></span>
@@ -11532,14 +11560,14 @@ itself has been completd</p>
       <pre class="lines">
 
 
-2587
-2588
-2589
-2590
-2591</pre>
+2596
+2597
+2598
+2599
+2600</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2587</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2596</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_use_tabs'>cmd_use_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='lbracket'>[</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id identifier rubyid_words'>words</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>1</span>
@@ -11577,21 +11605,21 @@ itself has been completd</p>
       <pre class="lines">
 
 
-2596
-2597
-2598
-2599
-2600
-2601
-2602
-2603
-2604
 2605
 2606
-2607</pre>
+2607
+2608
+2609
+2610
+2611
+2612
+2613
+2614
+2615
+2616</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2596</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2605</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_version'>cmd_version</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_svn_console_version'>svn_console_version</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>$Revision: 15168 $</span><span class='tstring_end'>&quot;</span></span>
@@ -11636,9 +11664,6 @@ itself has been completd</p>
       <pre class="lines">
 
 
-105
-106
-107
 108
 109
 110
@@ -11678,10 +11703,13 @@ itself has been completd</p>
 144
 145
 146
-147</pre>
+147
+148
+149
+150</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 105</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 108</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_commands'>commands</span>
   <span class='lbrace'>{</span>
@@ -11757,18 +11785,18 @@ itself has been completd</p>
       <pre class="lines">
 
 
-3414
-3415
-3416
-3417
-3418
-3419
-3420
-3421
-3422</pre>
+3423
+3424
+3425
+3426
+3427
+3428
+3429
+3430
+3431</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3414</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3423</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_generate_module_table'>generate_module_table</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='const'>Table</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
@@ -11810,12 +11838,12 @@ itself has been completd</p>
       <pre class="lines">
 
 
-3161
-3162
-3163</pre>
+3170
+3171
+3172</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3161</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3170</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_is_apt'>is_apt</span>
   <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>Msf</span><span class='op'>::</span><span class='const'>Config</span><span class='period'>.</span><span class='id identifier rubyid_install_root'>install_root</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>.apt</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -11840,20 +11868,20 @@ itself has been completd</p>
       <pre class="lines">
 
 
-3148
-3149
-3150
-3151
-3152
-3153
-3154
-3155
-3156
 3157
-3158</pre>
+3158
+3159
+3160
+3161
+3162
+3163
+3164
+3165
+3166
+3167</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3148</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3157</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_is_metasploit_debian_package_installed'>is_metasploit_debian_package_installed</span>
   <span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/usr/bin/dpkg</span><span class='tstring_end'>&quot;</span></span>
@@ -11886,13 +11914,13 @@ itself has been completd</p>
       <pre class="lines">
 
 
-3143
-3144
-3145
-3146</pre>
+3152
+3153
+3154
+3155</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3143</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3152</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_is_metasploit_service_running'>is_metasploit_service_running</span>
   <span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/usr/sbin/service</span><span class='tstring_end'>&quot;</span></span>
@@ -11929,15 +11957,6 @@ itself has been completd</p>
       <pre class="lines">
 
 
-3094
-3095
-3096
-3097
-3098
-3099
-3100
-3101
-3102
 3103
 3104
 3105
@@ -11968,10 +11987,19 @@ itself has been completd</p>
 3130
 3131
 3132
-3133</pre>
+3133
+3134
+3135
+3136
+3137
+3138
+3139
+3140
+3141
+3142</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3094</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3103</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_launch_metasploit_browser'>launch_metasploit_browser</span>
   <span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/usr/bin/xdg-open</span><span class='tstring_end'>&quot;</span></span>
@@ -12033,12 +12061,12 @@ itself has been completd</p>
       <pre class="lines">
 
 
-633
-634
-635</pre>
+636
+637
+638</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 633</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 636</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_local_editor'>local_editor</span>
   <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Compat</span><span class='period'>.</span><span class='id identifier rubyid_getenv'>getenv</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>VISUAL</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='op'>||</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Compat</span><span class='period'>.</span><span class='id identifier rubyid_getenv'>getenv</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>EDITOR</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/usr/bin/vim</span><span class='tstring_end'>&#39;</span></span>
@@ -12074,12 +12102,12 @@ itself has been completd</p>
       <pre class="lines">
 
 
-164
-165
-166</pre>
+167
+168
+169</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 164</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 167</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Core</span><span class='tstring_end'>&quot;</span></span>
@@ -12115,16 +12143,16 @@ itself has been completd</p>
       <pre class="lines">
 
 
-2943
-2944
-2945
-2946
-2947
-2948
-2949</pre>
+2952
+2953
+2954
+2955
+2956
+2957
+2958</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2943</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2952</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_option_values_actions'>option_values_actions</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -12164,15 +12192,6 @@ itself has been completd</p>
       <pre class="lines">
 
 
-2832
-2833
-2834
-2835
-2836
-2837
-2838
-2839
-2840
 2841
 2842
 2843
@@ -12238,10 +12257,19 @@ itself has been completd</p>
 2903
 2904
 2905
-2906</pre>
+2906
+2907
+2908
+2909
+2910
+2911
+2912
+2913
+2914
+2915</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2832</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2841</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_option_values_dispatch'>option_values_dispatch</span><span class='lparen'>(</span><span class='id identifier rubyid_o'>o</span><span class='comma'>,</span> <span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
 
@@ -12349,12 +12377,12 @@ itself has been completd</p>
       <pre class="lines">
 
 
-2961
-2962
-2963</pre>
+2970
+2971
+2972</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2961</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2970</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_option_values_encoders'>option_values_encoders</span>
   <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_encoders'>encoders</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_refname'>refname</span><span class='comma'>,</span> <span class='id identifier rubyid_mod'>mod</span><span class='op'>|</span> <span class='id identifier rubyid_refname'>refname</span> <span class='rbrace'>}</span>
@@ -12390,12 +12418,12 @@ itself has been completd</p>
       <pre class="lines">
 
 
-2954
-2955
-2956</pre>
+2963
+2964
+2965</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2954</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2963</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_option_values_nops'>option_values_nops</span>
   <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_nops'>nops</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_refname'>refname</span><span class='comma'>,</span> <span class='id identifier rubyid_mod'>mod</span><span class='op'>|</span> <span class='id identifier rubyid_refname'>refname</span> <span class='rbrace'>}</span>
@@ -12431,18 +12459,18 @@ itself has been completd</p>
       <pre class="lines">
 
 
-2911
-2912
-2913
-2914
-2915
-2916
-2917
-2918
-2919</pre>
+2920
+2921
+2922
+2923
+2924
+2925
+2926
+2927
+2928</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2911</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2920</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_option_values_payloads'>option_values_payloads</span>
   <span class='kw'>return</span> <span class='ivar'>@cache_payloads</span> <span class='kw'>if</span> <span class='ivar'>@cache_payloads</span>
@@ -12484,12 +12512,12 @@ itself has been completd</p>
       <pre class="lines">
 
 
-2924
-2925
-2926</pre>
+2933
+2934
+2935</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2924</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2933</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_option_values_sessions'>option_values_sessions</span>
   <span class='id identifier rubyid_active_module'>active_module</span><span class='period'>.</span><span class='id identifier rubyid_compatible_sessions'>compatible_sessions</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_sid'>sid</span><span class='op'>|</span> <span class='id identifier rubyid_sid'>sid</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='rbrace'>}</span>
@@ -12525,15 +12553,6 @@ itself has been completd</p>
       <pre class="lines">
 
 
-2968
-2969
-2970
-2971
-2972
-2973
-2974
-2975
-2976
 2977
 2978
 2979
@@ -12553,10 +12572,19 @@ itself has been completd</p>
 2993
 2994
 2995
-2996</pre>
+2996
+2997
+2998
+2999
+3000
+3001
+3002
+3003
+3004
+3005</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2968</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2977</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_option_values_target_addrs'>option_values_target_addrs</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='rbracket'>]</span>
@@ -12618,24 +12646,24 @@ itself has been completd</p>
       <pre class="lines">
 
 
-3001
-3002
-3003
-3004
-3005
-3006
-3007
-3008
-3009
 3010
 3011
 3012
 3013
 3014
-3015</pre>
+3015
+3016
+3017
+3018
+3019
+3020
+3021
+3022
+3023
+3024</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3001</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3010</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_option_values_target_ports'>option_values_target_ports</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='rbracket'>]</span>
@@ -12683,16 +12711,16 @@ itself has been completd</p>
       <pre class="lines">
 
 
-2931
-2932
-2933
-2934
-2935
-2936
-2937</pre>
+2940
+2941
+2942
+2943
+2944
+2945
+2946</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2931</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2940</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_option_values_targets'>option_values_targets</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -12828,17 +12856,17 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-3433
-3434
-3435
-3436
-3437
-3438
-3439
-3440</pre>
+3442
+3443
+3444
+3445
+3446
+3447
+3448
+3449</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3433</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3442</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_retrieve_grep_lines'>retrieve_grep_lines</span><span class='lparen'>(</span><span class='id identifier rubyid_all_lines'>all_lines</span><span class='comma'>,</span><span class='id identifier rubyid_line_num'>line_num</span><span class='comma'>,</span> <span class='id identifier rubyid_before'>before</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_after'>after</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_after'>after</span> <span class='op'>=</span> <span class='id identifier rubyid_after'>after</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='period'>.</span><span class='id identifier rubyid_abs'>abs</span>
@@ -12879,16 +12907,16 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-1509
-1510
-1511
 1512
 1513
 1514
-1515</pre>
+1515
+1516
+1517
+1518</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1509</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 1512</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_search_modules_sql'>search_modules_sql</span><span class='lparen'>(</span><span class='id identifier rubyid_search_string'>search_string</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_tbl'>tbl</span> <span class='op'>=</span> <span class='id identifier rubyid_generate_module_table'>generate_module_table</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Matching Modules</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -12928,13 +12956,13 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-3306
-3307
-3308
-3309</pre>
+3315
+3316
+3317
+3318</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3306</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3315</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_actions'>show_actions</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_mod_actions'>mod_actions</span> <span class='op'>=</span> <span class='const'>Serializer</span><span class='op'>::</span><span class='const'>ReadableText</span><span class='period'>.</span><span class='id identifier rubyid_dump_module_actions'>dump_module_actions</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>   </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -12971,15 +12999,6 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-3311
-3312
-3313
-3314
-3315
-3316
-3317
-3318
-3319
 3320
 3321
 3322
@@ -12992,10 +13011,19 @@ and/or <code>after</code></p>
 3329
 3330
 3331
-3332</pre>
+3332
+3333
+3334
+3335
+3336
+3337
+3338
+3339
+3340
+3341</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3311</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3320</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_advanced_options'>show_advanced_options</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_mod_opt'>mod_opt</span> <span class='op'>=</span> <span class='const'>Serializer</span><span class='op'>::</span><span class='const'>ReadableText</span><span class='period'>.</span><span class='id identifier rubyid_dump_advanced_options'>dump_advanced_options</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>   </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -13050,12 +13078,12 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-3209
-3210
-3211</pre>
+3218
+3219
+3220</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3209</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3218</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_auxiliary'>show_auxiliary</span><span class='lparen'>(</span><span class='id identifier rubyid_regex'>regex</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_show_module_set'>show_module_set</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Auxiliary</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_auxiliary'>auxiliary</span><span class='comma'>,</span> <span class='id identifier rubyid_regex'>regex</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -13091,18 +13119,18 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-3181
-3182
-3183
-3184
-3185
-3186
-3187
-3188
-3189</pre>
+3190
+3191
+3192
+3193
+3194
+3195
+3196
+3197
+3198</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3181</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3190</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_encoders'>show_encoders</span><span class='lparen'>(</span><span class='id identifier rubyid_regex'>regex</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='comment'># If an active module has been selected and it&#39;s an exploit, get the
@@ -13144,15 +13172,6 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-3334
-3335
-3336
-3337
-3338
-3339
-3340
-3341
-3342
 3343
 3344
 3345
@@ -13165,10 +13184,19 @@ and/or <code>after</code></p>
 3352
 3353
 3354
-3355</pre>
+3355
+3356
+3357
+3358
+3359
+3360
+3361
+3362
+3363
+3364</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3334</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3343</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_evasion_options'>show_evasion_options</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_mod_opt'>mod_opt</span> <span class='op'>=</span> <span class='const'>Serializer</span><span class='op'>::</span><span class='const'>ReadableText</span><span class='period'>.</span><span class='id identifier rubyid_dump_evasion_options'>dump_evasion_options</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>   </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -13223,12 +13251,12 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-3195
-3196
-3197</pre>
+3204
+3205
+3206</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3195</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3204</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_exploits'>show_exploits</span><span class='lparen'>(</span><span class='id identifier rubyid_regex'>regex</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_show_module_set'>show_module_set</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Exploits</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_exploits'>exploits</span><span class='comma'>,</span> <span class='id identifier rubyid_regex'>regex</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -13253,15 +13281,6 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-3278
-3279
-3280
-3281
-3282
-3283
-3284
-3285
-3286
 3287
 3288
 3289
@@ -13274,10 +13293,19 @@ and/or <code>after</code></p>
 3296
 3297
 3298
-3299</pre>
+3299
+3300
+3301
+3302
+3303
+3304
+3305
+3306
+3307
+3308</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3278</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3287</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_global_options'>show_global_options</span>
   <span class='id identifier rubyid_columns'>columns</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Option</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Current Setting</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Description</span><span class='tstring_end'>&#39;</span></span> <span class='rbracket'>]</span>
@@ -13332,15 +13360,6 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-3255
-3256
-3257
-3258
-3259
-3260
-3261
-3262
-3263
 3264
 3265
 3266
@@ -13353,10 +13372,19 @@ and/or <code>after</code></p>
 3273
 3274
 3275
-3276</pre>
+3276
+3277
+3278
+3279
+3280
+3281
+3282
+3283
+3284
+3285</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3255</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3264</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_missing'>show_missing</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_mod_opt'>mod_opt</span> <span class='op'>=</span> <span class='const'>Serializer</span><span class='op'>::</span><span class='const'>ReadableText</span><span class='period'>.</span><span class='id identifier rubyid_dump_options'>dump_options</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>   </span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
@@ -13411,15 +13439,6 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-3373
-3374
-3375
-3376
-3377
-3378
-3379
-3380
-3381
 3382
 3383
 3384
@@ -13450,10 +13469,19 @@ and/or <code>after</code></p>
 3409
 3410
 3411
-3412</pre>
+3412
+3413
+3414
+3415
+3416
+3417
+3418
+3419
+3420
+3421</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3373</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3382</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_module_set'>show_module_set</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_module_set'>module_set</span><span class='comma'>,</span> <span class='id identifier rubyid_regex'>regex</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_tbl'>tbl</span> <span class='op'>=</span> <span class='id identifier rubyid_generate_module_table'>generate_module_table</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
@@ -13526,12 +13554,12 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-3191
-3192
-3193</pre>
+3200
+3201
+3202</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3191</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3200</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_nops'>show_nops</span><span class='lparen'>(</span><span class='id identifier rubyid_regex'>regex</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_show_module_set'>show_module_set</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>NOP Generators</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_nops'>nops</span><span class='comma'>,</span> <span class='id identifier rubyid_regex'>regex</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -13567,15 +13595,6 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-3217
-3218
-3219
-3220
-3221
-3222
-3223
-3224
-3225
 3226
 3227
 3228
@@ -13603,10 +13622,19 @@ and/or <code>after</code></p>
 3250
 3251
 3252
-3253</pre>
+3253
+3254
+3255
+3256
+3257
+3258
+3259
+3260
+3261
+3262</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3217</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3226</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_options'>show_options</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_mod_opt'>mod_opt</span> <span class='op'>=</span> <span class='const'>Serializer</span><span class='op'>::</span><span class='const'>ReadableText</span><span class='period'>.</span><span class='id identifier rubyid_dump_options'>dump_options</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>   </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -13676,18 +13704,18 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-3199
-3200
-3201
-3202
-3203
-3204
-3205
-3206
-3207</pre>
+3208
+3209
+3210
+3211
+3212
+3213
+3214
+3215
+3216</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3199</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3208</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_payloads'>show_payloads</span><span class='lparen'>(</span><span class='id identifier rubyid_regex'>regex</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='comment'># If an active module has been selected and it&#39;s an exploit, get the
@@ -13729,24 +13757,24 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-3357
-3358
-3359
-3360
-3361
-3362
-3363
-3364
-3365
 3366
 3367
 3368
 3369
 3370
-3371</pre>
+3371
+3372
+3373
+3374
+3375
+3376
+3377
+3378
+3379
+3380</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3357</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3366</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_plugins'>show_plugins</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_tbl'>tbl</span> <span class='op'>=</span> <span class='const'>Table</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
@@ -13794,12 +13822,12 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-3213
-3214
-3215</pre>
+3222
+3223
+3224</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3213</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3222</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_post'>show_post</span><span class='lparen'>(</span><span class='id identifier rubyid_regex'>regex</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_show_module_set'>show_module_set</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Post</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_post'>post</span><span class='comma'>,</span> <span class='id identifier rubyid_regex'>regex</span><span class='comma'>,</span> <span class='id identifier rubyid_minrank'>minrank</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
@@ -13835,13 +13863,13 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-3301
-3302
-3303
-3304</pre>
+3310
+3311
+3312
+3313</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3301</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3310</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_show_targets'>show_targets</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='rparen'>)</span> <span class='comment'># :nodoc:
 </span>  <span class='id identifier rubyid_mod_targs'>mod_targs</span> <span class='op'>=</span> <span class='const'>Serializer</span><span class='op'>::</span><span class='const'>ReadableText</span><span class='period'>.</span><span class='id identifier rubyid_dump_exploit_targets'>dump_exploit_targets</span><span class='lparen'>(</span><span class='id identifier rubyid_mod'>mod</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>   </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -13867,16 +13895,16 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-3135
-3136
-3137
-3138
-3139
-3140
-3141</pre>
+3144
+3145
+3146
+3147
+3148
+3149
+3150</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3135</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3144</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_start_metasploit_service'>start_metasploit_service</span>
   <span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>METASPLOIT_ROOT</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>scripts</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>start.sh</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -13916,20 +13944,20 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-2760
-2761
-2762
-2763
-2764
-2765
-2766
-2767
-2768
 2769
-2770</pre>
+2770
+2771
+2772
+2773
+2774
+2775
+2776
+2777
+2778
+2779</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2760</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2769</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_tab_complete_module'>tab_complete_module</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -13973,15 +14001,6 @@ and/or <code>after</code></p>
       <pre class="lines">
 
 
-2776
-2777
-2778
-2779
-2780
-2781
-2782
-2783
-2784
 2785
 2786
 2787
@@ -14024,10 +14043,19 @@ and/or <code>after</code></p>
 2824
 2825
 2826
-2827</pre>
+2827
+2828
+2829
+2830
+2831
+2832
+2833
+2834
+2835
+2836</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2776</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 2785</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_tab_complete_option'>tab_complete_option</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_opt'>opt</span> <span class='op'>=</span> <span class='id identifier rubyid_words'>words</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
@@ -14201,23 +14229,23 @@ match an interactive session</p>
       <pre class="lines">
 
 
-3073
-3074
-3075
-3076
-3077
-3078
-3079
-3080
-3081
 3082
 3083
 3084
 3085
-3086</pre>
+3086
+3087
+3088
+3089
+3090
+3091
+3092
+3093
+3094
+3095</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3073</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/core.rb', line 3082</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_verify_session'>verify_session</span><span class='lparen'>(</span><span class='id identifier rubyid_session_id'>session_id</span><span class='comma'>,</span> <span class='id identifier rubyid_quiet'>quiet</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_session'>session</span> <span class='op'>=</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_sessions'>sessions</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_session_id'>session_id</span><span class='rparen'>)</span>
@@ -14243,7 +14271,7 @@ match an interactive session</p>
 </div>
 
     <div id="footer">
-  Generated on Wed Jan 21 02:19:33 2015 by
+  Generated on Wed Jan 21 08:19:40 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>
