@@ -778,12 +778,12 @@ InboundPacketHandler interface.</p>
       <pre class="lines">
 
 
-538
-539
-540</pre>
+544
+545
+546</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 538</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 544</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dispatcher_thread'>dispatcher_thread</span>
   <span class='ivar'>@dispatcher_thread</span>
@@ -864,12 +864,12 @@ InboundPacketHandler interface.</p>
       <pre class="lines">
 
 
-537
-538
-539</pre>
+543
+544
+545</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 537</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 543</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_receiver_thread'>receiver_thread</span>
   <span class='ivar'>@receiver_thread</span>
@@ -993,12 +993,12 @@ InboundPacketHandler interface.</p>
       <pre class="lines">
 
 
-539
-540
-541</pre>
+545
+546
+547</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 539</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 545</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_waiters'>waiters</span>
   <span class='ivar'>@waiters</span>
@@ -1041,16 +1041,16 @@ InboundPacketHandler interface.</p>
       <pre class="lines">
 
 
-428
-429
-430
-431
-432
-433
-434</pre>
+434
+435
+436
+437
+438
+439
+440</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 428</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 434</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_response_waiter'>add_response_waiter</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='comma'>,</span> <span class='id identifier rubyid_completion_routine'>completion_routine</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_completion_param'>completion_param</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_waiter'>waiter</span> <span class='op'>=</span> <span class='const'>PacketResponseWaiter</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_rid'>rid</span><span class='comma'>,</span> <span class='id identifier rubyid_completion_routine'>completion_routine</span><span class='comma'>,</span> <span class='id identifier rubyid_completion_param'>completion_param</span><span class='rparen'>)</span>
@@ -1090,12 +1090,12 @@ InboundPacketHandler interface.</p>
       <pre class="lines">
 
 
-531
-532
-533</pre>
+537
+538
+539</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 531</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 537</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_deregister_inbound_handler'>deregister_inbound_handler</span><span class='lparen'>(</span><span class='id identifier rubyid_handler'>handler</span><span class='rparen'>)</span>
   <span class='ivar'>@inbound_handlers</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_handler'>handler</span><span class='rparen'>)</span>
@@ -1134,12 +1134,6 @@ success.</p>
       <pre class="lines">
 
 
-478
-479
-480
-481
-482
-483
 484
 485
 486
@@ -1174,10 +1168,16 @@ success.</p>
 515
 516
 517
-518</pre>
+518
+519
+520
+521
+522
+523
+524</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 478</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 484</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dispatch_inbound_packet'>dispatch_inbound_packet</span><span class='lparen'>(</span><span class='id identifier rubyid_packet'>packet</span><span class='comma'>,</span> <span class='id identifier rubyid_client'>client</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_handled'>handled</span> <span class='op'>=</span> <span class='kw'>false</span>
@@ -1251,12 +1251,12 @@ success.</p>
       <pre class="lines">
 
 
-468
-469
-470</pre>
+474
+475
+476</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 468</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 474</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize_inbound_handlers'>initialize_inbound_handlers</span>
   <span class='ivar'>@inbound_handlers</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -1501,7 +1501,13 @@ and parsers all inbound packets.</p>
 390
 391
 392
-393</pre>
+393
+394
+395
+396
+397
+398
+399</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 237</span>
@@ -1627,8 +1633,14 @@ and parsers all inbound packets.</p>
 
         <span class='kw'>begin</span>
         <span class='kw'>if</span> <span class='op'>!</span> <span class='id identifier rubyid_dispatch_inbound_packet'>dispatch_inbound_packet</span><span class='lparen'>(</span><span class='id identifier rubyid_pkt'>pkt</span><span class='rparen'>)</span>
-          <span class='comment'># Only requeue packets newer than the timeout
-</span>          <span class='kw'>if</span> <span class='lparen'>(</span><span class='op'>::</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>-</span> <span class='id identifier rubyid_pkt'>pkt</span><span class='period'>.</span><span class='id identifier rubyid_created_at'>created_at</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>&gt;</span> <span class='const'>PacketTimeout</span><span class='rparen'>)</span>
+          <span class='comment'># Keep Packets in the receive queue until a handler is registered
+</span>          <span class='comment'># for them. Packets will live in the receive queue for up to
+</span>          <span class='comment'># PacketTimeout, after which they will be dropped.
+</span>          <span class='comment'>#
+</span>          <span class='comment'># A common reason why there would not immediately be a handler for
+</span>          <span class='comment'># a received Packet is in channels, where a connection may
+</span>          <span class='comment'># open and receive data before anything has asked to read.
+</span>          <span class='kw'>if</span> <span class='lparen'>(</span><span class='op'>::</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>-</span> <span class='id identifier rubyid_pkt'>pkt</span><span class='period'>.</span><span class='id identifier rubyid_created_at'>created_at</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>&lt;</span> <span class='const'>PacketTimeout</span><span class='rparen'>)</span>
             <span class='id identifier rubyid_incomplete'>incomplete</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_pkt'>pkt</span>
           <span class='kw'>end</span>
         <span class='kw'>end</span>
@@ -1694,20 +1706,20 @@ and parsers all inbound packets.</p>
       <pre class="lines">
 
 
-407
-408
-409
-410
-411
-412
 413
 414
 415
 416
-417</pre>
+417
+418
+419
+420
+421
+422
+423</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 407</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 413</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_monitor_stop'>monitor_stop</span>
   <span class='kw'>if</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_receiver_thread'>receiver_thread</span><span class='rparen'>)</span>
@@ -1751,20 +1763,20 @@ and parsers all inbound packets.</p>
       <pre class="lines">
 
 
-440
-441
-442
-443
-444
-445
 446
 447
 448
 449
-450</pre>
+450
+451
+452
+453
+454
+455
+456</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 440</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 446</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_notify_response_waiter'>notify_response_waiter</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_waiters'>waiters</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_waiter'>waiter</span><span class='op'>|</span>
@@ -1903,12 +1915,12 @@ once a full packet has been received.</p>
       <pre class="lines">
 
 
-400
-401
-402</pre>
+406
+407
+408</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 400</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 406</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_receive_packet'>receive_packet</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_parser'>parser</span><span class='period'>.</span><span class='id identifier rubyid_recv'>recv</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_sock'>sock</span><span class='rparen'>)</span>
@@ -1945,12 +1957,12 @@ InboundPacketHandler interface.</p>
       <pre class="lines">
 
 
-524
-525
-526</pre>
+530
+531
+532</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 524</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 530</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register_inbound_handler'>register_inbound_handler</span><span class='lparen'>(</span><span class='id identifier rubyid_handler'>handler</span><span class='rparen'>)</span>
   <span class='ivar'>@inbound_handlers</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_handler'>handler</span>
@@ -1986,12 +1998,12 @@ InboundPacketHandler interface.</p>
       <pre class="lines">
 
 
-455
-456
-457</pre>
+461
+462
+463</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 455</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/packet_dispatcher.rb', line 461</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_response_waiter'>remove_response_waiter</span><span class='lparen'>(</span><span class='id identifier rubyid_waiter'>waiter</span><span class='rparen'>)</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_waiters'>waiters</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_waiter'>waiter</span><span class='rparen'>)</span>
@@ -2327,7 +2339,7 @@ InboundPacketHandler interface.</p>
 </div>
 
     <div id="footer">
-  Generated on Fri Jan 23 14:48:24 2015 by
+  Generated on Fri Jan 23 18:47:28 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>
