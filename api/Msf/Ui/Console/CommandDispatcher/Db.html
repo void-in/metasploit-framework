@@ -1809,6 +1809,7 @@ result into <code>host_ranges</code></p>
       <pre class="lines">
 
 
+1915
 1916
 1917
 1918
@@ -1827,11 +1828,10 @@ result into <code>host_ranges</code></p>
 1931
 1932
 1933
-1934
-1935</pre>
+1934</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1916</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1915</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_arg_host_range'>arg_host_range</span><span class='lparen'>(</span><span class='id identifier rubyid_arg'>arg</span><span class='comma'>,</span> <span class='id identifier rubyid_host_ranges'>host_ranges</span><span class='comma'>,</span> <span class='id identifier rubyid_required'>required</span><span class='op'>=</span><span class='kw'>false</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='lparen'>(</span><span class='op'>!</span><span class='id identifier rubyid_arg'>arg</span> <span class='kw'>and</span> <span class='id identifier rubyid_required'>required</span><span class='rparen'>)</span>
@@ -1889,6 +1889,7 @@ result into <code>host_ranges</code></p>
       <pre class="lines">
 
 
+1943
 1944
 1945
 1946
@@ -1900,11 +1901,10 @@ result into <code>host_ranges</code></p>
 1952
 1953
 1954
-1955
-1956</pre>
+1955</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1944</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1943</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_arg_port_range'>arg_port_range</span><span class='lparen'>(</span><span class='id identifier rubyid_arg'>arg</span><span class='comma'>,</span> <span class='id identifier rubyid_port_ranges'>port_ranges</span><span class='comma'>,</span> <span class='id identifier rubyid_required'>required</span><span class='op'>=</span><span class='kw'>false</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='lparen'>(</span><span class='op'>!</span><span class='id identifier rubyid_arg'>arg</span> <span class='kw'>and</span> <span class='id identifier rubyid_required'>required</span><span class='rparen'>)</span>
@@ -1951,6 +1951,7 @@ port or range, and/or on a service name.</p>
       <pre class="lines">
 
 
+960
 961
 962
 963
@@ -1975,11 +1976,10 @@ port or range, and/or on a service name.</p>
 982
 983
 984
-985
-986</pre>
+985</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 961</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 960</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_creds'>cmd_creds</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_active?'>active?</span>
@@ -2153,6 +2153,7 @@ port or range, and/or on a service name.</p>
       <pre class="lines">
 
 
+987
 988
 989
 990
@@ -2169,11 +2170,10 @@ port or range, and/or on a service name.</p>
 1001
 1002
 1003
-1004
-1005</pre>
+1004</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 988</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 987</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_creds_tabs'>cmd_creds_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_words'>words</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
@@ -2224,10 +2224,10 @@ port or range, and/or on a service name.</p>
       <pre class="lines">
 
 
-1382</pre>
+1381</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1382</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1381</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_autopwn'>cmd_db_autopwn</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='id identifier rubyid_deprecated_cmd'>deprecated_cmd</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2261,10 +2261,10 @@ port or range, and/or on a service name.</p>
       <pre class="lines">
 
 
-1369</pre>
+1368</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1369</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1368</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_autopwn_help'>cmd_db_autopwn_help</span><span class='semicolon'>;</span> <span class='id identifier rubyid_deprecated_help'>deprecated_help</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2287,6 +2287,7 @@ port or range, and/or on a service name.</p>
       <pre class="lines">
 
 
+1701
 1702
 1703
 1704
@@ -2321,11 +2322,10 @@ port or range, and/or on a service name.</p>
 1733
 1734
 1735
-1736
-1737</pre>
+1736</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1702</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1701</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_connect'>cmd_db_connect</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_db_check_driver'>db_check_driver</span>
@@ -2383,13 +2383,13 @@ port or range, and/or on a service name.</p>
       <pre class="lines">
 
 
+1696
 1697
 1698
-1699
-1700</pre>
+1699</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1697</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1696</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_connect_help'>cmd_db_connect_help</span>
   <span class='comment'># Help is specific to each driver
@@ -2415,6 +2415,7 @@ port or range, and/or on a service name.</p>
       <pre class="lines">
 
 
+1745
 1746
 1747
 1748
@@ -2425,11 +2426,10 @@ port or range, and/or on a service name.</p>
 1753
 1754
 1755
-1756
-1757</pre>
+1756</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1746</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1745</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_disconnect'>cmd_db_disconnect</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_db_check_driver'>db_check_driver</span>
@@ -2463,15 +2463,15 @@ port or range, and/or on a service name.</p>
       <pre class="lines">
 
 
+1738
 1739
 1740
 1741
 1742
-1743
-1744</pre>
+1743</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1739</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1738</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_disconnect_help'>cmd_db_disconnect_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: db_disconnect</span><span class='tstring_end'>&quot;</span></span>
@@ -2513,6 +2513,7 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
+1389
 1390
 1391
 1392
@@ -2521,11 +2522,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
 1395
 1396
 1397
-1398
-1399</pre>
+1398</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1390</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1389</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_driver'>cmd_db_driver</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_deprecated_cmd'>deprecated_cmd</span>
@@ -2568,10 +2568,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
-1371</pre>
+1370</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1371</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1370</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_driver_help'>cmd_db_driver_help</span><span class='semicolon'>;</span> <span class='id identifier rubyid_deprecated_help'>deprecated_help</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2605,6 +2605,7 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
+1532
 1533
 1534
 1535
@@ -2651,11 +2652,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
 1576
 1577
 1578
-1579
-1580</pre>
+1579</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1533</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1532</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_export'>cmd_db_export</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_active?'>active?</span>
@@ -2725,14 +2725,14 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
+1523
 1524
 1525
 1526
-1527
-1528</pre>
+1527</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1524</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1523</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_export_help'>cmd_db_export_help</span>
   <span class='comment'># Like db_hosts and db_services, this creates a list of columns, so
@@ -2770,10 +2770,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
-1374</pre>
+1373</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1374</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1373</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_hosts'>cmd_db_hosts</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='id identifier rubyid_deprecated_cmd'>deprecated_cmd</span><span class='lparen'>(</span><span class='symbol'>:hosts</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2807,10 +2807,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
-1361</pre>
+1360</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1361</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1360</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_hosts_help'>cmd_db_hosts_help</span><span class='semicolon'>;</span> <span class='id identifier rubyid_deprecated_help'>deprecated_help</span><span class='lparen'>(</span><span class='symbol'>:hosts</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2844,6 +2844,7 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
+1447
 1448
 1449
 1450
@@ -2917,11 +2918,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
 1518
 1519
 1520
-1521
-1522</pre>
+1521</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1448</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1447</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_import'>cmd_db_import</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_active?'>active?</span>
@@ -3018,6 +3018,7 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
+1404
 1405
 1406
 1407
@@ -3055,11 +3056,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
 1439
 1440
 1441
-1442
-1443</pre>
+1442</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1405</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1404</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_import_help'>cmd_db_import_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: db_import &lt;filename&gt; [file2...]</span><span class='tstring_end'>&quot;</span></span>
@@ -3120,12 +3120,12 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
+1400
 1401
-1402
-1403</pre>
+1402</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1401</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1400</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_import_tabs'>cmd_db_import_tabs</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_tab_complete_filenames'>tab_complete_filenames</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_words'>words</span><span class='rparen'>)</span>
@@ -3161,6 +3161,7 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
+1584
 1585
 1586
 1587
@@ -3233,11 +3234,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
 1654
 1655
 1656
-1657
-1658</pre>
+1657</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1585</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1584</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_nmap'>cmd_db_nmap</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_active?'>active?</span>
@@ -3344,10 +3344,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
-1376</pre>
+1375</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1376</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1375</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_notes'>cmd_db_notes</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='id identifier rubyid_deprecated_cmd'>deprecated_cmd</span><span class='lparen'>(</span><span class='symbol'>:notes</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -3381,10 +3381,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
-1363</pre>
+1362</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1363</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1362</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_notes_help'>cmd_db_notes_help</span><span class='semicolon'>;</span> <span class='id identifier rubyid_deprecated_help'>deprecated_help</span><span class='lparen'>(</span><span class='symbol'>:notes</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -3407,6 +3407,7 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
+1758
 1759
 1760
 1761
@@ -3417,11 +3418,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
 1766
 1767
 1768
-1769
-1770</pre>
+1769</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1759</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1758</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_rebuild_cache'>cmd_db_rebuild_cache</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_active'>active</span>
@@ -3455,15 +3455,15 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
+1771
 1772
 1773
 1774
 1775
-1776
-1777</pre>
+1776</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1772</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1771</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_rebuild_cache_help'>cmd_db_rebuild_cache_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: db_rebuild_cache</span><span class='tstring_end'>&quot;</span></span>
@@ -3502,10 +3502,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
-1380</pre>
+1379</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1380</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1379</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_services'>cmd_db_services</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='id identifier rubyid_deprecated_cmd'>deprecated_cmd</span><span class='lparen'>(</span><span class='symbol'>:services</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -3539,10 +3539,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
-1367</pre>
+1366</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1367</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1366</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_services_help'>cmd_db_services_help</span><span class='semicolon'>;</span> <span class='id identifier rubyid_deprecated_help'>deprecated_help</span><span class='lparen'>(</span><span class='symbol'>:services</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -3576,6 +3576,7 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
+1680
 1681
 1682
 1683
@@ -3589,11 +3590,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
 1691
 1692
 1693
-1694
-1695</pre>
+1694</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1681</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1680</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_status'>cmd_db_status</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='kw'>not</span> <span class='id identifier rubyid_db_check_driver'>db_check_driver</span>
@@ -3641,10 +3641,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
-1378</pre>
+1377</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1378</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1377</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_vulns'>cmd_db_vulns</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='id identifier rubyid_deprecated_cmd'>deprecated_cmd</span><span class='lparen'>(</span><span class='symbol'>:vulns</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -3678,10 +3678,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
-1365</pre>
+1364</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1365</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1364</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_db_vulns_help'>cmd_db_vulns_help</span><span class='semicolon'>;</span> <span class='id identifier rubyid_deprecated_help'>deprecated_help</span><span class='lparen'>(</span><span class='symbol'>:vulns</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -4058,6 +4058,7 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
+1212
 1213
 1214
 1215
@@ -4202,11 +4203,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
 1354
 1355
 1356
-1357
-1358</pre>
+1357</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1213</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1212</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_loot'>cmd_loot</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_active?'>active?</span>
@@ -4374,6 +4374,7 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
+1196
 1197
 1198
 1199
@@ -4387,11 +4388,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
 1207
 1208
 1209
-1210
-1211</pre>
+1210</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1197</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1196</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_loot_help'>cmd_loot_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: loot &lt;options&gt;</span><span class='tstring_end'>&quot;</span></span>
@@ -4428,6 +4428,7 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
+1025
 1026
 1027
 1028
@@ -4580,11 +4581,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
 1175
 1176
 1177
-1178
-1179</pre>
+1178</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1026</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1025</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_notes'>cmd_notes</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>unless</span> <span class='id identifier rubyid_active?'>active?</span>
@@ -4760,6 +4760,7 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
+1006
 1007
 1008
 1009
@@ -4776,11 +4777,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
 1020
 1021
 1022
-1023
-1024</pre>
+1023</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1007</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1006</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cmd_notes_help'>cmd_notes_help</span>
   <span class='id identifier rubyid_print_line'>print_line</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: notes [-h] [-t &lt;type1,type2&gt;] [-n &lt;data string&gt;] [-a] [addr range]</span><span class='tstring_end'>&quot;</span></span>
@@ -6371,8 +6371,7 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
 951
 952
 953
-954
-955</pre>
+954</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 766</span>
@@ -6441,13 +6440,7 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
   <span class='kw'>end</span>
 
   <span class='comment'># If we get here, we&#39;re searching.  Delete implies search
-</span>  <span class='kw'>if</span> <span class='id identifier rubyid_user'>user</span>
-    <span class='id identifier rubyid_user_regex'>user_regex</span> <span class='op'>=</span> <span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_compile'>compile</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_pass'>pass</span>
-    <span class='id identifier rubyid_pass_regex'>pass_regex</span> <span class='op'>=</span> <span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_compile'>compile</span><span class='lparen'>(</span><span class='id identifier rubyid_pass'>pass</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-
+</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_ptype'>ptype</span>
     <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='kw'>case</span> <span class='id identifier rubyid_ptype'>ptype</span>
            <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>password</span><span class='tstring_end'>&#39;</span></span>
@@ -6473,39 +6466,51 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
   <span class='id identifier rubyid_tbl'>tbl</span> <span class='op'>=</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Ui</span><span class='op'>::</span><span class='const'>Text</span><span class='op'>::</span><span class='const'>Table</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_tbl_opts'>tbl_opts</span><span class='rparen'>)</span>
 
   <span class='op'>::</span><span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span><span class='period'>.</span><span class='id identifier rubyid_connection_pool'>connection_pool</span><span class='period'>.</span><span class='id identifier rubyid_with_connection'>with_connection</span> <span class='lbrace'>{</span>
-    <span class='id identifier rubyid_query'>query</span> <span class='op'>=</span> <span class='const'>Metasploit</span><span class='op'>::</span><span class='const'>Credential</span><span class='op'>::</span><span class='const'>Core</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span>
-      <span class='label'>workspace_id:</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_workspace'>workspace</span><span class='comma'>,</span>
-    <span class='rparen'>)</span>
+    <span class='id identifier rubyid_query'>query</span> <span class='op'>=</span> <span class='const'>Metasploit</span><span class='op'>::</span><span class='const'>Credential</span><span class='op'>::</span><span class='const'>Core</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span> <span class='label'>workspace_id:</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_workspace'>workspace</span> <span class='rparen'>)</span>
+    <span class='id identifier rubyid_query'>query</span> <span class='op'>=</span> <span class='id identifier rubyid_query'>query</span><span class='period'>.</span><span class='id identifier rubyid_includes'>includes</span><span class='lparen'>(</span><span class='symbol'>:private</span><span class='comma'>,</span> <span class='symbol'>:public</span><span class='comma'>,</span> <span class='symbol'>:logins</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_query'>query</span> <span class='op'>=</span> <span class='id identifier rubyid_query'>query</span><span class='period'>.</span><span class='id identifier rubyid_includes'>includes</span><span class='lparen'>(</span><span class='label'>logins:</span> <span class='lbracket'>[</span> <span class='symbol'>:service</span><span class='comma'>,</span> <span class='lbrace'>{</span> <span class='label'>service:</span> <span class='symbol'>:host</span> <span class='rbrace'>}</span> <span class='rbracket'>]</span><span class='rparen'>)</span>
 
-    <span class='id identifier rubyid_query'>query</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_core'>core</span><span class='op'>|</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
+      <span class='id identifier rubyid_query'>query</span> <span class='op'>=</span> <span class='id identifier rubyid_query'>query</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>metasploit_credential_privates:</span> <span class='lbrace'>{</span> <span class='label'>type:</span> <span class='id identifier rubyid_type'>type</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
 
-      <span class='comment'># Exclude creds that don&#39;t match the given type
-</span>      <span class='kw'>next</span> <span class='kw'>if</span> <span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_core'>core</span><span class='period'>.</span><span class='id identifier rubyid_private'>private</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_svcs'>svcs</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
+      <span class='id identifier rubyid_query'>query</span> <span class='op'>=</span> <span class='id identifier rubyid_query'>query</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='const'>Mdm</span><span class='op'>::</span><span class='const'>Service</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_in'>in</span><span class='lparen'>(</span><span class='id identifier rubyid_svcs'>svcs</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_ports'>ports</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
+      <span class='id identifier rubyid_query'>query</span> <span class='op'>=</span> <span class='id identifier rubyid_query'>query</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='const'>Mdm</span><span class='op'>::</span><span class='const'>Service</span><span class='lbracket'>[</span><span class='symbol'>:port</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_in'>in</span><span class='lparen'>(</span><span class='id identifier rubyid_ports'>ports</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
+      <span class='comment'># If we have a user regex, only include those that match
+</span>      <span class='id identifier rubyid_query'>query</span> <span class='op'>=</span> <span class='id identifier rubyid_query'>query</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>&quot;metasploit_credential_publics&quot;.&quot;username&quot; ~* ?</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_pass'>pass</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
+      <span class='comment'># If we have a password regex, only include those that match
+</span>      <span class='id identifier rubyid_query'>query</span> <span class='op'>=</span> <span class='id identifier rubyid_query'>query</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>&quot;metasploit_credential_privates&quot;.&quot;data&quot; ~* ?</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_pass'>pass</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_host_ranges'>host_ranges</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span> <span class='op'>||</span> <span class='id identifier rubyid_ports'>ports</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span> <span class='op'>||</span> <span class='id identifier rubyid_svcs'>svcs</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span>
+      <span class='comment'># Only find Cores that have non-zero Logins if the user specified a
+</span>      <span class='comment'># filter based on host, port, or service name
+</span>      <span class='id identifier rubyid_query'>query</span> <span class='op'>=</span> <span class='id identifier rubyid_query'>query</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='const'>Metasploit</span><span class='op'>::</span><span class='const'>Credential</span><span class='op'>::</span><span class='const'>Login</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_not_eq'>not_eq</span><span class='lparen'>(</span><span class='kw'>nil</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_query'>query</span><span class='period'>.</span><span class='id identifier rubyid_find_each'>find_each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_core'>core</span><span class='op'>|</span>
 
       <span class='comment'># Exclude non-blank username creds if that&#39;s what we&#39;re after
-</span>      <span class='kw'>if</span> <span class='id identifier rubyid_user_regex'>user_regex</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_user_regex'>user_regex</span> <span class='op'>==</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='regexp_end'>/</span></span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_core'>core</span><span class='period'>.</span><span class='id identifier rubyid_public'>public</span><span class='period'>.</span><span class='id identifier rubyid_username'>username</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
+</span>      <span class='kw'>if</span> <span class='id identifier rubyid_user'>user</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_core'>core</span><span class='period'>.</span><span class='id identifier rubyid_public'>public</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='lparen'>(</span><span class='id identifier rubyid_core'>core</span><span class='period'>.</span><span class='id identifier rubyid_public'>public</span><span class='period'>.</span><span class='id identifier rubyid_username'>username</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span><span class='rparen'>)</span>
         <span class='kw'>next</span>
       <span class='kw'>end</span>
 
       <span class='comment'># Exclude non-blank password creds if that&#39;s what we&#39;re after
-</span>      <span class='kw'>if</span> <span class='id identifier rubyid_pass_regex'>pass_regex</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_pass_regex'>pass_regex</span> <span class='op'>==</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='regexp_end'>/</span></span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_core'>core</span><span class='period'>.</span><span class='id identifier rubyid_private'>private</span><span class='period'>.</span><span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
-        <span class='kw'>next</span>
-      <span class='kw'>end</span>
-
-      <span class='comment'># Exclude creds that don&#39;t match the given user
-</span>      <span class='kw'>if</span> <span class='id identifier rubyid_user_regex'>user_regex</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_core'>core</span><span class='period'>.</span><span class='id identifier rubyid_public'>public</span><span class='period'>.</span><span class='id identifier rubyid_username'>username</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='id identifier rubyid_user_regex'>user_regex</span><span class='rparen'>)</span>
-        <span class='kw'>next</span>
-      <span class='kw'>end</span>
-
-      <span class='comment'># Exclude creds that don&#39;t match the given pass
-</span>      <span class='kw'>if</span> <span class='id identifier rubyid_pass_regex'>pass_regex</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_core'>core</span><span class='period'>.</span><span class='id identifier rubyid_private'>private</span><span class='period'>.</span><span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='id identifier rubyid_pass_regex'>pass_regex</span><span class='rparen'>)</span>
+</span>      <span class='kw'>if</span> <span class='id identifier rubyid_pass'>pass</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_core'>core</span><span class='period'>.</span><span class='id identifier rubyid_private'>private</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='lparen'>(</span><span class='id identifier rubyid_core'>core</span><span class='period'>.</span><span class='id identifier rubyid_private'>private</span><span class='period'>.</span><span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span><span class='rparen'>)</span>
         <span class='kw'>next</span>
       <span class='kw'>end</span>
 
       <span class='kw'>if</span> <span class='id identifier rubyid_core'>core</span><span class='period'>.</span><span class='id identifier rubyid_logins'>logins</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
-        <span class='comment'># Skip cores that don&#39;t have any logins if the user specified a
-</span>        <span class='comment'># filter based on host, port, or service name
-</span>        <span class='kw'>next</span> <span class='kw'>if</span> <span class='id identifier rubyid_host_ranges'>host_ranges</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span> <span class='op'>||</span> <span class='id identifier rubyid_ports'>ports</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span> <span class='op'>||</span> <span class='id identifier rubyid_svcs'>svcs</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span>
 
         <span class='id identifier rubyid_tbl'>tbl</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span>
           <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='comment'># host
@@ -6517,13 +6522,6 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
         <span class='rbracket'>]</span>
       <span class='kw'>else</span>
         <span class='id identifier rubyid_core'>core</span><span class='period'>.</span><span class='id identifier rubyid_logins'>logins</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_login'>login</span><span class='op'>|</span>
-          <span class='kw'>if</span> <span class='id identifier rubyid_svcs'>svcs</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_svcs'>svcs</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_login'>login</span><span class='period'>.</span><span class='id identifier rubyid_service'>service</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
-            <span class='kw'>next</span>
-          <span class='kw'>end</span>
-
-          <span class='kw'>if</span> <span class='id identifier rubyid_ports'>ports</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_ports'>ports</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_login'>login</span><span class='period'>.</span><span class='id identifier rubyid_service'>service</span><span class='period'>.</span><span class='id identifier rubyid_port'>port</span><span class='rparen'>)</span>
-            <span class='kw'>next</span>
-          <span class='kw'>end</span>
 
           <span class='comment'># If none of this Core&#39;s associated Logins is for a host within
 </span>          <span class='comment'># the user-supplied RangeWalker, then we don&#39;t have any reason to
@@ -6598,16 +6596,16 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
+1669
 1670
 1671
 1672
 1673
 1674
-1675
-1676</pre>
+1675</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1670</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1669</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_db_check_driver'>db_check_driver</span>
   <span class='kw'>if</span><span class='lparen'>(</span><span class='kw'>not</span> <span class='id identifier rubyid_framework'>framework</span><span class='period'>.</span><span class='id identifier rubyid_db'>db</span><span class='period'>.</span><span class='id identifier rubyid_driver'>driver</span><span class='rparen'>)</span>
@@ -6647,6 +6645,7 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
+1836
 1837
 1838
 1839
@@ -6697,11 +6696,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
 1884
 1885
 1886
-1887
-1888</pre>
+1887</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1837</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1836</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_db_connect_postgresql'>db_connect_postgresql</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span><span class='lparen'>(</span><span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='kw'>nil</span> <span class='kw'>or</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-h</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>or</span> <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--help</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -6775,6 +6773,7 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
+1815
 1816
 1817
 1818
@@ -6786,11 +6785,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
 1824
 1825
 1826
-1827
-1828</pre>
+1827</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1816</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1815</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_db_find_tools'>db_find_tools</span><span class='lparen'>(</span><span class='id identifier rubyid_tools'>tools</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_missed'>missed</span>  <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -6825,6 +6823,7 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
       <pre class="lines">
 
 
+1889
 1890
 1891
 1892
@@ -6836,11 +6835,10 @@ warning, so give the user a better understanding of what&#39;s going on.</p>
 1898
 1899
 1900
-1901
-1902</pre>
+1901</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1890</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1889</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_db_parse_db_uri_postgresql'>db_parse_db_uri_postgresql</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_res'>res</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -6931,6 +6929,7 @@ into blocks of 1024.</p>
       <pre class="lines">
 
 
+1961
 1962
 1963
 1964
@@ -6961,11 +6960,10 @@ into blocks of 1024.</p>
 1989
 1990
 1991
-1992
-1993</pre>
+1992</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1962</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1961</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_each_host_range_chunk'>each_host_range_chunk</span><span class='lparen'>(</span><span class='id identifier rubyid_host_ranges'>host_ranges</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='comment'># Chunk it up and do the query in batches. The naive implementation
@@ -7019,6 +7017,7 @@ into blocks of 1024.</p>
       <pre class="lines">
 
 
+1180
 1181
 1182
 1183
@@ -7032,11 +7031,10 @@ into blocks of 1024.</p>
 1191
 1192
 1193
-1194
-1195</pre>
+1194</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1181</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1180</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_make_sortable'>make_sortable</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_input'>input</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span>
@@ -7125,12 +7123,12 @@ into blocks of 1024.</p>
       <pre class="lines">
 
 
+1662
 1663
-1664
-1665</pre>
+1664</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1663</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1662</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_report_store_local'>report_store_local</span><span class='lparen'>(</span><span class='id identifier rubyid_ltype'>ltype</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_ctype'>ctype</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_filename'>filename</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_store_local'>store_local</span><span class='lparen'>(</span><span class='id identifier rubyid_ltype'>ltype</span><span class='comma'>,</span><span class='id identifier rubyid_ctype'>ctype</span><span class='comma'>,</span><span class='id identifier rubyid_data'>data</span><span class='comma'>,</span><span class='id identifier rubyid_filename'>filename</span><span class='rparen'>)</span>
@@ -7172,6 +7170,7 @@ datastore from an array of addresses</p>
       <pre class="lines">
 
 
+1786
 1787
 1788
 1789
@@ -7198,11 +7197,10 @@ datastore from an array of addresses</p>
 1810
 1811
 1812
-1813
-1814</pre>
+1813</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1787</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/ui/console/command_dispatcher/db.rb', line 1786</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_set_rhosts_from_addrs'>set_rhosts_from_addrs</span><span class='lparen'>(</span><span class='id identifier rubyid_rhosts'>rhosts</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_rhosts'>rhosts</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
@@ -7242,7 +7240,7 @@ datastore from an array of addresses</p>
 </div>
 
     <div id="footer">
-  Generated on Tue Jan 27 22:47:08 2015 by
+  Generated on Wed Jan 28 14:51:18 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>
