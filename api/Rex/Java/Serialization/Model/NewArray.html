@@ -829,7 +829,7 @@
       <pre class="code"><span class="info file"># File 'lib/rex/java/serialization/model/new_array.rb', line 54</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_encode'>encode</span>
-  <span class='kw'>unless</span> <span class='id identifier rubyid_array_description'>array_description</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='const'>ClassDesc</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_array_description'>array_description</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>ClassDesc</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_raise'>raise</span> <span class='op'>::</span><span class='const'>RuntimeError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Failed to serialize NewArray</span><span class='tstring_end'>&#39;</span></span>
   <span class='kw'>end</span>
 
@@ -912,7 +912,7 @@
 </div>
 
     <div id="footer">
-  Generated on Wed Jan 28 14:52:18 2015 by
+  Generated on Wed Jan 28 16:48:49 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>
