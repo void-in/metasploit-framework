@@ -76,7 +76,7 @@
   
     
       <dt class="r1">Includes:</dt>
-      <dd class="r1"><span class='object_link'><a href="../Exploit/Remote/HttpClient.html" title="Msf::Exploit::Remote::HttpClient (module)">Exploit::Remote::HttpClient</a></span>, <span class='object_link'><a href="Wordpress/Base.html" title="Msf::HTTP::Wordpress::Base (module)">Base</a></span>, <span class='object_link'><a href="Wordpress/Helpers.html" title="Msf::HTTP::Wordpress::Helpers (module)">Helpers</a></span>, <span class='object_link'><a href="Wordpress/Login.html" title="Msf::HTTP::Wordpress::Login (module)">Login</a></span>, <span class='object_link'><a href="Wordpress/Posts.html" title="Msf::HTTP::Wordpress::Posts (module)">Posts</a></span>, <span class='object_link'><a href="Wordpress/URIs.html" title="Msf::HTTP::Wordpress::URIs (module)">URIs</a></span>, <span class='object_link'><a href="Wordpress/Users.html" title="Msf::HTTP::Wordpress::Users (module)">Users</a></span>, <span class='object_link'><a href="Wordpress/Version.html" title="Msf::HTTP::Wordpress::Version (module)">Version</a></span></dd>
+      <dd class="r1"><span class='object_link'><a href="../Exploit/Remote/HttpClient.html" title="Msf::Exploit::Remote::HttpClient (module)">Exploit::Remote::HttpClient</a></span>, <span class='object_link'><a href="Wordpress/Base.html" title="Msf::HTTP::Wordpress::Base (module)">Base</a></span>, <span class='object_link'><a href="Wordpress/Helpers.html" title="Msf::HTTP::Wordpress::Helpers (module)">Helpers</a></span>, <span class='object_link'><a href="Wordpress/Login.html" title="Msf::HTTP::Wordpress::Login (module)">Login</a></span>, <span class='object_link'><a href="Wordpress/Posts.html" title="Msf::HTTP::Wordpress::Posts (module)">Posts</a></span>, <span class='object_link'><a href="Wordpress/URIs.html" title="Msf::HTTP::Wordpress::URIs (module)">URIs</a></span>, <span class='object_link'><a href="Wordpress/Users.html" title="Msf::HTTP::Wordpress::Users (module)">Users</a></span>, <span class='object_link'><a href="Wordpress/Version.html" title="Msf::HTTP::Wordpress::Version (module)">Version</a></span>, <span class='object_link'><a href="Wordpress/XmlRpc.html" title="Msf::HTTP::Wordpress::XmlRpc (module)">XmlRpc</a></span></dd>
       
     
   
@@ -92,7 +92,7 @@
 <p class="children">
   
     
-      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Wordpress/Base.html" title="Msf::HTTP::Wordpress::Base (module)">Base</a></span>, <span class='object_link'><a href="Wordpress/Helpers.html" title="Msf::HTTP::Wordpress::Helpers (module)">Helpers</a></span>, <span class='object_link'><a href="Wordpress/Login.html" title="Msf::HTTP::Wordpress::Login (module)">Login</a></span>, <span class='object_link'><a href="Wordpress/Posts.html" title="Msf::HTTP::Wordpress::Posts (module)">Posts</a></span>, <span class='object_link'><a href="Wordpress/URIs.html" title="Msf::HTTP::Wordpress::URIs (module)">URIs</a></span>, <span class='object_link'><a href="Wordpress/Users.html" title="Msf::HTTP::Wordpress::Users (module)">Users</a></span>, <span class='object_link'><a href="Wordpress/Version.html" title="Msf::HTTP::Wordpress::Version (module)">Version</a></span>
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Wordpress/Base.html" title="Msf::HTTP::Wordpress::Base (module)">Base</a></span>, <span class='object_link'><a href="Wordpress/Helpers.html" title="Msf::HTTP::Wordpress::Helpers (module)">Helpers</a></span>, <span class='object_link'><a href="Wordpress/Login.html" title="Msf::HTTP::Wordpress::Login (module)">Login</a></span>, <span class='object_link'><a href="Wordpress/Posts.html" title="Msf::HTTP::Wordpress::Posts (module)">Posts</a></span>, <span class='object_link'><a href="Wordpress/URIs.html" title="Msf::HTTP::Wordpress::URIs (module)">URIs</a></span>, <span class='object_link'><a href="Wordpress/Users.html" title="Msf::HTTP::Wordpress::Users (module)">Users</a></span>, <span class='object_link'><a href="Wordpress/Version.html" title="Msf::HTTP::Wordpress::Version (module)">Version</a></span>, <span class='object_link'><a href="Wordpress/XmlRpc.html" title="Msf::HTTP::Wordpress::XmlRpc (module)">XmlRpc</a></span>
     
   
     
@@ -180,6 +180,17 @@
     </ul>
   
 
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Wordpress/XmlRpc.html" title="Msf::HTTP::Wordpress::XmlRpc (module)">XmlRpc</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Wordpress/XmlRpc.html#wordpress_generate_xml_rpc_body-instance_method" title="Msf::HTTP::Wordpress::XmlRpc#wordpress_generate_xml_rpc_body (method)">#wordpress_generate_xml_rpc_body</a></span>, <span class='object_link'><a href="Wordpress/XmlRpc.html#wordpress_xmlrpc_enabled%3F-instance_method" title="Msf::HTTP::Wordpress::XmlRpc#wordpress_xmlrpc_enabled? (method)">#wordpress_xmlrpc_enabled?</a></span></p>
 
   
   
@@ -307,8 +318,6 @@
       <pre class="lines">
 
 
-24
-25
 26
 27
 28
@@ -321,10 +330,12 @@
 35
 36
 37
-38</pre>
+38
+39
+40</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/http/wordpress.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/http/wordpress.rb', line 26</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_info'>info</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='kw'>super</span>
@@ -361,12 +372,12 @@
       <pre class="lines">
 
 
-40
-41
-42</pre>
+42
+43
+44</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/http/wordpress.rb', line 40</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/http/wordpress.rb', line 42</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_wp_content_dir'>wp_content_dir</span>
   <span class='id identifier rubyid_datastore'>datastore</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>WPCONTENTDIR</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
@@ -381,7 +392,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu Jan 29 20:46:14 2015 by
+  Generated on Fri Jan 30 10:51:30 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>
