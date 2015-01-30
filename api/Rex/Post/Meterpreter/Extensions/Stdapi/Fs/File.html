@@ -557,7 +557,7 @@ supplied in destination.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#upload_file-class_method" title="upload_file (class method)">+ (Object) <strong>upload_file</strong>(dest_file, src_file) </a>
+      <a href="#upload_file-class_method" title="upload_file (class method)">+ (Object) <strong>upload_file</strong>(dest_file, src_file, &amp;stat) </a>
     
 
     
@@ -798,13 +798,13 @@ supplied in destination.</p>
       <pre class="lines">
 
 
-339
-340
 341
-342</pre>
+342
+343
+344</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 339</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 341</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_mode'>mode</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>r</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_perms'>perms</span> <span class='op'>=</span> <span class='int'>0</span><span class='rparen'>)</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_client'>client</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_client'>client</span>
@@ -896,12 +896,12 @@ supplied in destination.</p>
       <pre class="lines">
 
 
-394
-395
-396</pre>
+396
+397
+398</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 394</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 396</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_client'>client</span>
   <span class='ivar'>@client</span>
@@ -1003,8 +1003,6 @@ again when each download is complete.</p>
       <pre class="lines">
 
 
-273
-274
 275
 276
 277
@@ -1017,10 +1015,12 @@ again when each download is complete.</p>
 284
 285
 286
-287</pre>
+287
+288
+289</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 273</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 275</span>
 
 <span class='kw'>def</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_download'>download</span><span class='lparen'>(</span><span class='id identifier rubyid_dest'>dest</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_src_files'>src_files</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_stat'>stat</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_src_files'>src_files</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_src'>src</span><span class='op'>|</span>
@@ -1068,8 +1068,6 @@ again when each download is complete.</p>
       <pre class="lines">
 
 
-292
-293
 294
 295
 296
@@ -1085,10 +1083,12 @@ again when each download is complete.</p>
 306
 307
 308
-309</pre>
+309
+310
+311</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 292</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 294</span>
 
 <span class='kw'>def</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_download_file'>download_file</span><span class='lparen'>(</span><span class='id identifier rubyid_dest_file'>dest_file</span><span class='comma'>,</span> <span class='id identifier rubyid_src_file'>src_file</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_src_fd'>src_fd</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_fs'>fs</span><span class='period'>.</span><span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_src_file'>src_file</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>rb</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -1383,8 +1383,6 @@ href="http://www.ruby-doc.org/core-1.9.3/File.html#method-c-open">www.ruby-doc.o
       <pre class="lines">
 
 
-319
-320
 321
 322
 323
@@ -1392,10 +1390,12 @@ href="http://www.ruby-doc.org/core-1.9.3/File.html#method-c-open">www.ruby-doc.o
 325
 326
 327
-328</pre>
+328
+329
+330</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 319</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 321</span>
 
 <span class='kw'>def</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_mode'>mode</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>r</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_perms'>perms</span><span class='op'>=</span><span class='int'>0</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_f'>f</span> <span class='op'>=</span> <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_mode'>mode</span><span class='comma'>,</span> <span class='id identifier rubyid_perms'>perms</span><span class='rparen'>)</span>
@@ -1823,7 +1823,7 @@ again when each upload is complete.</p>
       <div class="method_details ">
   <h3 class="signature " id="upload_file-class_method">
   
-    + (<tt>Object</tt>) <strong>upload_file</strong>(dest_file, src_file) 
+    + (<tt>Object</tt>) <strong>upload_file</strong>(dest_file, src_file, &amp;stat) 
   
 
   
@@ -1861,15 +1861,18 @@ again when each upload is complete.</p>
 261
 262
 263
-264</pre>
+264
+265
+266</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 249</span>
 
-<span class='kw'>def</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_upload_file'>upload_file</span><span class='lparen'>(</span><span class='id identifier rubyid_dest_file'>dest_file</span><span class='comma'>,</span> <span class='id identifier rubyid_src_file'>src_file</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_upload_file'>upload_file</span><span class='lparen'>(</span><span class='id identifier rubyid_dest_file'>dest_file</span><span class='comma'>,</span> <span class='id identifier rubyid_src_file'>src_file</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_stat'>stat</span><span class='rparen'>)</span>
   <span class='comment'># Open the file on the remote side for writing and read
 </span>  <span class='comment'># all of the contents of the local file
-</span>  <span class='id identifier rubyid_dest_fd'>dest_fd</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_fs'>fs</span><span class='period'>.</span><span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_dest_file'>dest_file</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+</span>  <span class='id identifier rubyid_stat'>stat</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>uploading</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_src_file'>src_file</span><span class='comma'>,</span> <span class='id identifier rubyid_dest_file'>dest_file</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_stat'>stat</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_dest_fd'>dest_fd</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_fs'>fs</span><span class='period'>.</span><span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_dest_file'>dest_file</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>wb</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_src_buf'>src_buf</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
 
   <span class='op'>::</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='id identifier rubyid_src_file'>src_file</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
@@ -1881,6 +1884,7 @@ again when each upload is complete.</p>
   <span class='kw'>ensure</span>
     <span class='id identifier rubyid_dest_fd'>dest_fd</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span>
   <span class='kw'>end</span>
+  <span class='id identifier rubyid_stat'>stat</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>uploaded</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_src_file'>src_file</span><span class='comma'>,</span> <span class='id identifier rubyid_dest_file'>dest_file</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_stat'>stat</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1919,13 +1923,13 @@ again when each upload is complete.</p>
       <pre class="lines">
 
 
-389
-390
 391
-392</pre>
+392
+393
+394</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 389</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 391</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid__open'>_open</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_mode'>mode</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>r</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_perms'>perms</span> <span class='op'>=</span> <span class='int'>0</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='const'>Rex</span><span class='op'>::</span><span class='const'>Post</span><span class='op'>::</span><span class='const'>Meterpreter</span><span class='op'>::</span><span class='const'>Channels</span><span class='op'>::</span><span class='const'>Pools</span><span class='op'>::</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span>
@@ -1962,12 +1966,12 @@ again when each upload is complete.</p>
       <pre class="lines">
 
 
-353
-354
-355</pre>
+355
+356
+357</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 353</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 355</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_eof'>eof</span>
   <span class='kw'>return</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_filed'>filed</span><span class='period'>.</span><span class='id identifier rubyid_eof'>eof</span>
@@ -2003,12 +2007,12 @@ again when each upload is complete.</p>
       <pre class="lines">
 
 
-360
-361
-362</pre>
+362
+363
+364</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 360</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 362</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_pos'>pos</span>
   <span class='kw'>return</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_filed'>filed</span><span class='period'>.</span><span class='id identifier rubyid_tell'>tell</span>
@@ -2044,12 +2048,12 @@ again when each upload is complete.</p>
       <pre class="lines">
 
 
-367
-368
-369</pre>
+369
+370
+371</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 367</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 369</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_seek'>seek</span><span class='lparen'>(</span><span class='id identifier rubyid_offset'>offset</span><span class='comma'>,</span> <span class='id identifier rubyid_whence'>whence</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>IO</span><span class='op'>::</span><span class='const'>SEEK_SET</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_sysseek'>sysseek</span><span class='lparen'>(</span><span class='id identifier rubyid_offset'>offset</span><span class='comma'>,</span> <span class='id identifier rubyid_whence'>whence</span><span class='rparen'>)</span>
@@ -2085,12 +2089,12 @@ again when each upload is complete.</p>
       <pre class="lines">
 
 
-374
-375
-376</pre>
+376
+377
+378</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 374</span>
+      <pre class="code"><span class="info file"># File 'lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb', line 376</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sysseek'>sysseek</span><span class='lparen'>(</span><span class='id identifier rubyid_offset'>offset</span><span class='comma'>,</span> <span class='id identifier rubyid_whence'>whence</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>IO</span><span class='op'>::</span><span class='const'>SEEK_SET</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_filed'>filed</span><span class='period'>.</span><span class='id identifier rubyid_seek'>seek</span><span class='lparen'>(</span><span class='id identifier rubyid_offset'>offset</span><span class='comma'>,</span> <span class='id identifier rubyid_whence'>whence</span><span class='rparen'>)</span>
@@ -2105,7 +2109,7 @@ again when each upload is complete.</p>
 </div>
 
     <div id="footer">
-  Generated on Thu Jan 29 14:49:13 2015 by
+  Generated on Thu Jan 29 18:47:34 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>
