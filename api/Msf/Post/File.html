@@ -718,6 +718,14 @@ which will call this if it is appropriate for the given session.</p>
       <pre class="lines">
 
 
+380
+381
+382
+383
+384
+385
+386
+387
 388
 389
 390
@@ -727,18 +735,10 @@ which will call this if it is appropriate for the given session.</p>
 394
 395
 396
-397
-398
-399
-400
-401
-402
-403
-404
-405</pre>
+397</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/post/file.rb', line 388</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/post/file.rb', line 380</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid__read_file_meterpreter'>_read_file_meterpreter</span><span class='lparen'>(</span><span class='id identifier rubyid_file_name'>file_name</span><span class='rparen'>)</span>
   <span class='kw'>begin</span>
@@ -802,6 +802,14 @@ which will call this if it is appropriate for the given session.</p>
       <pre class="lines">
 
 
+535
+536
+537
+538
+539
+540
+541
+542
 543
 544
 545
@@ -812,18 +820,10 @@ which will call this if it is appropriate for the given session.</p>
 550
 551
 552
-553
-554
-555
-556
-557
-558
-559
-560
-561</pre>
+553</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/post/file.rb', line 543</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/post/file.rb', line 535</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid__unix_max_line_length'>_unix_max_line_length</span>
   <span class='comment'># Based on autoconf&#39;s arg_max calculator, see
@@ -881,6 +881,14 @@ session.</p>
       <pre class="lines">
 
 
+409
+410
+411
+412
+413
+414
+415
+416
 417
 418
 419
@@ -993,18 +1001,10 @@ session.</p>
 526
 527
 528
-529
-530
-531
-532
-533
-534
-535
-536
-537</pre>
+529</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/post/file.rb', line 417</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/post/file.rb', line 409</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid__write_file_unix_shell'>_write_file_unix_shell</span><span class='lparen'>(</span><span class='id identifier rubyid_file_name'>file_name</span><span class='comma'>,</span> <span class='id identifier rubyid_data'>data</span><span class='comma'>,</span> <span class='id identifier rubyid_append'>append</span><span class='op'>=</span><span class='kw'>false</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_redirect'>redirect</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_append'>append</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&gt;&gt;</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&gt;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -2675,35 +2675,19 @@ relative or absolute.</p>
 363
 364
 365
-366
-367
-368
-369
-370
-371
-372
-373
-374</pre>
+366</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/msf/core/post/file.rb', line 356</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rename_file'>rename_file</span><span class='lparen'>(</span><span class='id identifier rubyid_old_file'>old_file</span><span class='comma'>,</span> <span class='id identifier rubyid_new_file'>new_file</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_session'>session</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span> <span class='symbol'>:commands</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_session'>session</span><span class='period'>.</span><span class='id identifier rubyid_commands'>commands</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>stdapi_fs_file_move</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_session'>session</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>meterpreter</span><span class='tstring_end'>&quot;</span></span>
     <span class='kw'>return</span> <span class='lparen'>(</span><span class='id identifier rubyid_session'>session</span><span class='period'>.</span><span class='id identifier rubyid_fs'>fs</span><span class='period'>.</span><span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_mv'>mv</span><span class='lparen'>(</span><span class='id identifier rubyid_old_file'>old_file</span><span class='comma'>,</span> <span class='id identifier rubyid_new_file'>new_file</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_result'>result</span> <span class='op'>==</span> <span class='int'>0</span><span class='rparen'>)</span>
   <span class='kw'>else</span>
     <span class='kw'>if</span> <span class='id identifier rubyid_session'>session</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>win</span><span class='regexp_end'>/</span></span>
-      <span class='kw'>if</span> <span class='id identifier rubyid_cmd_exec'>cmd_exec</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>%Q|</span><span class='tstring_content'>move /y &quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_old_file'>old_file</span><span class='embexpr_end'>}</span><span class='tstring_content'>&quot; &quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_new_file'>new_file</span><span class='embexpr_end'>}</span><span class='tstring_content'>&quot;</span><span class='tstring_end'>|</span></span><span class='rparen'>)</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>moved</span><span class='regexp_end'>/</span></span>
-        <span class='kw'>return</span> <span class='kw'>true</span>
-      <span class='kw'>else</span>
-        <span class='kw'>return</span> <span class='kw'>false</span>
-      <span class='kw'>end</span>
+      <span class='id identifier rubyid_cmd_exec'>cmd_exec</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>%Q|</span><span class='tstring_content'>move /y &quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_old_file'>old_file</span><span class='embexpr_end'>}</span><span class='tstring_content'>&quot; &quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_new_file'>new_file</span><span class='embexpr_end'>}</span><span class='tstring_content'>&quot;</span><span class='tstring_end'>|</span></span><span class='rparen'>)</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>moved</span><span class='regexp_end'>/</span></span>
     <span class='kw'>else</span>
-      <span class='kw'>if</span> <span class='id identifier rubyid_cmd_exec'>cmd_exec</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>%Q|</span><span class='tstring_content'>mv -f &quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_old_file'>old_file</span><span class='embexpr_end'>}</span><span class='tstring_content'>&quot; &quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_new_file'>new_file</span><span class='embexpr_end'>}</span><span class='tstring_content'>&quot;</span><span class='tstring_end'>|</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
-        <span class='kw'>return</span> <span class='kw'>true</span>
-      <span class='kw'>else</span>
-        <span class='kw'>return</span> <span class='kw'>false</span>
-      <span class='kw'>end</span>
+      <span class='id identifier rubyid_cmd_exec'>cmd_exec</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>%Q|</span><span class='tstring_content'>mv -f &quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_old_file'>old_file</span><span class='embexpr_end'>}</span><span class='tstring_content'>&quot; &quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_new_file'>new_file</span><span class='embexpr_end'>}</span><span class='tstring_content'>&quot;</span><span class='tstring_end'>|</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
@@ -2983,7 +2967,7 @@ the remote file system</p>
 </div>
 
     <div id="footer">
-  Generated on Fri Jan 30 10:51:30 2015 by
+  Generated on Fri Jan 30 16:05:15 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>

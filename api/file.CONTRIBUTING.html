@@ -66,9 +66,7 @@
 <p>Thanks for your interest in making Metasploit -- and therefore, the
 world -- a better place!</p>
 
-<p>Are you about to report a bug? Sorry to hear it.</p>
-
-<p>Here&#39;s our <a href="https://github.com/rapid7/metasploit-framework/issues">Issue tracker</a>.
+<p>Are you about to report a bug? Sorry to hear it. Here&#39;s our <a href="http://r-7.co/MSF-BUGv1">Issue tracker</a>.
 Please try to be as specific as you can about your problem, include steps
 to reproduce (cut and paste from your console output if it&#39;s helpful), and
 what you were expecting to happen.</p>
@@ -76,7 +74,7 @@ what you were expecting to happen.</p>
 <p>Are you about to report a security vulnerability in Metasploit itself?
 How ironic! Please take a look at Rapid7&#39;s <a href="https://www.rapid7.com/disclosure.jsp">Vulnerability
 Disclosure Policy</a>, and send
-your report to <a href="mailto:security@rapid7.com">security@rapid7.com</a> using <a href="http://pgp.mit.edu:11371/pks/lookup?op=vindex&amp;search=0x2380F85B8AD4DB8D">our PGP key</a>.</p>
+your report to <a href="mailto:security@rapid7.com">security@rapid7.com</a> using our <a href="http://pgp.mit.edu:11371/pks/lookup?op=vindex&amp;search=0x2380F85B8AD4DB8D">PGP key</a>.</p>
 
 <p>Are you about to contribute some new functionality, a bug fix, or a new
 Metasploit module? If so, read on...</p>
@@ -88,13 +86,11 @@ and don&#39;ts of how to make sure <em>your</em> valuable contributions actually
 make it into Metasploit&#39;s master branch.</p>
 
 <p>If you care not to follow these rules, your contribution <strong>will</strong> be
-closed (<em>Road House</em> style). Sorry!</p>
+closed. Sorry!</p>
 
-<p>This is intended to be a <strong>short</strong> list. The
-<a href="https://github.com/rapid7/metasploit-framework/wiki">wiki</a> is much more
+<p>This is intended to be a <strong>short</strong> list. The <a href="https://github.com/rapid7/metasploit-framework/wiki">wiki</a> is much more
 exhaustive and reveals many mysteries. If you read nothing else, take a
-look at the standard <a href="https://github.com/rapid7/metasploit-framework/wiki/Setting-Up-a-Metasploit-Development-Environment">development environment setup
-guide</a>
+look at the standard <a href="http://r-7.co/MSF-DEV">development environment setup</a> guide,
 and Metasploit&#39;s <a href="https://github.com/rapid7/metasploit-framework/wiki/Common-Metasploit-Module-Coding-Mistakes">Common Coding Mistakes</a>.</p>
 
 <h2>Code Contributions</h2>
@@ -102,9 +98,8 @@ and Metasploit&#39;s <a href="https://github.com/rapid7/metasploit-framework/wik
 <ul>
 <li><strong>Do</strong> stick to the <a href="https://github.com/bbatsov/ruby-style-guide">Ruby style guide</a>.</li>
 <li><strong>Do</strong> get <a href="https://rubygems.org/search?query=rubocop">Rubocop</a> relatively quiet against the code you are adding or modifying.</li>
-<li><strong>Do</strong> follow the <a href="http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">50/72 rule</a> for Git commit messages.</li>
-<li><strong>Don&#39;t</strong> use the default merge messages when merging from other
-branches.</li>
+<li><strong>Do</strong> follow the [50/72 rule] for Git commit messages.</li>
+<li><strong>Don&#39;t</strong> use the default merge messages when merging from other branches.</li>
 <li><strong>Do</strong> create a <a href="http://git-scm.com/book/en/Git-Branching-Branching-Workflows#Topic-Branches">topic branch</a> to work on instead of working directly on <code>master</code>.</li>
 </ul>
 
@@ -119,14 +114,26 @@ branches.</li>
 <li><strong>Don&#39;t</strong> abandon your pull request. Being responsive helps us land your code faster.</li>
 </ul>
 
-<p>Pull requests <a href="https://github.com/rapid7/metasploit-framework/pull/2940">#2940</a> and <a href="https://github.com/rapid7/metasploit-framework/pull/3043">#3043</a> are a couple good examples to follow.</p>
+<p>Pull requests <a href="https://github.com/rapid7/metasploit-framework/pull/2940">PR#2940</a> and <a href="https://github.com/rapid7/metasploit-framework/pull/3043">PR#3043</a> are a couple good examples to follow.</p>
 
 <h4>New Modules</h4>
 
 <ul>
-<li><strong>Do</strong> run <code>tools/msftidy.rb</code> against your module and fix any errors or warnings that come up. Even better would be to set up <code>msftidy.rb</code> as a <a href="https://github.com/rapid7/metasploit-framework/blob/master/tools/dev/pre-commit-hook.rb">pre-commit hook</a>.</li>
-<li><strong>Do</strong> use the <a href="https://rapid7.github.io/metasploit-framework/api/">many module mixin APIs</a>. Wheel improvements are welcome; wheel reinventions, not so much.</li>
+<li><strong>Do</strong> run <code>tools/msftidy.rb</code> against your module and fix any errors or warnings that come up.
+
+<ul>
+<li>Even better would be to set up <code>msftidy.rb</code> as a <a href="https://github.com/rapid7/metasploit-framework/blob/master/tools/dev/pre-commit-hook.rb">pre-commit hook</a>.</li>
+</ul></li>
+<li><strong>Do</strong> use the many module mixin <a href="https://rapid7.github.io/metasploit-framework/api/">API</a>s. Wheel improvements are welcome; wheel reinventions, not so much.</li>
 <li><strong>Don&#39;t</strong> include more than one module per pull request.</li>
+</ul>
+
+<h4>Scripts</h4>
+
+<ul>
+<li><strong>Don&#39;t</strong> submit new <a href="https://github.com/rapid7/metasploit-framework/tree/master/scripts">scripts</a>.  Scripts are shipped as examples for
+automating local tasks, and anything &quot;serious&quot; can be done with post
+modules and local exploits.</li>
 </ul>
 
 <h4>Library Code</h4>
@@ -142,7 +149,8 @@ branches.</li>
 
 <ul>
 <li><strong>Do</strong> include reproduction steps in the form of verification steps.</li>
-<li><strong>Do</strong> include a link to any corresponding <a href="https://github.com/rapid7/metasploit-framework/issues">Issue</a> in the format of <code>See #1234</code> in your commit description.</li>
+<li><strong>Do</strong> include a link to any corresponding <a href="https://github.com/rapid7/metasploit-framework/issues">Issues</a> in the format of
+<code>See #1234</code> in your commit description.</li>
 </ul>
 
 <h2>Bug Reports</h2>
@@ -156,15 +164,14 @@ branches.</li>
 
 <p>If you need some more guidance, talk to the main body of open
 source contributors over on the <a href="http://webchat.freenode.net/?channels=%23metasploit&amp;uio=d4">Freenode IRC channel</a>
-or e-mail us at <a href="https://lists.sourceforge.net/lists/listinfo/metasploit-hackers">metasploit-hackers</a>
-mailing list.</p>
+or e-mail us at <a href="https://lists.sourceforge.net/lists/listinfo/metasploit-hackers">metasploit-hackers</a> mailing list.</p>
 
 <p>Also, <strong>thank you</strong> for taking the few moments to read this far! You&#39;re
 already way ahead of the curve, so keep it up!</p>
 </div></div>
 
     <div id="footer">
-  Generated on Fri Jan 30 10:51:26 2015 by
+  Generated on Fri Jan 30 16:05:12 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.5).
 </div>
