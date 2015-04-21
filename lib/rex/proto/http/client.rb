@@ -71,7 +71,9 @@ class Client
       'uri_fake_end'           => 'bool',
       'uri_fake_params_start'  => 'bool',
       'header_folding'         => 'bool',
-      'chunked_size'           => 'integer'
+      'chunked_size'           => 'integer',
+      'connect_timeout'        => 'integer',
+      'recv_timeout'           => 'integer'
     }
 
 
@@ -164,10 +166,11 @@ class Client
   #
   # Connects to the remote server if possible.
   #
-  # @param t [Fixnum] Timeout
+  # @param t [Fixnum] Connection timeout
   # @see Rex::Socket::Tcp.create
   # @return [Rex::Socket::Tcp]
-  def connect(t = -1)
+  #
+  def connect(t = 5)
     # If we already have a connection and we aren't pipelining, close it.
     if (self.conn)
       if !pipelining?
@@ -177,7 +180,7 @@ class Client
       end
     end
 
-    timeout = (t.nil? or t == -1) ? 0 : t
+    timeout = (t.nil? or t == -1) ? 5 : t
 
     self.conn = Rex::Socket::Tcp.create(
       'PeerHost'   => self.hostname,
@@ -211,10 +214,15 @@ class Client
   # authentication and return the final response
   #
   # @return (see #_send_recv)
-  def send_recv(req, t = -1, persist=false)
-    res = _send_recv(req,t,persist)
+  def send_recv(opts={})
+    req             = opts['request']
+    connect_timeout = opts['connect_timeout']
+    recv_timeout    = opts['recv_timeout']
+    persist         = opts['persistent']
+
+    res = _send_recv(opts)
     if res and res.code == 401 and res.headers['WWW-Authenticate']
-      res = send_auth(res, req.opts, t, persist)
+      res = send_auth(opts)
     end
     res
   end
@@ -229,10 +237,14 @@ class Client
   # authentication handling.
   #
   # @return (see #read_response)
-  def _send_recv(req, t = -1, persist=false)
-    @pipeline = persist
-    send_request(req, t)
-    res = read_response(t)
+  def _send_recv(opts={})
+    req             = opts['request']
+    connect_timeout = opts['connect_timeout'] || 5
+    recv_timeout    = opts['recv_timeout'] || 5
+    @pipeline       = opts['persistent'] || false
+
+    send_request(req, connect_timeout)
+    res = read_response(recv_timeout)
     res.request = req.to_s if res
     res
   end
@@ -241,10 +253,10 @@ class Client
   # Send an HTTP request to the server
   #
   # @param req [Request,ClientRequest,#to_s] The request to send
-  # @param t (see #connect)
+  # @param t (see #connect) Connection timeout
   #
   # @return [void]
-  def send_request(req, t = -1)
+  def send_request(req, t = 5)
     connect(t)
     conn.put(req.to_s)
   end
@@ -255,11 +267,17 @@ class Client
   #
   # @param res [Response] the HTTP Response object
   # @param opts [Hash] the options used to generate the original HTTP request
-  # @param t [Fixnum] the timeout for the request in seconds
+  # @param connect_timeout [Fixnum]
+  # @param recv_timeout [Fixnum]
   # @param persist [Boolean] whether or not to persist the TCP connection (pipelining)
   #
   # @return [Response] the last valid HTTP response object we received
-  def send_auth(res, opts, t, persist)
+  def send_auth(opts={})
+    res = opts['response']
+    connect_timeout = opts['connect_timeout'] || 5
+    recv_timeout = opts['recv_timeout'] || 5
+    persist = opts['persistent'] || false
+
     if opts['username'].nil? or opts['username'] == ''
       if self.username and not (self.username == '')
         opts['username'] = self.username
@@ -276,7 +294,7 @@ class Client
       opts['headers'] ||= {}
       opts['headers']['Authorization'] = basic_auth_header(opts['username'],opts['password'] )
       req = request_cgi(opts)
-      res = _send_recv(req,t,persist)
+      res = _send_recv(req, connect_timeout, recv_timeout ,persist)
       return res
     elsif  supported_auths.include? "Digest"
       temp_response = digest_auth(opts)
@@ -319,7 +337,8 @@ class Client
   def digest_auth(opts={})
     @nonce_count = 0
 
-    to = opts['timeout'] || 20
+    connect_timeout = opts['connect_timeout'] || 5
+    recv_timeout    = opts['recv_timeout']    || 5
 
     digest_user = opts['username'] || ""
     digest_password =  opts['password'] || ""
@@ -341,7 +360,7 @@ class Client
       r = request_cgi(opts.merge({
           'uri' => path,
           'method' => method }))
-      resp = _send_recv(r, to)
+      resp = _send_recv(r, connect_timeout, recv_timeout)
       unless resp.kind_of? Rex::Proto::Http::Response
         return nil
       end
@@ -438,7 +457,7 @@ class Client
       'uri' => path,
       'method' => method,
       'headers' => headers }))
-    resp = _send_recv(r, to, true)
+    resp = _send_recv(r, connect_timeout, recv_timeout, true)
     unless resp.kind_of? Rex::Proto::Http::Response
       return nil
     end
@@ -466,7 +485,8 @@ class Client
       :send_ntlm        => self.config['send_ntlm']
     }
 
-    to = opts['timeout'] || 20
+    connect_timeout = opts['connect_timeout'] || 5
+    recv_timeout    = opts['recv_timeout'] || 5
     opts['username'] ||= ''
     opts['password'] ||= ''
 
@@ -496,7 +516,7 @@ class Client
       # First request to get the challenge
       opts['headers']['Authorization'] = ntlm_message_1
       r = request_cgi(opts)
-      resp = _send_recv(r, to)
+      resp = _send_recv(r, connect_timeout, recv_timeout)
       unless resp.kind_of? Rex::Proto::Http::Response
         return nil
       end
@@ -549,7 +569,7 @@ class Client
       # Send the response
       opts['headers']['Authorization'] = "#{provider}#{ntlm_message_3}"
       r = request_cgi(opts)
-      resp = _send_recv(r, to, true)
+      resp = _send_recv(r, connect_timeout, recv_timeout, true)
       unless resp.kind_of? Rex::Proto::Http::Response
         return nil
       end
@@ -564,7 +584,6 @@ class Client
   #
   # @return [Response]
   def read_response(t = -1, opts = {})
-
     resp = Response.new
     resp.max_data = config['read_max_data']
 
