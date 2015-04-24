@@ -222,7 +222,7 @@ class Client
 
     res = _send_recv(opts)
     if res and res.code == 401 and res.headers['WWW-Authenticate']
-      res = send_auth(opts)
+      res = send_auth(opts.merge({'response'=>res}))
     end
     res
   end
