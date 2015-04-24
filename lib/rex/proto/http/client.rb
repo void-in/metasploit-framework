@@ -267,8 +267,8 @@ class Client
   #
   # @param res [Response] the HTTP Response object
   # @param opts [Hash] the options used to generate the original HTTP request
-  # @param connect_timeout [Fixnum]
-  # @param recv_timeout [Fixnum]
+  # @param connect_timeout [Fixnum] Default: 5
+  # @param recv_timeout [Fixnum] Default: 5
   # @param persist [Boolean] whether or not to persist the TCP connection (pipelining)
   #
   # @return [Response] the last valid HTTP response object we received
@@ -294,7 +294,7 @@ class Client
       opts['headers'] ||= {}
       opts['headers']['Authorization'] = basic_auth_header(opts['username'],opts['password'] )
       req = request_cgi(opts)
-      res = _send_recv(req, connect_timeout, recv_timeout ,persist)
+      res = _send_recv(opts.merge({'request'=>req}))
       return res
     elsif  supported_auths.include? "Digest"
       temp_response = digest_auth(opts)
@@ -360,7 +360,7 @@ class Client
       r = request_cgi(opts.merge({
           'uri' => path,
           'method' => method }))
-      resp = _send_recv(r, connect_timeout, recv_timeout)
+      resp = _send_recv(opts.merge('request'=>r))
       unless resp.kind_of? Rex::Proto::Http::Response
         return nil
       end
@@ -457,7 +457,7 @@ class Client
       'uri' => path,
       'method' => method,
       'headers' => headers }))
-    resp = _send_recv(r, connect_timeout, recv_timeout, true)
+    resp = _send_recv(opts.merge({'request'=>r, 'persistent'=>true}))
     unless resp.kind_of? Rex::Proto::Http::Response
       return nil
     end
@@ -516,7 +516,7 @@ class Client
       # First request to get the challenge
       opts['headers']['Authorization'] = ntlm_message_1
       r = request_cgi(opts)
-      resp = _send_recv(r, connect_timeout, recv_timeout)
+      resp = _send_recv(opts.merge({'request'=>r}))
       unless resp.kind_of? Rex::Proto::Http::Response
         return nil
       end
@@ -569,7 +569,7 @@ class Client
       # Send the response
       opts['headers']['Authorization'] = "#{provider}#{ntlm_message_3}"
       r = request_cgi(opts)
-      resp = _send_recv(r, connect_timeout, recv_timeout, true)
+      resp = _send_recv(opts.merge({'request'=>r, 'persistent'=>true}))
       unless resp.kind_of? Rex::Proto::Http::Response
         return nil
       end
