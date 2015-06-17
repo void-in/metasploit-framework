@@ -1,6 +1,5 @@
-# path : /root/.msf4/modules/auxiliary/scanner/http/phpmyadmin_login.rb
 require 'msf/core'
-require 'metasploit/framework/login_scanner/php_my_admin'
+require 'metasploit/framework/login_scanner/php_myadmin'
 require 'metasploit/framework/credential_collection'
 
 class Metasploit3 < Msf::Auxiliary
@@ -13,48 +12,52 @@ class Metasploit3 < Msf::Auxiliary
   def initialize(info={})
 
     super(update_info(info,
-      'Name'        => 'phpMyAdmin Login Utility',
-      'Description' => %q{
-        This module attempts to authenticate to a phpMyAdmin interface,
-        warning, this is bruteforcing !
+      'Name'           => 'phpMyAdmin Login Utility',
+      'Description'    => %q{
+        This module attempts to authenticate to a phpMyAdmin interface
       },
-      'Author'      => [ 'hdelval' ],
-      'License'     => MSF_LICENSE,
+      'Author'         => 
+        [
+          'hdelval', # original contributor
+          'void_in'  # help with dev and cleanup
+        ],
+      'References'     =>
+        [
+          ['CVE', '1999-0502'] # Weak password
+        ],
+      'License'        => MSF_LICENSE,
       'DefaultOptions' =>
         {
-          'RPORT'      => 80,
-          'SSL'        => false,
-          'SSLVersion' => 'TLS1',
-          'TARGETURI'  => '/phpmyadmin/'
+          'RPORT'      => 80
         }
     ))
 
     register_options(
       [
-        OptString.new('TARGETURI', [ true, '/phpmyadmin/' ])
+        OptString.new('TARGETURI', [ true, 'Path of the phpMyAdmin interface', '/phpmyadmin/'])
       ], self.class)
 
   end
 
   def scanner(ip)
     cred_collection = Metasploit::Framework::CredentialCollection.new(
-      blank_passwords: datastore['BLANK_PASSWORDS'] ,
-      pass_file:       datastore['PASS_FILE'] ,
-      password:        datastore['PASSWORD'] ,
-      user_file:       datastore['USER_FILE'] ,
-      userpass_file:   datastore['USERPASS_FILE'] ,
-      username:        datastore['USERNAME'] ,
+      blank_passwords: datastore['BLANK_PASSWORDS'],
+      pass_file:       datastore['PASS_FILE'],
+      password:        datastore['PASSWORD'],
+      user_file:       datastore['USER_FILE'],
+      userpass_file:   datastore['USERPASS_FILE'],
+      username:        datastore['USERNAME'],
       user_as_pass:    datastore['USER_AS_PASS']
     )
 
     login_scanneur = Metasploit::Framework::LoginScanner::PhpMyAdmin.new(
       configure_http_login_scanner(
-        host:               ip ,
-        uri:                datastore['TARGETURI'] ,
-        port:               datastore['RPORT'] ,
-        cred_details:       cred_collection ,
-        stop_on_success:    datastore['STOP_ON_SUCCESS'] ,
-        bruteforce_speed:   datastore['BRUTEFORCE_SPEED'] ,
+        host:               ip,
+        uri:                datastore['TARGETURI'],
+        port:               datastore['RPORT'],
+        cred_details:       cred_collection,
+        stop_on_success:    datastore['STOP_ON_SUCCESS'],
+        bruteforce_speed:   datastore['BRUTEFORCE_SPEED'],
         connection_timeout: 5
       ))
 
@@ -69,7 +72,7 @@ class Metasploit3 < Msf::Auxiliary
     service_data = {
       address: ip,
       port: port,
-      service_name: 'http',
+      service_name: (ssl ? 'https': 'http'),
       protocol: 'tcp',
       workspace_id: myworkspace_id
     }
@@ -124,7 +127,6 @@ class Metasploit3 < Msf::Auxiliary
       end
     end
   end
-
 
   # Start here
   def run_host(ip)

@@ -1,4 +1,3 @@
-# path : [installation_path]/lib/metasploit/framework/login_scanner/php_my_admin.rb
 require 'metasploit/framework/login_scanner/http'
 
 module Metasploit
@@ -9,7 +8,7 @@ module Metasploit
 
         DEFAULT_PORT = 80
         PRIVATE_TYPES = [ :password ]
-        LOGIN_STATUS = Metasploit::Model::Login::Status # Shorter name
+        LOGIN_STATUS = Metasploit::Model::Login::Status # shorter name
         
         def check_setup
           res = send_request(
@@ -32,7 +31,6 @@ module Metasploit
           return !(res.body.include? '<div class="error">')
         end
 
-
         def get_important_cookies_and_token
           cookies = ''
 
@@ -41,12 +39,12 @@ module Metasploit
             'uri'    => normalize_uri("#{uri}")
           })
 
-          return nil if res.nil? || res.get_cookies.empty?
+          return nil if (res.nil? || res.get_cookies.empty?)
 
           # Get the cookies
           # seuls les derniers comptent (d'ou le m[-1])
           m = res.get_cookies.match(/(phpMyAdmin=[a-z0-9]+;)/)
-          phpMyAdmin = (m.nil?) ? nil : m[-1]
+          pma_session = (m.nil?) ? nil : m[-1]
           m = res.get_cookies.match(/(pma_lang=[a-z]+;)/)
           pma_lang = (m.nil?) ? nil : m[-1]
           m = res.get_cookies.match(/(pma_collation_connection=[a-z0-9_]+;)/)
@@ -54,14 +52,13 @@ module Metasploit
           m = res.get_cookies.match(/(pma_mcrypt_iv=[a-zA-Z0-9%]+;)/)
           pma_mcrypt_iv = (m.nil?) ? nil : m[-1]
           # check if everythong is okay
-          if phpMyAdmin.nil? or pma_lang.nil? or pma_collation_connection.nil? or pma_mcrypt_iv.nil?
+          if pma_session.nil? or pma_lang.nil? or pma_collation_connection.nil? or pma_mcrypt_iv.nil?
             vprint_error("#{peer} - Unable to obtain all cookies, cannot continue")
             return :abort
           else
-            vprint_status("#{peer} - Using session ID: #{phpMyAdmin}")
+            vprint_status("#{peer} - Using session ID: #{pma_session}")
           end
-          cookies = phpMyAdmin+pma_lang+pma_collation_connection+pma_mcrypt_iv
-          # end Get the cookies
+          cookies = pma_session + pma_lang + pma_collation_connection + pma_mcrypt_iv
 
           # Get token
           doc = REXML::Document.new res.body
@@ -69,7 +66,6 @@ module Metasploit
             fail_with(Failure::UnexpectedReply, 'Error getting token')
           end
           token = REXML::XPath.first(doc, "//input[@name='token']/@value").value
-          # end Get token
 
           return pma_lang, pma_collation_connection, cookies, token
         end
@@ -146,4 +142,3 @@ module Metasploit
     end
   end
 end
-
