@@ -108,8 +108,9 @@ module ReverseTcp
         else
           via = ""
         end
-
-        print_status("Started reverse handler on #{ip}:#{local_port} #{via}")
+        unless datastore['MODULEOWNER'] == Msf::Exploit::Remote::BrowserAutopwnv2
+          print_status("Started reverse handler on #{ip}:#{local_port} #{via}")
+        end
         break
       rescue
         ex = $!
